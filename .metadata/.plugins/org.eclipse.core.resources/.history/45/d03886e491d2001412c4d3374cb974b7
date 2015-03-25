@@ -17,6 +17,5 @@
 	backgroundColor: "white", 
 	left: "10", 
 	right: "10", 
-	height: "150", 
-	top: "10"
+	height: "150"
 }

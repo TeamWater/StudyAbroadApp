@@ -15,8 +15,6 @@
 
 ".tile" : {
 	backgroundColor: "white", 
-	left: "10", 
-	right: "10", 
-	height: "150", 
-	top: "10"
+	weight: "200", 
+	height: "150"
 }

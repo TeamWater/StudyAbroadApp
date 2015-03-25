@@ -1,6 +1,6 @@
 <Alloy>    
 	<Window class="container" id="index">
-        <Menu platform="android" class="menuBar" >
+        <Menu platform="android" class="menuBar" icon="/images/ic_dehaze_white_48dp.png">
             <MenuItem title="log in"  onClick="doClick"/>
         </Menu>
         <RightNavButton platform="ios" icon="ic_menu_white_48dp.png" class="menuBar"/>
