@@ -1,0 +1,14 @@
+
+".container" : {
+	backgroundColor: "blue"
+}
+".Title" : {
+	backgroudColor: "red", 
+	color: "black", 
+	font: {fontSize: "21", fontweight: "bold"}
+	left: 
+}
+
+".Main" : {
+	backgroudColor: "green"
+}

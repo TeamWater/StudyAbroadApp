@@ -1,7 +1,25 @@
 <Alloy>
-	<Window>
-		<View class="container">
-		
-		</View>
+	<Window class="container">
+		<Menu platform="android" class="menuBar" icon="/images/ic_dehaze_white_48dp.png">
+            <MenuItem title="Full Agenda"  onClick="doClick"/>
+            <MenuItem title="Todays Agenda" onClick="doClick"/>
+        </Menu>
+		<ListView defaultItemTemplate="Template">
+			<Templates>
+				
+				<ItemTemplate name="Template">
+					<View layout="vertical" class="tile">
+						<Label class="Title" id="Title" bindId="TitleBID"/>
+						<Label class="Main" id="MainText" bindId="TextBID"/>
+					</View>
+				</ItemTemplate>
+				
+			</Templates>
+			
+			<ListSection>
+				<ListItem TitleBID:text="Agenda 1" TextBID:text="Main Text Agenda 1"/>
+				<ListItem TitleBID:text="Agenda 2" TextBID:text="Main Text Agenda 2"/>
+			</ListSection>
+		</ListView>
 	</Window>
 </Alloy>

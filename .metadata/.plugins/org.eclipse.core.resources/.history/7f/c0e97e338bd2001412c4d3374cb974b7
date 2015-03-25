@@ -1,0 +1,15 @@
+<Alloy>
+	<Window class="container">
+		<Menu platform="android" class="menuBar" icon="/images/ic_dehaze_white_48dp.png">
+            <MenuItem title="Full Agenda"  onClick="doClick"/>
+        </Menu>
+		<ListView>
+			<Templates>
+				
+				<ItemTemplate>
+					
+				</ItemTemplate>
+			</Templates>
+		</ListView>
+	</Window>
+</Alloy>

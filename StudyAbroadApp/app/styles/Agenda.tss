@@ -1,4 +1,21 @@
 
 ".container" : {
-  
+	backgroundColor: "blue"
+}
+".Title" : {
+	backgroudColor: "red", 
+	color: "black", 
+	font: {fontSize: "21", fontweight: "bold"}, 
+	left: "10dp"
+}
+
+".Main" : {
+	backgroudColor: "green"
+}
+
+".tile" : {
+	backgroundColor: "white", 
+	left: "10", 
+	right: "10", 
+	height: "150"
 }

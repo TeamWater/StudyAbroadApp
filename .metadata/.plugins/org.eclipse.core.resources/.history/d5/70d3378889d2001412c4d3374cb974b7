@@ -1,0 +1,10 @@
+<Alloy>
+	<Window class="container">
+		<Menu platform="android" class="menuBar">
+            <MenuItem title="log in" icon="/images/ic_dehaze_white_48dp.png" onClick="doClick"/>
+        </Menu>
+		<TableView>
+			<TableRow></TableRow>
+		</TableView>
+	</Window>
+</Alloy>
