@@ -18,3 +18,4 @@ function OpenSettings() {
 }
 
 $.index.open();
+
