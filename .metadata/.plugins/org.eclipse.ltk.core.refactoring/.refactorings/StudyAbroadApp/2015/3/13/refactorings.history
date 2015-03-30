@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;StudyAbroadApp/app/models/Agenda.js&apos; to &apos;AgendaModel.js&apos;" description="Rename resource &apos;Agenda.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="app/models/Agenda.js" name="AgendaModel.js" stamp="1427311120022" updateReferences="true"/>
+</session>

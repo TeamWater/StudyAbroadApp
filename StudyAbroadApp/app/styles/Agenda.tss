@@ -1,6 +1,6 @@
 
 ".container" : {
-	backgroundColor: "blue"
+	backgroundColor: "red"
 }
 ".Title" : {
 	backgroudColor: "red", 
