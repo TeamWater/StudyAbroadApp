@@ -1,8 +1,10 @@
 ".container": {
-	backgroundColor: "white"
+	backgroundColor: "#253640"
 }
 ".one": {
-	backgroundColor: "red", 
+	backgroundColor: "#edf0fe", 
 	width: "300dp", 
 	height: "125dp",
+	top:"10pd",
+	color: "black"
 }

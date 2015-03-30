@@ -1,0 +1,8 @@
+".container": {
+	backgroundColor: "white"
+}
+".button": {
+	backgroundColor: "red", 
+	width: "300dp", 
+	height: "125dp",
+}

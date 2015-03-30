@@ -1,0 +1,71 @@
+
+function doClick(e) {
+    $.menu.open();
+   } 
+
+var Agenda = Titanium.UI.createButton({
+   title: 'Agenda',
+   top: 10,
+   width: 200,
+   height: 100
+});
+Agenda.addEventListener('click',function OpenAgenda()
+{
+   var Agenda = Alloy.createController("Agenda").getView();
+	Agenda.open();
+});
+
+
+
+
+var Map = Titanium.UI.createButton({
+   title: 'Agenda',
+   top: 10,
+   width: 200,
+   height: 100
+});
+
+Map.addEventListener('click',function OpenMap()
+{
+   var Map = Alloy.createController("Map").getView();
+	Agenda.open();
+});
+
+
+
+
+
+
+var Settings = Titanium.UI.createButton({
+   title: 'Settings',
+   top: 10,
+   width: 200,
+   height: 100
+});
+
+Settings.addEventListener('click',function OpenSettings()
+{
+   var Settings = Alloy.createController("Settings").getView();
+	Agenda.open();
+});
+
+
+$.index.open();
+
+
+
+
+// function OpenAgenda() {
+	// var Agenda = Alloy.createController("Agenda").getView();
+	// Agenda.open();
+// }
+// 
+// function OpenMap() {
+	// var Map = Alloy.createController("Map").getView();
+	// Map.open();
+// }
+// 
+// function OpenSettings() {
+	// var Settings = Alloy.createController("Settings").getView();
+	// Settings.open();
+// }
