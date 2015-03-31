@@ -1,3 +1,38 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+".container" : {
+  
+}
+=======
+>>>>>>> origin/master
+
+"#mapview" : {
+    region : {
+        latitude:33.74511,
+        longitude:-84.38993,
+        latitudeDelta:0.01,
+        longitudeDelta:0.01
+    }
+},
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
+"#appcHQ" : {
+    latitude: 33.74511,
+    longitude: -84.38993,
+    title: "Appcelerator Headquarters",
+    subtitle: "Mountain View, CA",
+    pincolor: Alloy.Globals.Map.ANNOTATION_RED
+<<<<<<< HEAD
+=======
+=======
+
+}
+
+>>>>>>> origin/master
 ".container": {
 	backgroundColor: "#253640"
+>>>>>>> origin/master
 }
