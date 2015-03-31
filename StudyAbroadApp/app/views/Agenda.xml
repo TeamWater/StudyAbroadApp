@@ -19,7 +19,11 @@
 			<ListSection>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<ListItem class="tiles">test</ListItem>
+=======
+				<ListItem></ListItem>
+>>>>>>> origin/master
 =======
 				<ListItem></ListItem>
 >>>>>>> origin/master

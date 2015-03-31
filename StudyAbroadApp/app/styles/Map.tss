@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ".container" : {
   
 }
+=======
+>>>>>>> origin/master
 =======
 >>>>>>> origin/master
 
@@ -16,6 +19,10 @@
     }
 },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 =======
 
 >>>>>>> origin/master
@@ -26,7 +33,13 @@
     subtitle: "Mountain View, CA",
     pincolor: Alloy.Globals.Map.ANNOTATION_RED
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+}
+
+>>>>>>> origin/master
 =======
 
 }

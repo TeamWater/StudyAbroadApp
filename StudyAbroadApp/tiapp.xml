@@ -62,8 +62,13 @@
         <module platform="android">ti.cloudpush</module>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <module platform="commonjs">ti.cloud</module>
         <module platform="android">dk.napp.drawer</module>
+=======
+        <module platform="iphone">ti.map</module>
+        <module platform="android">ti.map</module>
+>>>>>>> origin/master
 =======
         <module platform="iphone">ti.map</module>
         <module platform="android">ti.map</module>
