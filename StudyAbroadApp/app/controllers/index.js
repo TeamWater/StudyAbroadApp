@@ -16,10 +16,6 @@ function OpenSettings() {
 	Settings.open();
 }
 
-<<<<<<< HEAD
-$.index.open();
-
-=======
 function OpenCheckList() {
 	var CheckList = Alloy.createController("CheckList").getView();
 	CheckList.open();
@@ -31,4 +27,4 @@ function OpenEmergency() {
 }
 
 $.index.open();
->>>>>>> origin/master
+
