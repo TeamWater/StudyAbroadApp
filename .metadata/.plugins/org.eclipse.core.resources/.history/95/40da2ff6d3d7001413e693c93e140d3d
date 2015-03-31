@@ -1,0 +1,22 @@
+
+".container" : {
+	backgroundColor: "#253640"
+}
+".Title" : {
+	backgroudColor: "red", 
+	color: "black", 
+	font: {fontSize: "21", fontweight: "bold"}, 
+	left: "10dp"
+}
+
+".Main" : {
+	backgroudColor: "green"
+}
+
+".tile" : {
+	backgroundColor: "#edf0fe", 
+	left: "10", 
+	right: "10", 
+	height: "150", 
+	top: "10"
+}

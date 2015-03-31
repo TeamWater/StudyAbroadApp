@@ -7,8 +7,8 @@
 		<ListView defaultItemTemplate="Template">
 			<Templates>
 				
-				<ItemTemplate name="Template" height="150" backgroundColor="white">
-					<View layout="vertical" class="tile">
+				<ItemTemplate name="Template" height="150" class="template">
+					<View layout="vertical" >
 						<Label class="Title" id="Title" bindId="TitleBID"/>
 						<Label class="Main" id="MainText" bindId="TextBID"/>
 					</View>
@@ -17,7 +17,15 @@
 			</Templates>
 			
 			<ListSection>
-				
+<<<<<<< HEAD
+<<<<<<< HEAD
+				<ListItem class="tiles">test</ListItem>
+=======
+				<ListItem></ListItem>
+>>>>>>> origin/master
+=======
+				<ListItem></ListItem>
+>>>>>>> origin/master
 			</ListSection>
 		</ListView>
 	</Window>

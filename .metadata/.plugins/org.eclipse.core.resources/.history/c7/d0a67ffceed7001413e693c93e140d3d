@@ -1,0 +1,17 @@
+".container": {
+	backgroundColor: "#253640"
+}
+".menuButtons": {
+	backgroundColor: "#e4e4e4", 
+	width: "300dp", 
+	height: "100dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	
+}
+
+".space": {
+	borderColor: "Transparent"
+}

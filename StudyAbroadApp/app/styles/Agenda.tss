@@ -13,10 +13,13 @@
 	backgroudColor: "green"
 }
 
-".tile" : {
-	backgroundColor: "#edf0fe", 
-	left: "10", 
-	right: "10", 
-	height: "150", 
-	top: "10"
+".template": {
+	backgroundColor: "#e4e4e4", 
+	width: "320dp", 
+	height: "100dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	
 }

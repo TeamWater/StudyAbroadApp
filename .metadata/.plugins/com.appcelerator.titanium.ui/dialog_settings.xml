@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="generic-module-distribution-dialog">
+		<item value="PROJECT" key="deployTarget"/>
+		<item value="StudyAbroadApp" key="deployProject"/>
+	</section>
 </section>
