@@ -16,5 +16,5 @@
     longitude: -84.38993,
     title: "Appcelerator Headquarters",
     subtitle: "Mountain View, CA",
-    pincolor: Alloy.Globals.Map.ANNOTATION_PURPLE
+    pincolor: Alloy.Globals.Map.ANNOTATION_RED
 }
