@@ -1,0 +1,34 @@
+
+function doClick(e) {
+    $.menu.open();
+   } 
+
+var Agenda = Titanium.UI.createButton({});
+Agenda.addEventListener('click',function OpenAgenda(e)
+{
+   var OpenAgenda = Alloy.createController("Agenda").getView();
+	Agenda.open();
+});
+
+
+
+var Map = Titanium.UI.createButton({});
+
+Map.addEventListener('click',function OpenMap(e)
+{
+   var OpenMap = Alloy.createController("Map").getView();
+	Map.open();
+});
+
+
+
+var Settings = Titanium.UI.createButton({});
+
+Settings.addEventListener('click',function OpenSettings(e)
+{
+   var OpenSettings = Alloy.createController("Settings").getView();
+	Settings.open();
+});
+
+
+$.index.open();

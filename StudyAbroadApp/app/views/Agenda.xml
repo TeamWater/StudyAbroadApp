@@ -7,7 +7,7 @@
 		<ListView defaultItemTemplate="Template">
 			<Templates>
 				
-				<ItemTemplate name="Template" height="150">
+				<ItemTemplate name="Template" height="150" backgroundColor="white">
 					<View layout="vertical" class="tile">
 						<Label class="Title" id="Title" bindId="TitleBID"/>
 						<Label class="Main" id="MainText" bindId="TextBID"/>

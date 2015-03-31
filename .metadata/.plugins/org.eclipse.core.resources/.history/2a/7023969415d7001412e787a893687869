@@ -1,0 +1,10 @@
+".container": {
+	backgroundColor: "#253640"
+}
+".one": {
+	backgroundColor: "#edf0fe", 
+	width: "300dp", 
+	height: "125dp",
+	top:"10pd",
+	fontColor: "black"
+}

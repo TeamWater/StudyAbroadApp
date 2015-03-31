@@ -1,4 +1,3 @@
-
 function doClick(e) {
     $.menu.open();
    } 
@@ -17,5 +16,19 @@ function OpenSettings() {
 	Settings.open();
 }
 
+<<<<<<< HEAD
 $.index.open();
 
+=======
+function OpenCheckList() {
+	var CheckList = Alloy.createController("CheckList").getView();
+	CheckList.open();
+}
+
+function OpenEmergency() {
+	var Emergency = Alloy.createController("Emergency").getView();
+	Emergency.open();
+}
+
+$.index.open();
+>>>>>>> origin/master

@@ -1,0 +1,23 @@
+
+function doClick(e) {
+    $.menu.open();
+   } 
+   
+var AgendaButton = Ti.UI.createButton({
+	title : 'Agenda',
+	height : 200,
+	width : 100,
+	top : 10,
+	left :10
+});
+
+// Listen for click events.
+AgendaButton.addEventListener('click', function() {
+	var OpenAgenda = Alloy.createController("Agenda").getView();
+	Agenda.open();
+});
+
+// Add to the parent view.
+parentView.add(AgendaButton);
+ 
+$.index.open();

@@ -1,6 +1,6 @@
 
 ".container" : {
-	backgroundColor: "red"
+	backgroundColor: "#253640"
 }
 ".Title" : {
 	backgroudColor: "red", 
@@ -14,7 +14,7 @@
 }
 
 ".tile" : {
-	backgroundColor: "white", 
+	backgroundColor: "#edf0fe", 
 	left: "10", 
 	right: "10", 
 	height: "150", 
