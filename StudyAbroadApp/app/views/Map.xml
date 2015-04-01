@@ -1,11 +1,6 @@
 <Alloy>
     <Window>
-    	<Module>
-        <View id="mapview" module="ti.map" onClick="report">
-            <!-- Starting with Alloy 1.4.0, use the Annotation tag to define an annotation -->
-            <!-- Prior to Alloy 1.4.0, create annotations in the controller -->
-           </View>
-           <Annotation id='appcHQ' myid='1' />
-        </Module>
+    	<View class="container"  onClick="openMap">
+	</View>
     </Window>
 </Alloy>
