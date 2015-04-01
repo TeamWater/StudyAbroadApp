@@ -9,14 +9,26 @@ Cloud.Events.show({
 }, function (e) {
     if (e.success) {
         var event = e.events[0];
-        var eventLabel = Ti.UI.createListView('Success:\n' +
+        var eventLabel = Ti.UI.createLabel('Success:\n' +
             'Name: ' + event.name + '\n' +
-            'Details: ' + event.details + '\n');}
-    {
-    $.EventList.add(eventLabel);
+            'Details: ' + event.details + '\n');
+    } else {
+        alert('Error:\n' +
+            ((e.error && e.message) || JSON.stringify(e)));
     }
 });
 
+
+Cloud.sendRequest({
+    url : "events/count.json",
+    method : "GET"
+}, function(e) {
+    if (e.success) {
+        alert(e.meta.count);
+    } else {
+        alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+    }
+});
 
 Cloud.sendRequest({
 	url : "events/count.json",
@@ -26,7 +38,7 @@ Cloud.sendRequest({
 { for (var i = 0; i < e.meta.count; i++) {
 	 var event = e.events[i]; 
 	 var eventLabel = Ti.UI.createLabel({ text: "Project: " + event.name, top:20 });
-	$.EventList.add(eventLabel);
+Agenda.add(event, eventLabel);
 }
 }));
 

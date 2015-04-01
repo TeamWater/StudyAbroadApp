@@ -9,11 +9,11 @@ Cloud.Events.show({
 }, function (e) {
     if (e.success) {
         var event = e.events[0];
-        var eventLabel = Ti.UI.createListView('Success:\n' +
+        var eventLabel = Ti.UI.createLabel('Success:\n' +
             'Name: ' + event.name + '\n' +
             'Details: ' + event.details + '\n');}
     {
-    $.EventList.add(eventLabel);
+    	Agenda.add(eventLabel);
     }
 });
 
@@ -25,8 +25,8 @@ Cloud.sendRequest({
 (function (e) 
 { for (var i = 0; i < e.meta.count; i++) {
 	 var event = e.events[i]; 
-	 var eventLabel = Ti.UI.createLabel({ text: "Project: " + event.name, top:20 });
-	$.EventList.add(eventLabel);
+	 var eventLabel = Ti.UI.createListView({ text: "Project: " + event.name, top:20 });
+Agenda.add(eventLabel);
 }
 }));
 

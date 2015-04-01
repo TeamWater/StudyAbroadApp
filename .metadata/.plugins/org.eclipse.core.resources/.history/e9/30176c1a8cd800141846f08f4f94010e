@@ -13,7 +13,7 @@ Cloud.Events.show({
             'Name: ' + event.name + '\n' +
             'Details: ' + event.details + '\n');}
     {
-    $.EventList.add(eventLabel);
+    	Agenda.add(eventLabel);
     }
 });
 

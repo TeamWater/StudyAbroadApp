@@ -7,7 +7,7 @@
 		<ListView defaultItemTemplate="Template">
 			<Templates>
 				
-				<ItemTemplate name="Template" height="150" class="template" id="event">
+				<ItemTemplate name="Template" height="150" class="template">
 					<View layout="vertical" >
 						<Label class="Title" id="Title" bindId="TitleBID"/>
 						<Label class="Main" id="MainText" bindId="TextBID"/>
@@ -16,8 +16,9 @@
 				
 			</Templates>
 			
-			<ListSection id="eventList">
-				
+			<ListSection>
+			<ListItem class="tiles">
+				</ListItem>
 			</ListSection>
 		</ListView>
 	</Window>

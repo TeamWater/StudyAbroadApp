@@ -16,7 +16,7 @@
 				
 			</Templates>
 			
-			<ListSection id="eventList">
+			<ListSection id="">
 				
 			</ListSection>
 		</ListView>
