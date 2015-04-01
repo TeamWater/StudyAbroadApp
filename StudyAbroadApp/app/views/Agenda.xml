@@ -17,14 +17,10 @@
 			</Templates>
 			
 			<ListSection>
-<<<<<<< HEAD
-
 				<ListItem class="tiles">test</ListItem>
 
-=======
-				<ListItem class="tiles">
+			<ListItem class="tiles">
 				</ListItem>
->>>>>>> origin/master
 			</ListSection>
 		</ListView>
 	</Window>
