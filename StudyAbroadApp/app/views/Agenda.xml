@@ -17,19 +17,8 @@
 			</Templates>
 			
 			<ListSection>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-				<ListItem class="tiles">test</ListItem>
-=======
-				<ListItem></ListItem>
->>>>>>> origin/master
-=======
-				<ListItem></ListItem>
->>>>>>> origin/master
-=======
-				<ListItem></ListItem>
->>>>>>> origin/master
+				<ListItem class="tiles">
+				</ListItem>
 			</ListSection>
 		</ListView>
 	</Window>
