@@ -61,7 +61,7 @@
             <!-- TODO: double check your app ID here -->
             <permission
                 android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
-            <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="21"/>
+            <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16"/>
             <application android:theme="@style/Theme.Studyabroadtheme">
                 <!-- Google API key -->
                 <!-- TODO: double check your API key here -->
