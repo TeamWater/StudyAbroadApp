@@ -1,5 +1,4 @@
 var MapModule = require('ti.map');
-var GMaps= google.maps;
 var win = Ti.UI.createWindow({backgroundColor: 'white'});
 var donHostel = MapModule.createAnnotation({
     latitude: 55.670905,

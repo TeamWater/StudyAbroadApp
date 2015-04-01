@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
-".container" : {
-  
-}
-
-
 "#HQ" : {
     latitude: 55.670929,
     longitude: 12.576556,
@@ -18,7 +9,7 @@
 ".container": {
 	backgroundColor: "#253640"
 
-
+}
 "#mapview" : {
     region : {
         latitude:33.74511,
