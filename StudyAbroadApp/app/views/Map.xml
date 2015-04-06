@@ -1,6 +1,6 @@
 <Alloy>
     <Window>
-    	<View class="container"  onClick="openMap">
+    	<View class="container"  >
 	</View>
     </Window>
 </Alloy>

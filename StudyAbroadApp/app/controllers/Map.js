@@ -57,7 +57,5 @@ var mapview = MapModule.createView({
 mapview.addRoute(route);
 mapview.addAnnotation(random);
 win.add(mapview);
-function openMap(){
-win.open();	
-}
+win.open();
 
