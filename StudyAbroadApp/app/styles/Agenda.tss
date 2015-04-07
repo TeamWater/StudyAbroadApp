@@ -2,24 +2,22 @@
 ".container" : {
 	backgroundColor: "#253640"
 }
-".Title" : {
-	backgroudColor: "red", 
-	color: "black", 
-	font: {fontSize: "21", fontweight: "bold"}, 
-	left: "10dp"
-}
 
-".Main" : {
-	backgroudColor: "green"
-}
-
-".template": {
-	backgroundColor: "#e4e4e4", 
-	width: "320dp", 
-	height: "100dp",
+".event": {
+	backgroundColor: "#E4E4E4", 
+	width: "300dp", 
+	height: "120dp",
 	top:"5dp",
 	bottom: "5dp",
 	color: "#565656", 
 	borderRadius: "5dp",
+	left: "20dp",
+	right:"10dp"
 	
+}
+".line": {
+	backgroundColor: "#E4E4E4", 
+	left: "10dp",
+	height: "TI.UI.SIZE",
+	width: "2dp",
 }

@@ -1,0 +1,15 @@
+<Alloy>
+	<Window class="container">
+		
+		<Menu platform="android" class="menuBar" >
+            <MenuItem title="Full Agenda"  onClick="doClick"/>
+            <MenuItem title="Todays Agenda" onClick="doClick"/>
+        </Menu>
+        
+		<View class="line"></View>
+		<TableView id="events" class="events">
+			<TableViewSection id="EventSelections" class="EventSelections">
+			</TableViewSection>
+		</TableView>
+	</Window>
+</Alloy>

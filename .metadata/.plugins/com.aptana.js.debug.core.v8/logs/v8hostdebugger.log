@@ -1,0 +1,87 @@
+Logger started at: Monday, April 6, 2015 1:00:52 AM CDT
+Component: com.aptana.js.debug.core.v8
+Version: 3.0.0.1407437730
+[0:53.779] Recv: >1428300053701*version<
+[0:53.780] Sent: >32*1428300053701*1*3.0.0.1407437730<
+[0:53.795] Recv: >1428300053702*update<
+[0:53.795] Sent: >13*1428300053702<
+[0:53.796] Recv: >1428300053703*option*stepFiltersEnabled*false<
+[0:53.796] Sent: >50*1428300053703*!unknown option <stepFiltersEnabled><
+[0:53.797] Recv: >1428300053704*option*monitorXHR*true<
+[0:53.797] Sent: >42*1428300053704*!unknown option <monitorXHR><
+[0:53.830] Recv: >1428300053705*option*suspendOnFirstLine*false<
+[0:53.830] Sent: >13*1428300053705<
+[0:53.831] Recv: >1428300053706*option*suspendOnExceptions*false<
+[0:53.937] Sent: >13*1428300053706<
+[0:53.937] Recv: >1428300053707*option*suspendOnErrors*true<
+[0:53.976] Sent: >13*1428300053707<
+[0:53.976] Recv: >1428300053708*option*suspendOnKeywords*true<
+[0:53.976] Sent: >13*1428300053708<
+[0:53.977] Recv: >1428300053709*option*bypassConstructors*false<
+[0:53.977] Sent: >50*1428300053709*!unknown option <bypassConstructors><
+[0:53.977] Recv: >1428300053710*option*stepFiltersEnabled*false<
+[0:53.977] Sent: >50*1428300053710*!unknown option <stepFiltersEnabled><
+[0:53.978] Recv: >1428300053711*detailFormatters<
+[0:53.978] Sent: >13*1428300053711<
+[0:53.978] Recv: >1428300053712*enable<
+[0:53.978] Sent: >13*resumed*start<
+[0:53.978] Sent: >13*1428300053712<
+[0:53.980] Sent: >46*scripts*created*1|ti:/webview.js|anonymous|1|1<
+[0:53.980] Sent: >48*scripts*created*2|ti:/bootstrap.js|anonymous|1|1<
+[0:53.980] Sent: >44*scripts*created*3|ti:/kroll.js|anonymous|1|1<
+[0:53.981] Sent: >47*scripts*created*4|ti:/titanium.js|anonymous|1|1<
+[0:53.981] Sent: >49*scripts*created*5|ti:/properties.js|anonymous|1|1<
+[0:53.981] Sent: >47*scripts*created*6|ti:/tabgroup.js|anonymous|1|1<
+[0:53.981] Sent: >45*scripts*created*7|ti:/events.js|anonymous|1|1<
+[0:53.981] Sent: >41*scripts*created*8|ti:/ui.js|anonymous|1|1<
+[0:53.981] Sent: >46*scripts*created*9|ti:/console.js|anonymous|1|1<
+[0:53.982] Sent: >44*scripts*created*10|ti:/path.js|anonymous|1|1<
+[0:53.982] Sent: >47*scripts*created*11|ti:/invoker.js|anonymous|1|1<
+[0:53.982] Sent: >43*scripts*created*12|ti:/tab.js|anonymous|1|1<
+[0:53.982] Sent: >43*scripts*created*13|ti:/url.js|anonymous|1|1<
+[0:53.982] Sent: >46*scripts*created*14|ti:/window.js|anonymous|1|1<
+[0:53.982] Sent: >50*scripts*created*15|ti:/httpclient.js|anonymous|1|1<
+[0:53.983] Sent: >48*scripts*created*16|ti:/listview.js|anonymous|1|1<
+[0:53.983] Sent: >47*scripts*created*17|ti:/network.js|anonymous|1|1<
+[0:53.983] Sent: >46*scripts*created*18|ti:/module.js|anonymous|1|1<
+[0:54.137] Sent: >46*scripts*created*19|app:///app.js|anonymous|1|1<
+[0:54.138] Sent: >48*scripts*created*20|app:///alloy.js|anonymous|1|1<
+[0:54.177] Sent: >59*scripts*created*21|app:///alloy/underscore.js|anonymous|1|1<
+[0:54.236] Sent: >57*scripts*created*22|app:///alloy/backbone.js|anonymous|1|1<
+[0:54.366] Sent: >59*scripts*created*23|app:///ti.map/bootstrap.js|anonymous|1|1<
+[0:54.427] Sent: >66*scripts*created*24|app:///alloy/controllers/index.js|anonymous|1|1<
+[0:54.428] Sent: >75*scripts*created*25|app:///alloy/controllers/BaseController.js|anonymous|1|1<
+[1:7.199] Sent: >67*scripts*created*26|app:///alloy/controllers/Agenda.js|anonymous|1|1<
+[1:7.317] Sent: >51*scripts*created*27|app:///ti.cloud.js|anonymous|1|1<
+[1:8.184] Sent: >56*suspended*exception*app:///alloy/controllers/Agenda.js*1<
+[1:8.188] Recv: >1428300053713*frames<
+[1:8.189] Sent: >246*1428300053713*0|(anonymous function)||app:///alloy/controllers/Agenda.js|1|false|2765|28*1|url.url||app:///ti.cloud.js|1|false|729|29*2|u.js.sdk.utils.sendAppceleratorRequest.Ti.Network.createHTTPClient.onload||app:///ti.cloud.js|1|false|24303|30<
+[1:30.183] Recv: >1428300053714*variables*frame[0]<
+[1:32.332] Sent: >336*1428300053714*this|global|o|[object global]*t|Function||[Function]*e|Function||[Function]*s|Object|wo|[object Object]*i|Object|wo|[object Object]*r|undefined|wl|undefined*console|Object|wo|[object Object]*persistentObjects|Array|wo|[object Array]*_|Function||[Function]*Alloy|Object|wo|[object Object]*Backbone|Object|wo|[object Object]<
+[1:33.810] Recv: >1428300053715*eval*frame[0]*removeEventListener<
+[1:33.832] Sent: >88*1428300053715*exception*Remote error: ReferenceError: removeEventListener is not defined<
+[1:35.725] Recv: >1428300053716*eval*frame[0]*removeEventListener<
+[1:35.737] Sent: >88*1428300053716*exception*Remote error: ReferenceError: removeEventListener is not defined<
+[1:49.534] Recv: >1428300053717*eval*frame[0]*obj<
+[1:49.554] Sent: >72*1428300053717*exception*Remote error: ReferenceError: obj is not defined<
+[1:58.528] Recv: >1428300053718*eval*frame[0]*doClick<
+[1:58.552] Sent: >76*1428300053718*exception*Remote error: ReferenceError: doClick is not defined<
+[2:14.589] Recv: >1428300053719*eval*frame[0]*__alloyId5<
+[2:14.608] Sent: >79*1428300053719*exception*Remote error: ReferenceError: __alloyId5 is not defined<
+[2:18.651] Recv: >1428300053720*eval*frame[0]*removeEventListener<
+[2:18.672] Sent: >88*1428300053720*exception*Remote error: ReferenceError: removeEventListener is not defined<
+[2:47.759] Recv: >1428300053721*details*frame[0].e<
+[2:47.766] Sent: >31*1428300053721*result*[Function]<
+[2:49.342] Recv: >1428300053722*details*frame[0].s<
+[2:49.376] Sent: >36*1428300053722*result*[object Object]<
+[3:35.457] Recv: >1428300053723*eval*frame[0]*meta<
+[3:35.474] Sent: >73*1428300053723*exception*Remote error: ReferenceError: meta is not defined<
+[6:57.233] Recv: >1428300053724*variables*frame[1]<
+[6:58.845] Sent: >290*1428300053724*this|global|o|[object global]*o|Function||[Function]*t|Object|wol|[object Object]*r|Object|wol|[object Object]*console|Object|wo|[object Object]*persistentObjects|Array|wo|[object Array]*_|Function||[Function]*Alloy|Object|wo|[object Object]*Backbone|Object|wo|[object Object]<
+[6:58.845] Recv: >1428300053725*variables*frame[2]<
+[7:0.465] Sent: >407*1428300053725*this|HTTPClient|o|[object HTTPClient]*t|String|w|"https://api.cloud.appcelerator.com/v1/events/count.json?key=5AgCUkznoV7VBZno3NnQ... (length: 92)"*s|Object|wo|[object Object]*i|Function||[Function]*e|Object|wol|[object Object]*console|Object|wo|[object Object]*persistentObjects|Array|wo|[object Array]*_|Function||[Function]*Alloy|Object|wo|[object Object]*Backbone|Object|wo|[object Object]<
+[7:2.421] Recv: >1428300053726*details*frame[0].s<
+[7:2.422] Sent: >36*1428300053726*result*[object Object]<
+[7:18.22] Recv: >1428300053727*details*frame[0].s<
+[7:18.22] Sent: >36*1428300053727*result*[object Object]<
+----------End of file----------

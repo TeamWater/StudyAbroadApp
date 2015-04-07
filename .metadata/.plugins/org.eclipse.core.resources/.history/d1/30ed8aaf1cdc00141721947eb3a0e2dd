@@ -1,0 +1,24 @@
+<Alloy>
+	<Window class="container">
+		<Menu platform="android" class="menuBar" >
+            <MenuItem title="Full Agenda"  onClick="doClick"/>
+            <MenuItem title="Todays Agenda" onClick="doClick"/>
+        </Menu>
+		<ListView defaultItemTemplate="Template">
+			<Templates>
+				
+				<ItemTemplate name="Template" height="150" class="template" id="event">
+					<View layout="vertical" >
+						<Label class="Title" id="Title" bindId="TitleBID"/>
+						<Label class="Main" id="MainText" bindId="TextBID"/>
+					</View>
+				</ItemTemplate>
+				
+			</Templates>
+			
+			<ListSection id="eventList">
+				
+			</ListSection>
+		</ListView>
+	</Window>
+</Alloy>

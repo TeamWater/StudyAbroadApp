@@ -1,0 +1,25 @@
+
+".container" : {
+	backgroundColor: "#253640"
+}
+".Title" : {
+	backgroudColor: "red", 
+	color: "black", 
+	font: {fontSize: "21", fontweight: "bold"}, 
+	left: "10dp"
+}
+
+".Main" : {
+	backgroudColor: "green"
+}
+
+".template": {
+	backgroundColor: "#e4e4e4", 
+	width: "320dp", 
+	height: "100dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	
+}

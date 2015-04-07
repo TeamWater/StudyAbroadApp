@@ -1,0 +1,33 @@
+
+".container" : {
+	backgroundColor: "#253640"
+}
+".Title" : {
+	backgroudColor: "red", 
+	color: "black", 
+	font: {fontSize: "21", fontweight: "bold"}, 
+	left: "10dp"
+}
+
+".Main" : {
+	backgroudColor: "green"
+}
+
+".Template": {
+	backgroundColor: "#E4E4E4", 
+	width: "TI.UI.FILL", 
+	height: "120dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	left: "20dp"
+	
+}
+".line": {
+	
+	backgroundColor: "#E4E4E4", 
+	left: "10dp",
+	height: "TI.UI.SIZE",
+	width: "2dp",
+}

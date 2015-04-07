@@ -5,7 +5,6 @@ function doClick(e) {
 
 function OpenAgenda() {
 	var Agenda = Alloy.createController("Agenda").getView();
-	Agenda.open();
 }
 
 function OpenMap() {
