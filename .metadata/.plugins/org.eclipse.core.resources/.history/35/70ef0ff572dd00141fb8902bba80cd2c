@@ -1,0 +1,119 @@
+function doClick(a) {
+    $.menu.open();
+}
+
+var Cloud = require("ti.cloud");
+
+Cloud.debug = true;
+
+var plainTemplate = {
+    childTemplates: [ {
+        type: "Ti.UI.Label",
+        bindId: "box",
+        properties: {
+            backgroundColor: "#e4e4e4",
+            width: "260dp",
+            height: "100dp",
+            top: "20dp",
+            left: "75dp",
+            borderRadius: "5dp"
+        }
+    }, {
+        type: "Ti.UI.Label",
+        bindId: "title",
+        properties: {
+            color: "#565656",
+            font: {
+                fontFamily: "Arial",
+                fontSize: "21dp"
+            },
+            left: "100dp",
+            top: "20dp"
+        }
+    }, {
+        type: "Ti.UI.Label",
+        bindId: "details",
+        properties: {
+            color: "gray",
+            font: {
+                fontFamily: "Arial",
+                fontSize: "12dp"
+            },
+            left: "100dp",
+            top: "50dp"
+        }
+    } ]
+};
+
+var eventList = [ "55130f8eac4547febdac2a75", "551c1763ac4547fec5d4025f" ];
+
+var win = Ti.UI.createWindow({
+    backgroundColor: "#253640"
+});
+
+var dateView = Ti.UI.createView({
+    backgroundColor: "red",
+    right: "10",
+    left: "10",
+    top: "10",
+    bottom: "10",
+});
+
+var date = Ti.UI.createView({
+    backgroundColor: "white",
+    height: "60dp",
+    left: "10dp",
+    width: "60dp",
+    top: "20dp",
+    color: "black",
+});
+
+var line = Ti.UI.createView({
+    backgroundColor: "white",
+    height: "100%",
+    left: "60dp",
+    width: "2dp",
+    top: "20dp"
+});
+
+
+dateView.add(date);
+
+dateView.add(line);
+
+var listView = Ti.UI.createListView({
+    templates: {
+        uncheck: plainTemplate
+    },
+    defaultItemTemplate: "uncheck"
+});
+
+var section = Ti.UI.createListSection();
+
+var data = [];
+
+for (var i = 0; i < eventList.length; i++) Cloud.Events.show({
+    event_id: eventList[i]
+}, function(a) {
+    if (a.success) {
+        var b = a.events[0];
+        for (var c = 0; c < eventList.length; c++) data.push({
+            box: {},
+            title: {
+                text: b.name
+            },
+            details: {
+                text: b.details
+            }
+        });
+    }
+});
+
+listView.sections = [ section ];
+
+section.setItems(data);
+
+//win.add(listView);
+ dateView.add(listView);
+win.add(dateView);
+win.open();

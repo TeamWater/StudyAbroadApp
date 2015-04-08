@@ -1,2 +1,3 @@
+com.aptana.explorer.view.filterActivation=\:com.appcelerator.titanium.ui.filters.build.folders\:org.eclipse.ui.navigator.resources.filters.endsWithClass\:com.aptana.projects.filters.projectFilesFilter\:org.eclipse.ui.navigator.resources.filters.startsWithDot\:com.appcelerator.titanium.ui.filters.ResourcesFolder\:
 eclipse.preferences.version=1
 org.eclipse.ui.navigator.ProjectExplorer.filterActivation=\:com.appcelerator.titanium.ui.filters.build.folders\:com.aptana.projects.filters.projectFilesFilter\:org.eclipse.ui.navigator.resources.filters.startsWithDot\:
