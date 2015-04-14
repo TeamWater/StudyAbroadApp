@@ -8,8 +8,7 @@ exports.definition = {
 	},
 	extendModel: function(Model) {
 		_.extend(Model.prototype, {
-			
-			
+
 		});
 		return Model;
 },

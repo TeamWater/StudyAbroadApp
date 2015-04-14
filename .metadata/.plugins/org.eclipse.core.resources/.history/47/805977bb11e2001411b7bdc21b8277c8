@@ -1,0 +1,37 @@
+exports.definition = {
+	config: {
+			
+		adapter: {
+			type: "acs",
+			collection_name: "Events"
+		}
+	},
+	extendModel: function(Model) {
+		_.extend(Model.prototype, {
+			
+			createEvent : function() {
+				var self = this;
+				this.config.Cloud.Events.show({
+					name : events,
+					dis : Details
+				), function(e) {
+					if (e.success) {
+						var event = e.events[0];
+						
+						Ti.App.Properties.setString('sessionId', e.meta.session_id);
+						Ti.App.Properites.setString('event', JSON.stringify())
+					}
+				}
+				})
+			}
+		});
+		return Model;
+},
+
+
+	extendCollection: function(Collection) {
+		_.extend(Collection.prototype, {});
+
+		return Collection;
+	}
+};

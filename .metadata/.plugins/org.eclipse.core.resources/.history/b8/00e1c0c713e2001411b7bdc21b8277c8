@@ -1,0 +1,35 @@
+exports.definition = {
+	config: {
+			
+		adapter: {
+			type: "acs",
+			collection_name: "Events"
+		}
+	},
+	extendModel: function(Model) {
+		_.extend(Model.prototype, {
+	
+	Cloud.Events.show({
+    	event_id: savedEventId
+	}, function (e) {
+    if (e.success) {
+        var event = e.events[0];
+        alert('Success:\n' +
+            'id: ' + event.id + '\n' +
+            'name: ' + event.name + '\n' +
+            'updated_at: ' + event.updated_at);
+    } else {
+        alert('Error:\n' +
+            ((e.error && e.message) || JSON.stringify(e)));
+    }
+		});
+		return Model;
+},
+
+
+	extendCollection: function(Collection) {
+		_.extend(Collection.prototype, {});
+
+		return Collection;
+	}
+};

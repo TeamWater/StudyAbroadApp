@@ -1,8 +1,19 @@
 var Events = Alloy.Collections.instance("Events");
 
-function doClick(a) {
-    $.menu.open();
+function openMenu() {
+    var index = Alloy.createController("index").getView();
+	index.open();
+   } 
+
+function StartEventModel() {
+	var event = Alloy.createModel('Events');
+	
+	event.createEvent($.AgendaTable.show);
 }
+
+$.initialize = function() {
+	loadEvents();
+};
 
 function loadEvents() {
 	var row = [];
@@ -19,16 +30,6 @@ function loadEvents() {
 		}
 		});
 	}
-
-function callToService() {
-	var event = Alloy.createModel('Events');
-	
-}
-
-$.initialize = function() {
-	loadEvents();
-};
-
 // var Cloud = require("ti.cloud");
 // 
 // Cloud.debug = true;

@@ -1,6 +1,6 @@
 =run
 Device\:ConsoleLogLevel=Info
-LAST_LAUNCH_TIMESTAMP=1428518680297
+LAST_LAUNCH_TIMESTAMP=1428949807794
 StudyAbroadApp\:launchMode=run
 StudyAbroadApp\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut.LGD850c819f7c3
 eclipse.preferences.version=1

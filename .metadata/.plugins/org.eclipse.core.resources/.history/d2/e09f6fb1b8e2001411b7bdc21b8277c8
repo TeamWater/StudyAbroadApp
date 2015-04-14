@@ -1,0 +1,12 @@
+<Alloy>
+	<Window>
+		<Menu platform="android" class="menuBar" >
+			 <MenuItem title="Menu" onClick="openMenu"/>
+-            <MenuItem title="Full Agenda"  onClick="doClick"/>
+-            <MenuItem title="Todays Agenda" onClick="doClick"/>
+-        </Menu>
+		<View class="container">
+		
+		</View>
+	</Window>
+</Alloy>

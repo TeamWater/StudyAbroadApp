@@ -1,5 +1,9 @@
+function openMenu() {
+    var index = Alloy.createController("index").getView();
+	index.open();
+   } 
+   
 var MapModule = require('ti.map');
-var win = Ti.UI.createWindow({backgroundColor: 'white'});
 var donHostel = MapModule.createAnnotation({
     latitude: 55.670905,
     longitude: 12.576385,
@@ -56,6 +60,6 @@ var mapview = MapModule.createView({
 // Add this annotation after creation'
 mapview.addRoute(route);
 mapview.addAnnotation(random);
-win.add(mapview);
-win.open();
+$.Mapwin.add(mapview);
+$.Mapwin.open();
 

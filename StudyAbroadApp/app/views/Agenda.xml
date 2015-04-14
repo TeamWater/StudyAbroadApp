@@ -1,12 +1,11 @@
--<Alloy>
--	<Window class="container">
--		<Menu platform="android" class="menuBar" >
--            <MenuItem title="Full Agenda"  onClick="doClick"/>
--            <MenuItem title="Todays Agenda" onClick="doClick"/>
--        </Menu>
--		
+<Alloy>
+	<Window class="container">
+		<Menu platform="android" class="menuBar" >
+			 <MenuItem title="Menu" onClick="openMenu"/>
+		</Menu>
+		
 		<TableView id="AgendaTable">
 		
 		</TableView>
--	</Window>
--</Alloy>
+	</Window>
+</Alloy>

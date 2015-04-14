@@ -1,6 +1,7 @@
 <Alloy>
-    <Window>
-    	<View class="container"  >
-	</View>
+    <Window id="Mapwin">
+    	<Menu platform="android" class="menuBar" >
+            <MenuItem title="Menu"  onClick="openMenu"/>
+        </Menu>
     </Window>
-</Alloy>
+</Alloy>	
