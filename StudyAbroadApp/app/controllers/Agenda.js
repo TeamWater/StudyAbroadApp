@@ -43,7 +43,8 @@ var plainTemplate = {
             height: "100dp",
             top: "20dp",
             left: "75dp",
-            borderRadius: "5dp"
+            borderRadius: "5dp",
+            separatorColor: "#253640"
         }
     }, {
         type: "Ti.UI.Label",
@@ -56,7 +57,8 @@ var plainTemplate = {
             },
             left: "100dp",
             top: "20dp"
-        }
+        },
+        separatorColor: "#253640"
     }, {
         type: "Ti.UI.Label",
         bindId: "details",
@@ -64,11 +66,22 @@ var plainTemplate = {
             color: "gray",
             font: {
                 fontFamily: "Arial",
-                fontSize: "12dp"
+                fontSize: "14dp"
             },
             left: "100dp",
             top: "50dp"
         }
+    }, {
+    	type: "Ti.UI.Label",
+    	bindId: "date",
+    	left: "-10dp",
+    	width: "30dp",
+    	top: "20dp",
+    	right: "200dp", 
+    	color: "red",
+    	backgroundColor: "green",
+    	separatorColor: "#253640"
+    	
     } ]
 };
 
@@ -84,23 +97,28 @@ var section = Ti.UI.createListSection();
 dateView = Ti.UI.createView();
 
 var data = [];
-var eventList = [ "55130f8eac4547febdac2a75", "551c1763ac4547fec5d4025f" ];
+var eventList = [ '55130f8eac4547febdac2a75', '551c1763ac4547fec5d4025f','552deaad54add893d5392575', '552df8957eead2057e3a9812' ];
 
-Cloud.Events.show({
-    event_id: eventList[0]
-	}, function(e) {
-		for (var i = 0; i < eventList.length; i++) {
-        var event = e.event[0];
+for (var i = 0; i < eventList.length; i++) {
+Cloud.Events.show({event_id: eventList[i] },function (e) {
+	if (e.success) {
+        var event = e.events[0];
         	data.push({
+        		
+        		//date: {text: event.start_time},
             	box : {},
             	title: { text: event.name},
-            	details: { text: event.details}
+            	details: { text: event.details},
             
             });
             
-             $.section.setItems(data);
-		}
+           }
+           section.setItems(data);
+           });
+           		}
+          
+             
     $.dateView.add(listView);
-});
+
 $.win.add(dateView);
 $.win.open();

@@ -1,5 +1,6 @@
 ".container": {
-	backgroundColor: "#253640"
+	backgroundColor: "#253640",
+	separatorColor: "#253640"
 }
 ".menuButtons": {
 	backgroundColor: "#e4e4e4", 
@@ -9,9 +10,10 @@
 	bottom: "5dp",
 	color: "#565656", 
 	borderRadius: "5dp",
+	separatorColor: "#253640"
 	
 }
 
 ".space": {
-	borderColor: "Transparent"
+	separatorColor: "#253640"
 }
