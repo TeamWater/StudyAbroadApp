@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <property name="acs-api-key-production" type="string">Phy9u4tzFKwuc3BwdYS3IdP3nHBsdqSo</property>
+    <property name="acs-api-key-development" type="string">5AgCUkznoV7VBZno3NnQJmBsQ1JqCy3N</property>
+    <id>edu.wtamu.cis.cidm4385.StudyAbroadApp</id>
+    <name>StudyAbroadApp</name>
+    <version>1.0</version>
+    <publisher>markritter</publisher>
+    <url>http://</url>
+    <description>undefined</description>
+    <copyright>2015 by markritter</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>3651983b-c452-45f2-8748-0aae366d56ab</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <ios>
+        <plist>
+            <dict>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <!-- Allows to use MOCK GPS data from emulators -->
+            <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+            <!-- Allows the API to download data from Google Map servers -->
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <!-- Allows the API to cache data -->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <!-- Use GPS for device location -->
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <!-- Use Wi-Fi or mobile connection for device location -->
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <!-- Allows the API to access Google web-based services -->
+            <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+            <!-- Specify OpenGL ES 2.0 as a requirement -->
+            <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+            <!-- TODO: double check your app ID here -->
+            <uses-permission android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.MAPS_RECEIVE"/>
+            <!-- TODO: double check your app ID here -->
+            <permission
+                android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+            <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16"/>
+            <application android:theme="@style/Theme.Studyabroadtheme">
+                <!-- Google API key -->
+                <!-- TODO: double check your API key here -->
+                <meta-data
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAU2L7GLpT7QdTIH0A4GoZaAtuP9V6OAfk"/>
+            </application>
+        </manifest>
+    </android>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="iphone">com.appcelerator.urlSession</module>
+        <module platform="android">ti.cloudpush</module>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="iphone">ti.map</module>
+        <module platform="android">ti.map</module>
+    </modules>
+    <deployment-targets>
+        <target device="android">true</target>
+        <target device="blackberry">false</target>
+        <target device="ipad">true</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">true</target>
+    </deployment-targets>
+    <sdk-version>3.5.1.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+</ti:app>

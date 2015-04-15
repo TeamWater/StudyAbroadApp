@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;StudyAbroadApp/platform/android/res/appicon.png&apos; to &apos;appicon2.png&apos;" description="Rename resource &apos;appicon.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="platform/android/res/appicon.png" name="appicon2.png" stamp="1429034668650" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;StudyAbroadApp/app/icon/Bufflogo.png&apos; to &apos;bufflogo.png&apos;" description="Rename resource &apos;Bufflogo.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="app/icon/Bufflogo.png" name="bufflogo.png" stamp="1429036955875" updateReferences="true"/>
+</session>

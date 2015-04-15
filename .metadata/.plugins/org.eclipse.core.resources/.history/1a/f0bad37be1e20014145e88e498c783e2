@@ -1,0 +1,15 @@
+<Alloy>
+	<Window class="win">
+		<Menu platform="android" class="menuBar" >
+			 <MenuItem title="Menu" onClick="openMenu"/>
+		</Menu>
+		
+		<View id="dateView">
+			<View id="date">
+				
+			</View>
+			<View id="line"></View>
+		</View>
+		
+	</Window>
+</Alloy>
