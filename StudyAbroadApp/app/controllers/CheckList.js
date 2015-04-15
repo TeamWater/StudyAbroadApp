@@ -98,10 +98,12 @@ Cloud.Posts.show({post_id: checkList[i] },function (e) {
            }
            section.setItems(data);
            });
+           checkList[i] = Ti.UI.createView();        
+           checkList[i].add(listView);
            		}
-          
-             
-    $.dateView.add(listView);
-
-$.win.add(dateView);
+           		
+ sectionView = Ti.UI.createView();
+ sectionView.add(scrollView);
+ $.dateView.add(sectionView);          
+$.dateView.add(listView);
 $.win.open();
