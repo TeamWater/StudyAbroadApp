@@ -1,3 +1,4 @@
+//MArk and James
 var Events = Alloy.Collections.instance("Events");
 
 function openMenu() {
@@ -15,8 +16,8 @@ var plainTemplate = {
         properties: {
             backgroundColor: "#e4e4e4",
             width: "260dp",
-            height: "100dp",
-            top: "20dp",
+            top: "10dp",
+            bottom: "10dp",
             left: "75dp",
             borderRadius: "5dp",
             separatorColor: "#253640"

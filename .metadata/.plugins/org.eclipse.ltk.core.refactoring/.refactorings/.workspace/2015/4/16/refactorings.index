@@ -9,3 +9,6 @@
 1429035492628	Delete resource 'StudyAbroadApp/platform/android/res/appicon2.png'
 1429037025121	Delete resource 'StudyAbroadApp/app/icon'
 1429037051443	Delete resource 'StudyAbroadApp/app/controllers/icon'
+1429132856836	Delete resource 'StudyAbroadApp/app/styles/EventRow.tss'
+1429132862585	Delete resource 'StudyAbroadApp/app/controllers/EventRow.js'
+1429132868792	Delete resource 'StudyAbroadApp/app/views/EventRow.xml'

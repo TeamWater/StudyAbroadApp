@@ -1,3 +1,4 @@
+// Mark and Hues
 var args = arguments[0] || {};
 
 function openMenu() {
@@ -15,8 +16,9 @@ var plainTemplate = {
         properties: {
             backgroundColor: "#e4e4e4",
             width: "260dp",
-            height: "100dp",
-            top: "20dp",
+            //height: "Titanium.UI.SIZE",
+            top: "10dp",
+            bottom: "10dp",
             left: "75dp",
             borderRadius: "5dp",
             separatorColor: "#253640"
@@ -31,7 +33,7 @@ var plainTemplate = {
                 fontSize: "21dp"
             },
             left: "100dp",
-            top: "20dp"
+            top: "12dp"
         },
         separatorColor: "#253640"
     }, {
@@ -44,7 +46,8 @@ var plainTemplate = {
                 fontSize: "14dp"
             },
             left: "100dp",
-            top: "50dp"
+            top: "32dp",
+            bottom: "10dp"
         }
     }, {
     	type: "Ti.UI.Label",
@@ -57,14 +60,26 @@ var plainTemplate = {
     	backgroundColor: "green",
     	separatorColor: "#253640"
     	
-    } ]
+    },
+    
+    {
+    	type: "Ti.UI.Switch",
+    	style : "Ti.UI.Android.SWITCH_STYLE_CHECKBOX",
+    	bindId: "check",
+    	left: "-50dp",
+    	height: "30dp",
+    	width: "30dp",
+    	
+    	
+    },
+    ]
 };
 var scrollView = Titanium.UI.createScrollView({
     contentWidth:'auto',
     contentHeight:'auto',
     top:0,
     showVerticalScrollIndicator:true,
-    showHorizontalScrollIndicator:true
+    showHorizontalScrollIndicator:true,
 });
 
 var listView = Ti.UI.createListView({
@@ -92,18 +107,45 @@ Cloud.Posts.show({post_id: checkList[i] },function (e) {
             	box : {},
             	title: { text: post.title},
             	details: { text: post.content},
+            	check: {}
             
             });
-            
            }
-           section.setItems(data);
+           
+     section.setItems(data);
            });
            checkList[i] = Ti.UI.createView();        
+<<<<<<< Updated upstream
            checkList[i].add(listView);
            		}
+=======
+<<<<<<< HEAD
+     checkList[i].add(listView);
+           		}
+
+var scrollableView = Ti.UI.createScrollableView({
+  views:checkList,
+  showPagingControl:true
+});          
+  
+ sectionView = Ti.UI.createView();
+ sectionView.add(scrollableView);
+$.dateView.add(sectionView);
+$.win.open();
+ 
+          
+=======
+           checkList[i].add(listView);
+           		}
+>>>>>>> Stashed changes
            		
  sectionView = Ti.UI.createView();
  sectionView.add(scrollView);
  $.dateView.add(sectionView);          
 $.dateView.add(listView);
+<<<<<<< Updated upstream
 $.win.open();
+=======
+$.win.open();
+>>>>>>> origin/master
+>>>>>>> Stashed changes

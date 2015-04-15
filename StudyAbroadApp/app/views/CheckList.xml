@@ -5,7 +5,6 @@
 		</Menu>
 		
 		<View id="dateView" class="dateView" >
-			<Label id="date" class="date" text="May 4th"></Label>
 		</View>
 	
 	</Window>
