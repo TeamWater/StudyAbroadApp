@@ -127,5 +127,4 @@ var scrollableView = Ti.UI.createScrollableView({
  sectionView = Ti.UI.createView();
  sectionView.add(scrollableView);
  $.dateView.add(sectionView);
-//$.win.add(dateView);
 $.win.open();
