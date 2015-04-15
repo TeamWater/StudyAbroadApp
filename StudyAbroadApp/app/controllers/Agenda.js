@@ -5,31 +5,6 @@ function openMenu() {
 	index.open();
    } 
 
-// function StartEventModel() {
-	// var event = Alloy.createModel('Events');
-// 	
-	// event.createEvent($.AgendaTable.show);
-// }
-// $.initialize = function() {
-	// loadEvents();
-// };
-// 
-// function loadEvents() {
-	// var row = [];
-	// Events.fetch({
-		// success: function(model, response) {
-			// Events.each(function(event){
-				// var eventRow = Alloy.createController("EventRow", event);
-			// });
-			// $.AgendaTable.data = row;
-		// },
-		// error : function(error) {
-			// alert('Error loading comments ' + e.message);
-			// Ti.API.error(JSON.stringify(error));
-		// }
-		// });
-	// }
-
 var Cloud = require("ti.cloud");
 Cloud.debug = true;
 
@@ -74,15 +49,39 @@ var plainTemplate = {
     }, {
     	type: "Ti.UI.Label",
     	bindId: "date",
-    	left: "-10dp",
-    	width: "30dp",
-    	top: "20dp",
+    	properties:{
+    	height:"50dp",
+    	left: "0dp",
+    	width: "60dp",
+    	top: "10dp",
     	right: "200dp", 
     	color: "red",
-    	backgroundColor: "green",
+    	borderRadius: "3dp",
+    	backgroundColor: "#e4e4e4",
     	separatorColor: "#253640"
+    	}
+    },
+    {
+    	type: "Ti.UI.Button",
+    	bindId: "mapBtn",
+    	properties:{
+    	left: "0dp",
+    	width: "60dp",
+    	top: "77dp",
+    	//right: "200dp", 
+    	color: "black",
+    	backgroundColor: "#e4e4e4",
+    	separatorColor: "#253640",
+    	borderRadius: "3dp",
+    	font: {
+                fontFamily: "Arial",
+                fontSize: "14dp"
+            },
+    	}
     	
-    } ]
+    },
+    
+     ]
 };
 
 var listView = Ti.UI.createListView({
@@ -94,31 +93,39 @@ var listView = Ti.UI.createListView({
 var section = Ti.UI.createListSection();
  	listView.sections = [ section ];
 
-dateView = Ti.UI.createView();
-
 var data = [];
-var eventList = [ '55130f8eac4547febdac2a75', '551c1763ac4547fec5d4025f','552deaad54add893d5392575', '552df8957eead2057e3a9812' ];
+var sectionViews = [];
+var eventList = [ '55130f8eac4547febdac2a75', '551c1763ac4547fec5d4025f','552deaad54add893d5392575', '552df8957eead2057e3a9812','552eb0ca54add893d53e6c9e','552ed1c2ac4547febd42ac84' ];
 
 for (var i = 0; i < eventList.length; i++) {
 Cloud.Events.show({event_id: eventList[i] },function (e) {
 	if (e.success) {
         var event = e.events[0];
         	data.push({
-        		
-        		//date: {text: event.start_time},
+        	
             	box : {},
             	title: { text: event.name},
             	details: { text: event.details},
+            	date: {text:event.start_time},
+            	mapBtn:{title:"Map"},
             
             });
             
            }
-           section.setItems(data);
+           
+     section.setItems(data);
            });
+           eventList[i] = Ti.UI.createView();        
+     eventList[i].add(listView);
            		}
-          
-             
-    $.dateView.add(listView);
 
-$.win.add(dateView);
+var scrollableView = Ti.UI.createScrollableView({
+  views:eventList,
+  showPagingControl:true
+});          
+  
+ sectionView = Ti.UI.createView();
+ sectionView.add(scrollableView);
+ $.dateView.add(sectionView);
+//$.win.add(dateView);
 $.win.open();
