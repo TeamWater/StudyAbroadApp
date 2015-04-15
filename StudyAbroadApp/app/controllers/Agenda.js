@@ -116,7 +116,7 @@ Cloud.Events.show({event_id: eventList[i] },function (e) {
      section.setItems(data);
            });
            eventList[i] = Ti.UI.createView();        
-     eventList[i].add(listView);
+           eventList[i].add(listView);
            		}
 
 var scrollableView = Ti.UI.createScrollableView({
