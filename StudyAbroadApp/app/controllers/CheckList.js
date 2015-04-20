@@ -52,6 +52,7 @@ var plainTemplate = {
     }, {
     	type: "Ti.UI.Label",
     	bindId: "date",
+    	properties: {
     	left: "-10dp",
     	width: "30dp",
     	top: "20dp",
@@ -59,17 +60,18 @@ var plainTemplate = {
     	color: "red",
     	backgroundColor: "green",
     	separatorColor: "#253640"
-    	
+    	}
     },
     
     {
     	type: "Ti.UI.Switch",
-    	style : "Ti.UI.Android.SWITCH_STYLE_CHECKBOX",
     	bindId: "check",
-    	left: "-50dp",
-    	height: "30dp",
-    	width: "30dp",
-    	
+    	properties: {
+    		style : "Ti.UI.Android.SWITCH_STYLE_CHECKBOX",
+    		left: "-50dp",
+    		height: "30dp",
+    		width: "30dp",
+    	}
     	
     },
     ]
@@ -79,7 +81,7 @@ var scrollView = Titanium.UI.createScrollView({
     contentHeight:'auto',
     top:0,
     showVerticalScrollIndicator:true,
-    showHorizontalScrollIndicator:true,
+    showHorizontalScrollIndicator:false,
 });
 
 var listView = Ti.UI.createListView({
@@ -115,13 +117,32 @@ Cloud.Posts.show({post_id: checkList[i] },function (e) {
      section.setItems(data);
            });
            checkList[i] = Ti.UI.createView();        
+<<<<<<< Updated upstream
            checkList[i].add(listView);
+=======
+<<<<<<< HEAD
+     			checkList[i].add(listView);
+=======
+           checkList[i].add(listView);
+>>>>>>> origin/master
+>>>>>>> Stashed changes
            		}
 
 var scrollableView = Ti.UI.createScrollableView({
   views:checkList,
   showPagingControl:true
 });          
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+       		
+ sectionView = Ti.UI.createView();
+ sectionView.add(scrollView);
+ $.dateView.add(sectionView);          
+$.dateView.add(listView);
+$.win.open();
+=======
+>>>>>>> Stashed changes
   
  sectionView = Ti.UI.createView();
  sectionView.add(scrollableView);
@@ -131,3 +152,7 @@ $.win.open();
           
 
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes

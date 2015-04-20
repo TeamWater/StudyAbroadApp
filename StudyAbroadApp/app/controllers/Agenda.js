@@ -97,7 +97,7 @@ var section = Ti.UI.createListSection();
 
 var data = [];
 var sectionViews = [];
-var eventList = [ '55130f8eac4547febdac2a75', '551c1763ac4547fec5d4025f','552deaad54add893d5392575', '552df8957eead2057e3a9812','552eb0ca54add893d53e6c9e','552ed1c2ac4547febd42ac84' ];
+var eventList = [ '55355318442599bbd0eec70c' ];
 
 for (var i = 0; i < eventList.length; i++) {
 Cloud.Events.show({event_id: eventList[i] },function (e) {
