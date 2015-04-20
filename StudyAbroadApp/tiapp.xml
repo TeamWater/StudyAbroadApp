@@ -46,6 +46,12 @@
             <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
             <!-- Allows the API to download data from Google Map servers -->
             <uses-permission android:name="android.permission.INTERNET"/>
+            <!-- Allows the API to pull Accounts-->
+            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+            <!-- Allows the API to keep the processor from sleeping when a message is received -->
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <!-- Allows the Receive-->
+            <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
             <!-- Allows the API to cache data -->
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
             <!-- Use GPS for device location -->
@@ -62,11 +68,24 @@
             <permission
                 android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
             <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16"/>
+            <!-- Permission for Google messaging -->
+                <permission android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    		<uses-permission android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.C2D_MESSAGE" />
+    		
             <application android:theme="@style/Theme.Studyabroadtheme">
+            	<receiver>
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.gcm" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".GcmIntentService" />
                 <!-- Google API key -->
                 <!-- TODO: double check your API key here -->
                 <meta-data
-                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAU2L7GLpT7QdTIH0A4GoZaAtuP9V6OAfk"/>
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDzdeO3ZOQ4i1iZ8Qqllf1jOCa9jc3ua1s"/>
             </application>
         </manifest>
     </android>
