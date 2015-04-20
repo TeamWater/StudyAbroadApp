@@ -115,12 +115,7 @@ Cloud.Posts.show({post_id: checkList[i] },function (e) {
      section.setItems(data);
            });
            checkList[i] = Ti.UI.createView();        
-<<<<<<< Updated upstream
            checkList[i].add(listView);
-           		}
-=======
-<<<<<<< HEAD
-     checkList[i].add(listView);
            		}
 
 var scrollableView = Ti.UI.createScrollableView({
@@ -134,18 +129,5 @@ $.dateView.add(sectionView);
 $.win.open();
  
           
-=======
-           checkList[i].add(listView);
-           		}
->>>>>>> Stashed changes
-           		
- sectionView = Ti.UI.createView();
- sectionView.add(scrollView);
- $.dateView.add(sectionView);          
-$.dateView.add(listView);
-<<<<<<< Updated upstream
-$.win.open();
-=======
-$.win.open();
->>>>>>> origin/master
->>>>>>> Stashed changes
+
+

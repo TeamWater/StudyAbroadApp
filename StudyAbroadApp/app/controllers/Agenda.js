@@ -66,6 +66,7 @@ var plainTemplate = {
     	type: "Ti.UI.Button",
     	bindId: "mapBtn",
     	properties:{
+    	
     	left: "0dp",
     	width: "60dp",
     	top: "77dp",

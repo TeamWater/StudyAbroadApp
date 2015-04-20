@@ -24,42 +24,48 @@ var  copeTrain = MapModule.createAnnotation({
     title: 'Kobenhavn',
     subtitle: 'Train Station'
 });
-var random = MapModule.createAnnotation({
-    latitude: -33.87365,
-    longitude: 151.20689,
-    pincolor: MapModule.ANNOTATION_VIOLET,
- // Even though we are creating a label, it does not respond to Label events.
- // Use the Map View's events instead.    
-    customView: Ti.UI.createLabel({
-        text: 'MOVE ME!',
-        opacity: '80%',
-        color: 'red',
-        backgroundColor: 'gray',
-        font: {
-            fontSize: '16dp',
-            fontWeight: 'bold'
-        }
-    }),
-    draggable: true
+
+var amaAirPort = MapModule.createAnnotation({
+    latitude: 35.218500,
+    longitude: -101.705264,
+    image: '',
+    title: 'Rick Husband Amarillo International Airport',
+    subtitle: 'Start'
+});
+
+var DFW = MapModule.createAnnotation({
+    latitude: 32.899809,
+    longitude: -97.040335,
+    image: '',
+    title: 'Dallas/Fort Worth International Airport',
+    subtitle: 'Texas, US'
+});
+
+var spainAirPort = MapModule.createAnnotation({
+    latitude: 40.464446,
+    longitude: -3.572611,
+    image: '',
+    title: 'Adolfo Suárez Madrid–Barajas Airport',
+    subtitle: 'Spain'
 });
 
 var route = MapModule.createRoute({
     width: 4,
     color: '#f00',
     points: [
-        {latitude:donHostel.latitude, longitude:donHostel.longitude},
-        {latitude:copeTrain.latitude, longitude:copeTrain.longitude},
+        {latitude:amaAirPort.latitude, longitude:amaAirPort.longitude},
+        {latitude:DFW.latitude, longitude:DFW.longitude},
+        {latitude:spainAirPort.latitude, longitude:spainAirPort.longitude},
     ]
 });
 
 var mapview = MapModule.createView({
     mapType: MapModule.NORMAL_TYPE,
     region: {latitude: 55.675987, longitude: 12.568145, latitudeDelta: 0.1, longitudeDelta: 0.1 },
-    annotations: [copeTrain,donHostel] //< add these annotations upon creation
+    annotations: [copeTrain,donHostel,amaAirPort,spainAirPort,DFW] //< add these annotations upon creation
 });
 // Add this annotation after creation'
 mapview.addRoute(route);
-mapview.addAnnotation(random);
 $.Mapwin.add(mapview);
 $.Mapwin.open();
 
