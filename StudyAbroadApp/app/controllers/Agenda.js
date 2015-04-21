@@ -9,6 +9,16 @@ function openMenu() {
 var Cloud = require("ti.cloud");
 Cloud.debug = true;
 
+var MapModule = require("ti.map");
+
+function showMap(){
+
+    $.mapview.region = {
+            latitude:37.390749, longitude:-122.081651,
+            latitudeDelta:0.01, longitudeDelta:0.01
+        };
+    $.mapview.visible = true;
+}
 
 var plainTemplate = {
     childTemplates: [{
@@ -108,10 +118,10 @@ for (var i = 0; i < eventList.length; i++) {
                         mapBtn: {
                             title: "Map"
                         },
-                        mapBtn: {
+                        mapView: {
                             placeLat: place.latitude
                         },
-                        mapBtn: {
+                        mapView: {
                             placeLong: place.longitude
                         },
                     });
