@@ -3,14 +3,15 @@ var Events = Alloy.Collections.instance("Events");
 
 function openMenu() {
     var index = Alloy.createController("index").getView();
-	index.open();
-   } 
+    index.open();
+}
 
 var Cloud = require("ti.cloud");
 Cloud.debug = true;
 
+
 var plainTemplate = {
-    childTemplates: [ {
+    childTemplates: [{
         type: "Ti.UI.Label",
         bindId: "box",
         properties: {
@@ -35,7 +36,8 @@ var plainTemplate = {
             top: "20dp"
         },
         separatorColor: "#253640"
-    }, {
+    },
+     {
         type: "Ti.UI.Label",
         bindId: "details",
         properties: {
@@ -46,87 +48,90 @@ var plainTemplate = {
             },
             left: "100dp",
             top: "50dp"
-        }
+        },
     }, {
-    	type: "Ti.UI.Label",
-    	bindId: "date",
-    	properties:{
-    	height:"50dp",
-    	left: "0dp",
-    	width: "60dp",
-    	top: "10dp",
-    	right: "200dp", 
-    	color: "red",
-    	borderRadius: "3dp",
-    	backgroundColor: "#e4e4e4",
-    	separatorColor: "#253640"
-    	}
-    },
-    {
-    	type: "Ti.UI.Button",
-    	bindId: "mapBtn",
-    	properties:{
-    	
-    	left: "0dp",
-    	width: "60dp",
-    	top: "77dp",
-    	//right: "200dp", 
-    	color: "black",
-    	backgroundColor: "#e4e4e4",
-    	separatorColor: "#253640",
-    	borderRadius: "3dp",
-    	font: {
-                fontFamily: "Arial",
-                fontSize: "14dp"
-            },
-    	}
-    	
-    },
-    
-     ]
+        type: "Ti.UI.Label",
+        bindId: "date",
+        properties: {
+            height: "50dp",
+            left: "0dp",
+            width: "60dp",
+            top: "10dp",
+            right: "200dp",
+            color: "red",
+            borderRadius: "3dp",
+            backgroundColor: "#e4e4e4",
+            separatorColor: "#253640"
+        }
+    }, ]
 };
+
 
 var listView = Ti.UI.createListView({
     templates: {
-        uncheck: plainTemplate
+        uncheck: plainTemplate,
     },
-    defaultItemTemplate: "uncheck"
+    defaultItemTemplate: "uncheck",
 });
-var section = Ti.UI.createListSection();
- 	listView.sections = [ section ];
 
-var data = [];
+var section = Ti.UI.createListSection();
+listView.sections = [section];
+
+var eventdata = [];
 var sectionViews = [];
-var eventList = [ '55355318442599bbd0eec70c' ];
+var eventList = ['55355318442599bbd0eec70c'];
 
 for (var i = 0; i < eventList.length; i++) {
-Cloud.Events.show({event_id: eventList[i] },function (e) {
-	if (e.success) {
-        var event = e.events[0];
-        	data.push({
-        	
-            	box : {},
-            	title: { text: event.name},
-            	details: { text: event.details},
-            	date: {text:event.start_time},
-            	mapBtn:{title:"Map"},
-            
+    Cloud.Events.show({
+        event_id: eventList[i]
+    }, function(e) {
+        if (e.success) {
+            var event = e.events[0];
+            Cloud.Places.show({
+                place_id: event.place_id
+            }, function(p) {
+                if (p.success) {
+                    var place = p.places[0];
+
+                    eventdata.push({
+
+                        box: {},
+                        title: {
+                            text: event.name
+                        },
+                        details: {
+                            text: event.details
+                        },
+                        date: {
+                            text: event.start_time
+                        },
+                        mapBtn: {
+                            title: "Map"
+                        },
+                        mapBtn: {
+                            placeLat: place.latitude
+                        },
+                        mapBtn: {
+                            placeLong: place.longitude
+                        },
+                    });
+                }
+                section.setItems(eventdata);
             });
-            
-           }
-           
-     section.setItems(data);
-           });
-           eventList[i] = Ti.UI.createView();        
-           eventList[i].add(listView);
-           		}
+        }
+    });
+    eventList[i] = Ti.UI.createView();
+    eventList[i].add(listView);
+}
 
 var scrollableView = Ti.UI.createScrollableView({
-  views:eventList,
-  showPagingControl:true
-});          
-  
- sectionView = Ti.UI.createView();
- sectionView.add(scrollableView);
- $.dateView.add(sectionView);
+    views: eventList,
+    showPagingControl: true
+});
+
+var dateView = Ti.UI.createView();
+sectionView = Ti.UI.createView();
+sectionView.add(scrollableView);
+dateView.add(sectionView);
+$.win.add(dateView);
 $.win.open();
