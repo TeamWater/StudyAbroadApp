@@ -1,9 +1,0 @@
-<Alloy>
-    <Window>
-    	<Menu platform="android" class="menuBar" >
-            <MenuItem title="Menu"  onClick="doClick"/>
-        </Menu>
-    	<View class="container"  >
-	</View>
-    </Window>
-</Alloy>
