@@ -61,7 +61,7 @@ $.loginSuccessAction = function(_options) {
 
 	// open the main screen
 	//$.tabGroup.open();
-		alert("You are loged in");
+		alert("You are logged in");
 		//$.index.open();
 		Agenda.open();
 	// set tabGroup to initial tab, in case this is coming from
