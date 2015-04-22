@@ -7,7 +7,7 @@
 }
 
 ".container": {
-	backgroundColor: "#424242"
+	backgroundColor: "#253640"
 
 }
 "#mapview" : {

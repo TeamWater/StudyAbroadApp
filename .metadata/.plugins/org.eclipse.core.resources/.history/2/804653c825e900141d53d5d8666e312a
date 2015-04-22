@@ -77,7 +77,7 @@
                 <permission android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.C2D_MESSAGE" android:protectionLevel="signature" />
     		<uses-permission android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.C2D_MESSAGE" />
     		
-            <application android:theme="@style/Theme.Derptheme">
+            <application android:theme="@style/Theme.Studyabroadtheme">
             	<receiver>
             android:name=".GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >

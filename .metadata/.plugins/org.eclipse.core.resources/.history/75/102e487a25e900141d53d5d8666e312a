@@ -1,6 +1,6 @@
 
 ".container" : {
-	backgroundColor: "#424242" //blue
+	backgroundColor: "#253640" //blue
 }
 
 ".event": {
