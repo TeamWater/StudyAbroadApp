@@ -1,8 +1,8 @@
 <Alloy>
-	<TabGroup>
+	<TabGroup platform="ios" >
         	<Tab>
         		<Window>
-                	<RightNavButton platform="ios" >
+                	<RightNavButton >
                     		<Button title="Menu" onClick="openMenu" />
                 	</RightNavButton>
                 </Window>

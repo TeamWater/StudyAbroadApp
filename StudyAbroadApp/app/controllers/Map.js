@@ -1,71 +1,118 @@
+//James Ritter Did this 
 function openMenu() {
     var index = Alloy.createController("index").getView();
 	index.open();
-   } 
-   
+   }    
 var MapModule = require('ti.map');
-var donHostel = MapModule.createAnnotation({
-    latitude: 55.670905,
-    longitude: 12.576385,
-    image: '',
-    title: 'DonHostel',
-    subtitle: 'Copenhagen'
-});
-var  copeTrain = MapModule.createAnnotation({
-    latitude: 55.672968,
-    longitude: 12.564465,
-    pincolor: MapModule.ANNOTATION_AZURE,
- // Even though we are creating a button, it does not respond to Button events or animates.
- // Use the Map View's click event and monitor the clicksource property for 'leftPane'.
-    leftView: Ti.UI.createButton({title: 'Detail'}),
- // For eventing, use the Map View's click event
- // and monitor the clicksource property for 'rightPane'.
-    rightButton: '',    
-    title: 'Kobenhavn',
-    subtitle: 'Train Station'
-});
 
-var amaAirPort = MapModule.createAnnotation({
-    latitude: 35.218500,
-    longitude: -101.705264,
-    image: '',
-    title: 'Rick Husband Amarillo International Airport',
-    subtitle: 'Start'
-});
+$.copeView.addEventListener('click',openMapCope);
+$.osloView.addEventListener('click',openMapOslo);
+$.gothView.addEventListener('click',openMapGoth);
 
-var DFW = MapModule.createAnnotation({
-    latitude: 32.899809,
-    longitude: -97.040335,
-    image: '',
-    title: 'Dallas/Fort Worth International Airport',
-    subtitle: 'Texas, US'
-});
 
-var spainAirPort = MapModule.createAnnotation({
-    latitude: 40.464446,
-    longitude: -3.572611,
-    image: '',
-    title: 'Adolfo Suárez Madrid–Barajas Airport',
-    subtitle: 'Spain'
-});
+ function openMapCope(mapNotes){
+ 	
+ 	var win = Titanium.UI.createWindow();
+	 var mapview = MapModule.createView({
+     mapType: MapModule.NORMAL_TYPE,
+     region: {latitude: 55.675987, longitude: 12.568145, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+     });
+     
+var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
+ var mapNotes = [];
+ for (var i = 0; i < placeList.length; i++) {
+     Cloud.Places.show({
+         place_id: placeList[i]
+     }, function(e) {
+         if (e.success) {
+             var place = e.places[0];
+             var placeID = String(placeList[i]);       
+             placeID = MapModule.createAnnotation({
+            	 latitude: place.latitude,
+   				 longitude: place.longitude,
+   				 image: '',
+   				 title: place.name,
+    			 subtitle: place.details
+    			
+            });
+           }
+           mapview.addAnnotation(placeID);
+        });
+       };
+                
+    win.add(mapview);
+    $.mapWin.close();
+    win.open();
+   
+}
 
-var route = MapModule.createRoute({
-    width: 4,
-    color: '#f00',
-    points: [
-        {latitude:amaAirPort.latitude, longitude:amaAirPort.longitude},
-        {latitude:DFW.latitude, longitude:DFW.longitude},
-        {latitude:spainAirPort.latitude, longitude:spainAirPort.longitude},
-    ]
-});
+ function openMapOslo(mapNotes){
+ 	
+ 	var win = Titanium.UI.createWindow();
+	 var mapview = MapModule.createView({
+     mapType: MapModule.NORMAL_TYPE,
+     region: {latitude:59.91361628, longitude: 10.75335361, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+     });
+     
+var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
+ var mapNotes = [];
+ for (var i = 0; i < placeList.length; i++) {
+     Cloud.Places.show({
+         place_id: placeList[i]
+     }, function(e) {
+         if (e.success) {
+             var place = e.places[0];
+             var placeID = String(placeList[i]);       
+             placeID = MapModule.createAnnotation({
+            	 latitude: place.latitude,
+   				 longitude: place.longitude,
+   				 image: '',
+   				 title: place.name,
+    			 subtitle: place.details
+    			
+            });
+           }
+           mapview.addAnnotation(placeID);
+        });
+       };
+                
+    win.add(mapview);
+    $.mapWin.close();
+    win.open();
+}
 
-var mapview = MapModule.createView({
-    mapType: MapModule.NORMAL_TYPE,
-    region: {latitude: 55.675987, longitude: 12.568145, latitudeDelta: 0.1, longitudeDelta: 0.1 },
-    annotations: [copeTrain,donHostel,amaAirPort,spainAirPort,DFW] //< add these annotations upon creation
-});
-// Add this annotation after creation'
-mapview.addRoute(route);
-$.Mapwin.add(mapview);
-$.Mapwin.open();
-
+ function openMapGoth(mapNotes){
+ 	
+ 	var win = Titanium.UI.createWindow();
+	 var mapview = MapModule.createView({
+     mapType: MapModule.NORMAL_TYPE,
+     region: {latitude: 57.70909962, longitude: 11.97458267, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+     });
+     
+var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
+ var mapNotes = [];
+ for (var i = 0; i < placeList.length; i++) {
+     Cloud.Places.show({
+         place_id: placeList[i]
+     }, function(e) {
+         if (e.success) {
+             var place = e.places[0];
+             var placeID = String(placeList[i]);       
+             placeID = MapModule.createAnnotation({
+            	 latitude: place.latitude,
+   				 longitude: place.longitude,
+   				 image: '',
+   				 title: place.name,
+    			 subtitle: place.details
+    			
+            });
+           }
+           mapview.addAnnotation(placeID);
+        });
+       };
+                
+    win.add(mapview);
+    $.mapWin.close();
+    win.open();
+   
+}

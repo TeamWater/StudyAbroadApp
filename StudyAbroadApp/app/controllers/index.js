@@ -11,6 +11,7 @@ function OpenAgenda() {
 
 function OpenMap() {
 	var Map = Alloy.createController("Map").getView();
+	Map.open(); 
  	
 }
 

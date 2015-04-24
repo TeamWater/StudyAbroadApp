@@ -1,30 +1,64 @@
-"#HQ" : {
-    latitude: 55.670929,
-    longitude: 12.576556,
-    title: "HeadQuarters",
-    subtitle: "DanHostel",
-    pincolor: Alloy.Globals.Map.ANNOTATION_AZURE
-}
+//James Did this
+'#youView': {
+	backgroundColor: "#e4e4e4", //grey/white
+	width: "300dp", 
+	height: "120dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	left: "20dp",
+	right:"10dp",
+	separatorColor: "#253640",
+}, 
+'#copeView': {
+	backgroundColor: "#e4e4e4", //grey/white
+	width: "300dp", 
+	height: "120dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	left: "20dp",
+	right:"10dp",
+	separatorColor: "#253640",
+}, 
 
-".container": {
-	backgroundColor: "#424242"
+'#osloView': {
+	backgroundColor: "#e4e4e4", //grey/white
+	width: "300dp", 
+	height: "120dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	left: "20dp",
+	right:"10dp",
+	separatorColor: "#253640",
+}, 
 
-}
-"#mapview" : {
-    region : {
-        latitude:33.74511,
-        longitude:-84.38993,
-        latitudeDelta:0.01,
-        longitudeDelta:0.01
-    }
+'#gothView': {
+	backgroundColor: "#e4e4e4", //grey/white
+	width: "300dp", 
+	height: "120dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	left: "20dp",
+	right:"10dp",
+	separatorColor: "#253640",
+}, 
+
+'.mapLabel':{
+	Color:'#565656',
+	font: {
+            fontFamily: "Arial",
+            fontSize: "21dp",
+           },
+
 },
-"#appcHQ" : {
-    latitude: 33.74511,
-    longitude: -84.38993,
-    title: "Appcelerator Headquarters",
-    subtitle: "Mountain View, CA",
-    pincolor: Alloy.Globals.Map.ANNOTATION_RED
-}
-".container": {
-	backgroundColor: "#253640"
-}
+
+'#mapScroll':{
+  layout: 'vertical'
+},

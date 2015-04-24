@@ -47,16 +47,4 @@
     width: "2dp",
     top: "20dp"
 },
-"#mapBtn":{
-	 left: "0dp",
-            width: "60dp",
-            top: "77dp", 
-            color: "black",
-            backgroundColor: "#e4e4e4",
-            separatorColor: "#253640",
-            borderRadius: "3dp",
-            font: {
-                fontFamily: "Arial",
-                fontSize: "14dp"
-            },
-}
+
