@@ -1,0 +1,17 @@
+".container": {
+}
+".menuButtons": {
+	backgroundColor: "#1da587", 
+	width: Ti.UI.FILL, 
+	height: Ti.UI.SIZE,
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	separatorColor: "Transparent"
+	
+}
+
+".space": {
+	separatorColor: "Transparent"
+}

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.appcelerator.titanium.mobile.ui.ios.simulator.launchConfigurationType">
+<booleanAttribute key="ATTR_CLEAN_BEFORE_LAUNCH" value="false"/>
 <stringAttribute key="ATTR_PROJECT_NAME" value="StudyAbroadApp"/>
-<stringAttribute key="device_id" value="62ED555F-6F25-4AFD-AA0F-E8D2936F3D2B"/>
+<stringAttribute key="device_id" value="569B5F51-8D0B-440C-A606-C319A01D76CA"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/StudyAbroadApp"/>
 </listAttribute>
@@ -9,6 +10,5 @@
 <listEntry value="4"/>
 </listAttribute>
 <stringAttribute key="process_factory_id" value="com.appcelerator.titanium.ui.logLevelFilteringProcessFactory"/>
-<stringAttribute key="sdk_version" value="8.2"/>
-<stringAttribute key="simulator_version" value="8.2"/>
+<stringAttribute key="simulator_version" value="8.3"/>
 </launchConfiguration>

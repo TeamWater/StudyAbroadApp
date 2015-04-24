@@ -1,8 +1,8 @@
 =run
 Device\:ConsoleLogLevel=Info
-LAST_LAUNCH_TIMESTAMP=1429730573475
+LAST_LAUNCH_TIMESTAMP=1429805519565
 StudyAbroadApp\:launchMode=run
-StudyAbroadApp\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut.LGD850c819f7c3
+StudyAbroadApp\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103

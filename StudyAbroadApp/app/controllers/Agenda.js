@@ -9,17 +9,9 @@ function openMenu() {
 var Cloud = require("ti.cloud");
 Cloud.debug = true;
 
-var MapModule = require("ti.map");
 
-function showMap(){
-
-    $.mapview.region = {
-            latitude:37.390749, longitude:-122.081651,
-            latitudeDelta:0.01, longitudeDelta:0.01
-        };
-    $.mapview.visible = true;
-}
-
+if(OS_ANDROID) {
+	
 var plainTemplate = {
     childTemplates: [{
         type: "Ti.UI.Label",
@@ -31,8 +23,8 @@ var plainTemplate = {
             bottom: "10dp",
             left: "75dp",
             borderRadius: "5dp",
-            separatorColor: "#253640"
-        }
+            separatorColor: "#424242"
+        },
     }, {
         type: "Ti.UI.Label",
         bindId: "title",
@@ -45,7 +37,7 @@ var plainTemplate = {
             left: "100dp",
             top: "20dp"
         },
-        separatorColor: "#253640"
+        separatorColor: "#253640",
     },
      {
         type: "Ti.UI.Label",
@@ -71,10 +63,64 @@ var plainTemplate = {
             color: "red",
             borderRadius: "3dp",
             backgroundColor: "#e4e4e4",
-            separatorColor: "#253640"
-        }
+            separatorColor: "#424242"
+        },
     }, ]
 };
+
+}
+
+if(OS_IOS) {
+	
+var plainTemplate = {
+    childTemplates: [{
+        type: "Ti.UI.Label",
+        bindId: "box",
+        properties: {
+            backgroundColor: "white",
+            width: Ti.UI.FILL,
+            height: Ti.UI.SIZE,
+            separatorColor: "transparent"
+        },
+    }, 
+    
+    {
+        type: "Ti.UI.Label",
+        bindId: "title",
+        properties: {
+            color: "#424242",
+            width: Ti.UI.SIZE,
+            height: Ti.UI.SIZE,
+            left: "20dp",
+            top: "5dp"
+        },
+    },
+    
+     {
+        type: "Ti.UI.Label",
+        bindId: "details",
+        properties: {
+            color: "gray",
+            height: Ti.UI.SIZE,
+            width: Ti.UI.FILL,
+            left: "20dp",
+            top: "20dp"
+        },
+    }, 
+    
+    {
+        type: "Ti.UI.Label",
+        bindId: "date",
+        properties: {
+            height: "38dp",
+            left: "5dp",
+            width: "38dp",
+            top: "5dp",
+            color: "red",
+        },
+    }, 
+    ]};
+}
 
 
 var listView = Ti.UI.createListView({
@@ -97,12 +143,6 @@ for (var i = 0; i < eventList.length; i++) {
     }, function(e) {
         if (e.success) {
             var event = e.events[0];
-            Cloud.Places.show({
-                place_id: event.place_id
-            }, function(p) {
-                if (p.success) {
-                    var place = p.places[0];
-
                     eventdata.push({
 
                         box: {},
@@ -115,24 +155,15 @@ for (var i = 0; i < eventList.length; i++) {
                         date: {
                             text: event.start_time
                         },
-                        mapBtn: {
-                            title: "Map"
-                        },
-                        mapView: {
-                            placeLat: place.latitude
-                        },
-                        mapView: {
-                            placeLong: place.longitude
-                        },
+                        
                     });
-                }
+                
                 section.setItems(eventdata);
-            });
-        }
+            };
     });
     eventList[i] = Ti.UI.createView();
     eventList[i].add(listView);
-}
+};
 
 var scrollableView = Ti.UI.createScrollableView({
     views: eventList,

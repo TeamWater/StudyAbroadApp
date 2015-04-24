@@ -1,5 +1,5 @@
 
-".container" : {
+".win" : {
 	backgroundColor: "#424242" //blue
 }
 

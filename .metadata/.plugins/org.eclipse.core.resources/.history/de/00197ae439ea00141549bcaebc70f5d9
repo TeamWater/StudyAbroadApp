@@ -1,0 +1,30 @@
+".container": {
+	backgroundColor: "#424242",
+	separatorColor: "#424242"
+}
+".menuButtons[platfor=android]": {
+	backgroundColor: "#e4e4e4", 
+	width: "300dp", 
+	height: "100dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	separatorColor: "Transparent"
+	
+}
+
+".menuButtons[platfor=ios]": {
+	backgroundColor: "#", 
+	width: Titanium.UI.FILL, 
+	height: Titanium.UI.SIZE,
+	top:"5dp",
+	bottom: "5dp",
+	color: "#424242", 
+	borderRadius: "5dp",
+	separatorColor: "Transparent"
+	
+}
+".space": {
+	separatorColor: "Transparent"
+}

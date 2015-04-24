@@ -1,0 +1,18 @@
+<Alloy>
+	<Window id="win" class="win">
+		<Menu platform="android" class="menuBar" >
+			 <MenuItem title="Menu" onClick="openMenu"/>
+		</Menu>
+		<RightNavButton platform="ios">
+			<Button onClick="openMenu">Menu</Button>
+		</RightNavButton>
+		<View id="line" class="line"></View>
+		<ScrollableView>
+			<View id="eventList"></View>
+		</ScrollableView>
+		<Button bindId="mapBtn" id="mapBtn" title="Map" onClick="showMap" ></Button>
+		
+		<!--<View bindId="mapView" id="mapview" ns="Ti.Map" animate="true" regionFit="true" mapType="Ti.Map.STANDARD_TYPE" visible = "false" /> -->
+           
+	</Window>
+</Alloy>
