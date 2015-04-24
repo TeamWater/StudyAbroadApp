@@ -10,6 +10,7 @@
 		</Menu>
 		
 		<View id="line" class="line"></View>
+<<<<<<< Updated upstream
 		
 			<View id="dateView">
 				<View id="sectionView">
@@ -26,4 +27,8 @@
                 </Window>
         	</Tab>
     	</TabGroup>
+=======
+	
+	</Window>
+>>>>>>> Stashed changes
 </Alloy>
