@@ -1,6 +1,6 @@
 <!-- mark made this -->
 <Alloy>    
-	<TabGroup BackgroundColor="#1da587" viewShadowColor="#1da587">
+	<TabGroup BackgroundColor="#1da587" barColor="#1da587" navBarHidden="true" tintColor="#e9e9e9">
         	<Tab>
         		<Window class="container" id="index">
         <RightNavButton platform="ios" icon="ic_menu_white_48dp.png" class="menuBar"/>
