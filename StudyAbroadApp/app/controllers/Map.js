@@ -5,6 +5,9 @@ function openMenu() {
    }    
 var MapModule = require('ti.map');
 
+
+
+
  function openMapCope(mapNotes){
  	
  	var win = Titanium.UI.createWindow();
@@ -112,10 +115,20 @@ var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
    
 }
 
-var geo = require('geo'), lat = 0, lng = 0;
 
-function openMapYou(mapNotes){
-  
+function openMapYou(){
+	var win = Titanium.UI.createWindow();
+
+ if (Ti.Geolocation.locationServicesEnabled) {
+    Ti.Geolocation.purpose = 'Get Current Location';
+    Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
+    Ti.Geolocation.distanceFilter = 10;
+    Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
+    Ti.Geolocation.addEventListener('location', function(e) {
+ if (e.error) {
+            alert('Error: ' + e.error);
+        } else {
+	 	
 var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
  var mapNotes = [];
  for (var i = 0; i < placeList.length; i++) {
@@ -134,26 +147,46 @@ var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
     			
             });
            }
+     
            mapview.addAnnotation(placeID);
         });
        };
        
-   while(true){	
- 	geo.getLatLong(function(latitude,longitude) {
-    lat = latitude;
-    lng = longitude;
-  });  
-}
-
- 	var win = Titanium.UI.createWindow();
+	
+      Ti.API.info(e.coords);
 	 var mapview = MapModule.createView({
      mapType: MapModule.NORMAL_TYPE,
-     region: {latitude: lat, longitude: lng, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+     region: {latitude: e.coords.latitude , longitude: e.coords.longitude, latitudeDelta: 0.001, longitudeDelta: 0.001 },
      });
-                
+     
+     if(OS_IOS){
+     var you = MapModule.createAnnotation({
+            	 latitude: e.coords.latitude,
+   				 longitude: e.coords.longitude,
+   				 title: "You are here",
+   				 pincolor:"Ti.Map.ANNOTATION_PURPLE"
+    			
+            });
+ };
+ 
+ if(OS_ANDROID){
+     var you = MapModule.createAnnotation({
+            	 latitude: e.coords.latitude,
+   				 longitude: e.coords.longitude,
+   				 title: "You are here",
+   				pincolor: Ti.Map.ANNOTATION_BLUE,
+    			
+            });
+ };
+    mapview.addAnnotation(you);           
     win.add(mapview);
     $.mapWin.close();
-    win.open();
-   
+        }
+    });
+} else {
+    alert('Please enable location services');
 }
+win.open();
+}
+
 
