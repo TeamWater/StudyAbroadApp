@@ -5,11 +5,6 @@ function openMenu() {
    }    
 var MapModule = require('ti.map');
 
-$.copeView.addEventListener('click',openMapCope);
-$.osloView.addEventListener('click',openMapOslo);
-$.gothView.addEventListener('click',openMapGoth);
-
-
  function openMapCope(mapNotes){
  	
  	var win = Titanium.UI.createWindow();

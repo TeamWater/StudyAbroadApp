@@ -1,19 +1,20 @@
 <Alloy>
 	<TabGroup>
         	<Tab>
-        		<Window>
+        		<Window platform=" ios" class="container">
                 	<RightNavButton platform="ios" >
                     		<Button title="Menu" onClick="openMenu" />
                 	</RightNavButton>
 					<Menu platform="android" class="menuBar" >
 			 				<MenuItem title="Menu" onClick="openMenu"/>
         			</Menu>
-        			
-		<View class="container">
-		
-		</View>
-	</Window>
-
+				</Window>
         	</Tab>
-    	</TabGroup>
+    </TabGroup>
+    
+    <Window platform="android" class="container">
+    	<Menu platform="android" class="menuBar" >
+			<MenuItem title="Menu" onClick="openMenu"/>
+        </Menu>
+    </Window>
 </Alloy>	

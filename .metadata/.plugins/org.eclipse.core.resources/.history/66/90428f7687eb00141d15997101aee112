@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Alloy>
+	
+   <TabGroup platform="ios">
+      <Tab>
+         <Window id="mapWin" class="container"platform="ios">
+        
+               <RightNavButton>
+                  <Button title="Menu" onClick="openMenu" />
+               </RightNavButton>
+            
+			<TableView id="mapMenu">
+        		<TableViewRow class="space">
+					<Button class="mapButtons" onClick="openMapYou" >You are Here</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button  class="mapButtons" onClick="openMapCope" >Copenhagen</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button class="mapButtons" onClick="openMapOslo">Oslo</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button class="mapButtons" onClick="openMapGoth">Gothenburg</Button>
+				</TableViewRow>
+        </TableView>
+       </Window>
+      <Tab>
+  <TabGroup>
+        
+        
+        
+   <Window id="mapWin" class="container" platform="android">
+      <Menu platform="android" class="menuBar">
+         <MenuItem title="Menu" onClick="openMenu" />
+      </Menu>
+       <TableView id="mapMenu">
+        		<TableViewRow class="space">
+					<Button class="menuButtons" onClick="openMapYou" >You are Here</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button  class="menuButtons" onClick="openMapCope" >Copenhagen</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button class="menuButtons" onClick="openMapOslo">Oslo</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button class="menuButtons" onClick="openMapGoth">Gothenburg</Button>
+				</TableViewRow>
+        </TableView>
+   </Window>
+</Alloy>

@@ -1,64 +1,36 @@
 //James Did this
-'#youView': {
-	backgroundColor: "#e4e4e4", //grey/white
+".container": {
+	backgroundColor: "#424242",
+	separatorColor: "transparent",
+}
+".mapButtons[platform=android]": {
+	backgroundColor: "#e4e4e4", 
 	width: "300dp", 
-	height: "120dp",
+	height: "100dp",
 	top:"5dp",
 	bottom: "5dp",
 	color: "#565656", 
 	borderRadius: "5dp",
-	left: "20dp",
-	right:"10dp",
-	separatorColor: "#253640",
-}, 
-'#copeView': {
-	backgroundColor: "#e4e4e4", //grey/white
-	width: "300dp", 
-	height: "120dp",
-	top:"5dp",
-	bottom: "5dp",
-	color: "#565656", 
-	borderRadius: "5dp",
-	left: "20dp",
-	right:"10dp",
-	separatorColor: "#253640",
-}, 
+	separatorColor: "transparent"
+	
+}
 
-'#osloView': {
-	backgroundColor: "#e4e4e4", //grey/white
-	width: "300dp", 
-	height: "120dp",
+".mapButtons[platform=ios]": {
+	backgroundColor: "#1da587", 
+	width: Titanium.UI.FILL, 
+	height: "100dp",
 	top:"5dp",
 	bottom: "5dp",
-	color: "#565656", 
+	left: "5dp",
+	right: "5dp",
+	color: "#e9e9e9", 
 	borderRadius: "5dp",
-	left: "20dp",
-	right:"10dp",
-	separatorColor: "#253640",
-}, 
-
-'#gothView': {
-	backgroundColor: "#e4e4e4", //grey/white
-	width: "300dp", 
-	height: "120dp",
-	top:"5dp",
-	bottom: "5dp",
-	color: "#565656", 
-	borderRadius: "5dp",
-	left: "20dp",
-	right:"10dp",
-	separatorColor: "#253640",
-}, 
-
-'.mapLabel':{
-	Color:'#565656',
 	font: {
-            fontFamily: "Arial",
-            fontSize: "21dp",
-           },
-
-},
-
-'#mapScroll':{
-  layout: 'vertical'
-},
+		fontSize: "28dp"
+	},
+	separatorColor: "transparent"
+	
+}
+".space": {
+	separatorColor: "transparent"
+}

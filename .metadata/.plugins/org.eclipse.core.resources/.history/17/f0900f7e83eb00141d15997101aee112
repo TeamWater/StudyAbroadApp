@@ -1,0 +1,64 @@
+//James Did this
+'#youView': {
+	backgroundColor: "#e4e4e4", //grey/white
+	width: "300dp", 
+	height: "120dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	left: "20dp",
+	right:"10dp",
+	separatorColor: "#253640",
+}, 
+'#copeView': {
+	backgroundColor: "#e4e4e4", //grey/white
+	width: "300dp", 
+	height: "120dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	left: "20dp",
+	right:"10dp",
+	separatorColor: "#253640",
+}, 
+
+'#osloView': {
+	backgroundColor: "#e4e4e4", //grey/white
+	width: "300dp", 
+	height: "120dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	left: "20dp",
+	right:"10dp",
+	separatorColor: "#253640",
+}, 
+
+'#gothView': {
+	backgroundColor: "#e4e4e4", //grey/white
+	width: "300dp", 
+	height: "120dp",
+	top:"5dp",
+	bottom: "5dp",
+	color: "#565656", 
+	borderRadius: "5dp",
+	left: "20dp",
+	right:"10dp",
+	separatorColor: "#253640",
+}, 
+
+'.mapLabel':{
+	Color:'#565656',
+	font: {
+            fontFamily: "Arial",
+            fontSize: "21dp",
+           },
+
+},
+
+'#mapScroll':{
+  layout: 'vertical'
+},
