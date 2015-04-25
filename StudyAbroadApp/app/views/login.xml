@@ -6,9 +6,9 @@
 			<View id='homeView'>
 				<Label id='welcomeText'></Label>
 				<View id='hvButtonContainer'>
-					<Button id='showCreateAccountBtn' title="Create Account" />
-					<Button id='showLoginBtn' title="Login" />
-					<Button id='showLoginFBBtn' title="Facebook Connect"/>
+					<Button id='showCreateAccountBtn' title="Create Account" class="button"/>
+					<Button id='showLoginBtn' title="Login" class="button"/>
+					<Button id='showLoginFBBtn' title="Facebook Connect" class="button"/>
 				</View>
 			</View>
 			<!-- the login view -->
@@ -18,10 +18,10 @@
 					<TextField id='email' class='tfWrapper' />
 					<TextField id='password' class='tfWrapper' />
 					<View class='centerHelper'>
-						<Button id='doLoginBtn' title="Login" />
-						<Button id='cancelLoginBtn' title="Cancel" />
+						<Button id='doLoginBtn' title="Login" class="button" right="3dp" />
+						<Button id='cancelLoginBtn' title="Cancel" class="button" left="3dp"/>
 					</View>
-					<Button id='forgotPasswordBtn' title="Forgot Password" />
+					<Button id='forgotPasswordBtn' title="Forgot Password" class="button" />
 				</View>
 			</View>
 			<!-- view account view -->
@@ -34,8 +34,8 @@
 					<TextField id='acct_password' class='tfWrapper' />
 					<TextField id='acct_password_confirmation' class='tfWrapper' />
 					<View class='centerHelper'>
-						<Button id='doCreateAcctBtn' title="Create Account" />
-						<Button id='cancelCreateAcctBtn' title="Cancel" />
+						<Button id='doCreateAcctBtn' title="Create Account"  class="button"/>
+						<Button id='cancelCreateAcctBtn' title="Cancel" class="button"/>
 					</View>
 				</View>
 			</View>

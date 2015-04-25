@@ -1,6 +1,6 @@
-//login Style created by Anthony & Mayra
+//login Style created by Anthony & Mayra &m  Mark :P
 ".loginContainer" : {
-  backgroundColor: 'white'
+  backgroundColor: '#424242'
 }
 
 //general styles
@@ -9,7 +9,8 @@
 	width: '260dp',
 	height: '40dp',
 	border: 1,
-	borderColor: 'gray'
+	borderColor: '#1da587',
+	borderRadius: "5dp"
 },
 '.centerHelper': {
 	top: '10dp',
@@ -32,18 +33,23 @@ TextField: {
 	bottom: '2dp',
 	right: '4dp',
 	paddingLeft: '4dp',
-	backgroundColor: 'white',
-	color : 'black'
+	backgroundColor: '#e9e9e9',
+	color : '#424242'
 },
 
 // Default Button Style
-"Button" : {
+".button" : {
+	backgroundColor: "#e9e9e9",
 	top: '6dp',
-	width: '124dp',
+	width: '123dp',
 	height: '36dp',
+	color: "#424242",
+	border: 1,
+	borderColor: '#1da587',
 	font:{
-		fontSize: '13dp'
-	}
+		fontSize: '14dp'
+	},
+	borderRadius: "5dp",
 }
 
 '#homeView' : {
@@ -60,6 +66,7 @@ TextField: {
 },
 '#welcomeText' :{
     text : "Study Abroad 2015",
+    color: "#1da587",
     font:{
         fontSize:'24dp',
         fontWeight : 'bold'
@@ -76,11 +83,13 @@ TextField: {
     backgroundColor: "transparent"
 },
 '#loginText' :{
-    text : "Login Text Goes Here For the App",
+    text : "Log In",
+    color: "#1da587",
     font:{
         fontSize:'24dp',
-        fontWeight : 'bold'
-    }
+        fontWeight : 'bold',
+    },
+    
 },
 //login view
 '#email' : {
@@ -96,7 +105,6 @@ TextField: {
     width:'280dp',
     height:Ti.UI.SIZE,
     layout:'vertical',
-    borderColor :'orange',
     borderWidth :0
 },
 '#createAcctView' : {
@@ -105,10 +113,11 @@ TextField: {
    height: Ti.UI.SIZE,
    top: '90dp',
    layout: 'vertical',
-   backgroundColor: 'white'
+   backgroundColor: '#424242'
 },
 '#accountText' :{
-   text: "Account Text Goes Here For the App",
+   text: "Create an Account",
+   color:"#1da587",
    font:{
     fontSize: '24dp',
     fontWeight: 'bold'
@@ -121,21 +130,21 @@ TextField: {
    layout: 'vertical',
 },
 '#acct_fname' : {
-   hintText: 'first name'
+   hintText: 'First Name'
 },
 '#acct_lname' : {
-   hintText: 'last name'
+   hintText: 'Last Name'
 },
 '#acct_email' : {
-   hintText: 'email address'
+   hintText: 'Email Address'
 },
 '#acct_password' : {
    passwordMask: true,
-   hintText: 'password'
+   hintText: 'Password'
 },
 '#acct_password_confirmation' : {
    passwordMask: true,
-   hintText: 'password confirmation'
+   hintText: 'Password Confirmation'
 },
 '#cancelCreateAcctBtn' : {
    left: '10dp'
