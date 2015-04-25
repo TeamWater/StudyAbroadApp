@@ -116,3 +116,49 @@ var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
     win.open();
    
 }
+
+var geo = require('geo'), lat = 0, lng = 0;
+
+function openMapYou(mapNotes){
+  
+var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
+ var mapNotes = [];
+ for (var i = 0; i < placeList.length; i++) {
+     Cloud.Places.show({
+         place_id: placeList[i]
+     }, function(e) {
+         if (e.success) {
+             var place = e.places[0];
+             var placeID = String(placeList[i]);       
+             placeID = MapModule.createAnnotation({
+            	 latitude: place.latitude,
+   				 longitude: place.longitude,
+   				 image: '',
+   				 title: place.name,
+    			 subtitle: place.details
+    			
+            });
+           }
+           mapview.addAnnotation(placeID);
+        });
+       };
+       
+   while(true){	
+ 	geo.getLatLong(function(latitude,longitude) {
+    lat = latitude;
+    lng = longitude;
+  });  
+}
+
+ 	var win = Titanium.UI.createWindow();
+	 var mapview = MapModule.createView({
+     mapType: MapModule.NORMAL_TYPE,
+     region: {latitude: lat, longitude: lng, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+     });
+                
+    win.add(mapview);
+    $.mapWin.close();
+    win.open();
+   
+}
+

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Alloy>
    <TabGroup platform="ios">
       <Tab>
@@ -10,34 +11,23 @@
          </Window>
       </Tab>
    </TabGroup>
-   
    <Window id="mapWin" platform="android">
       <Menu platform="android" class="menuBar">
          <MenuItem title="Menu" onClick="openMenu" />
       </Menu>
-      <!--<ScrollableView id="scrollBtns" scrollingEnabled='true'>-->
-      	<ScrollView id="mapScroll">
-      	<View id="youView" >
-      		<Label id="youBtn" class="mapLabel"  text="You Are Here"></Label>
-      	</View>
-      	
-      	
-     
-      	<View id="copeView">
-      		<Label id="copeBtn" class="mapLabel"  text="Copenhagen"></Label>
-      	</View>
-      
-      	
-      	
-      	<View id="osloView">
-      		<Label id="osloBtn" class="mapLabel"  text="Oslo"></Label>
-      	</View>
-      	
-      	
-      	<View id="gothView">
-      		<Label id="gothBtn" class="mapLabel"  text="Gothenburg"></Label>
-      	</View>
-      	</ScrollView>
-     <!-- </ScrollableView>-->
+      <ScrollView id="mapScroll">
+         <View id="youView">
+            <Label id="youBtn" class="mapLabel" text="You Are Here" />
+         </View>
+         <View id="copeView">
+            <Label id="copeBtn" class="mapLabel" text="Copenhagen" />
+         </View>
+         <View id="osloView">
+            <Label id="osloBtn" class="mapLabel" text="Oslo" />
+         </View>
+         <View id="gothView">
+            <Label id="gothBtn" class="mapLabel" text="Gothenburg" />
+         </View>
+      </ScrollView>
    </Window>
 </Alloy>
