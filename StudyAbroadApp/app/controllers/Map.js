@@ -8,7 +8,7 @@ var MapModule = require('ti.map');
 
 
 
- function openMapCope(mapNotes){
+ function openMapCope(){
  	
  	var win = Titanium.UI.createWindow();
 	 var mapview = MapModule.createView({
@@ -17,7 +17,6 @@ var MapModule = require('ti.map');
      });
      
 var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
- var mapNotes = [];
  for (var i = 0; i < placeList.length; i++) {
      Cloud.Places.show({
          place_id: placeList[i]
@@ -44,7 +43,7 @@ var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
    
 }
 
- function openMapOslo(mapNotes){
+ function openMapOslo(){
  	
  	var win = Titanium.UI.createWindow();
 	 var mapview = MapModule.createView({
@@ -53,7 +52,7 @@ var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
      });
      
 var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
- var mapNotes = [];
+ 
  for (var i = 0; i < placeList.length; i++) {
      Cloud.Places.show({
          place_id: placeList[i]
@@ -79,7 +78,7 @@ var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
     win.open();
 }
 
- function openMapGoth(mapNotes){
+ function openMapGoth(){
  	
  	var win = Titanium.UI.createWindow();
 	 var mapview = MapModule.createView({
@@ -88,7 +87,7 @@ var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
      });
      
 var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
- var mapNotes = [];
+
  for (var i = 0; i < placeList.length; i++) {
      Cloud.Places.show({
          place_id: placeList[i]
@@ -128,31 +127,7 @@ function openMapYou(){
  if (e.error) {
             alert('Error: ' + e.error);
         } else {
-	 	
-var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
- var mapNotes = [];
- for (var i = 0; i < placeList.length; i++) {
-     Cloud.Places.show({
-         place_id: placeList[i]
-     }, function(e) {
-         if (e.success) {
-             var place = e.places[0];
-             var placeID = String(placeList[i]);       
-             placeID = MapModule.createAnnotation({
-            	 latitude: place.latitude,
-   				 longitude: place.longitude,
-   				 image: '',
-   				 title: place.name,
-    			 subtitle: place.details
-    			
-            });
-           }
-     
-           mapview.addAnnotation(placeID);
-        });
-       };
-       
-	
+	 		
       Ti.API.info(e.coords);
 	 var mapview = MapModule.createView({
      mapType: MapModule.NORMAL_TYPE,
@@ -164,7 +139,7 @@ var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
             	 latitude: e.coords.latitude,
    				 longitude: e.coords.longitude,
    				 title: "You are here",
-   				 pincolor:"Ti.Map.ANNOTATION_PURPLE"
+   				 pincolor:"Ti.Map.ANNOTATION_RED"
     			
             });
  };
@@ -174,19 +149,19 @@ var placeList = ['553a70f1c3a596184905fc34','553aae8f57fff4d40608a187'];
             	 latitude: e.coords.latitude,
    				 longitude: e.coords.longitude,
    				 title: "You are here",
-   				pincolor: Ti.Map.ANNOTATION_BLUE,
+   				pincolor: Ti.Map.ANNOTATION_RED,
     			
             });
  };
     mapview.addAnnotation(you);           
     win.add(mapview);
     $.mapWin.close();
+    win.open();
         }
     });
 } else {
-    alert('Please enable location services');
+    ('Please enable location services');
 }
-win.open();
 }
 
 

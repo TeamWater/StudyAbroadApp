@@ -143,8 +143,10 @@ for (var i = 0; i < eventList.length; i++) {
     }, function(e) {
         if (e.success) {
             var event = e.events[0];
-            
-            var fixedDate = String.formatDate(event.start_time,['short']);
+            var moment = require('alloy/moment');
+			var day = moment(event.start_time, "YYYY-MM-DD:HH:mm:ssZZ");
+			var fixedDate = day.format("MM-DD");
+           
                     eventdata.push({
 
                         box: {},
