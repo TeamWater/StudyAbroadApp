@@ -1,34 +1,16 @@
 
-".container" : {
-	backgroundColor: "#424242" //blue
+".win" : {
+	backgroundColor: "#424242" 
 }
 
-".event": {
-	backgroundColor: "#E4E4E4", //grey/white
-	width: "300dp", 
-	height: "120dp",
-	top:"5dp",
-	bottom: "5dp",
-	color: "#565656", 
-	borderRadius: "5dp",
-	left: "20dp",
-	right:"10dp",
-	separatorColor: "#253640",
-	
-}
 ".line": {
 	backgroundColor: "#E4E4E4", 
 	left: "10dp",
-	height: "TI.UI.SIZE",
+	height: Titanium.UI.FILL,
 	width: "2dp",
 }
-".dateView" : {
-	backgroundColor: "#253640",
-    right: "10",
-    left: "10",
-    top: "10",
-    bottom: "10",
-    separatorColor: "#253640"
+"#dateView" : {
+	backgroundColor: "#424242",
 }
 
 ".date" : {
@@ -37,7 +19,6 @@
     width: "60dp",
     top: "20dp",
     color: "#e4e4e4",
-    separatorColor: "#253640"
 }
 
 ".line" : {

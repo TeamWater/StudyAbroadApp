@@ -1,0 +1,34 @@
+
+".wins" : {
+	backgroundColor: "#424242" 
+}
+
+".line": {
+	backgroundColor: "#E4E4E4", 
+	left: "10dp",
+	height: "TI.UI.SIZE",
+	width: "2dp",
+}
+".dateView" : {
+	backgroundColor: "#424242",
+    right: "10",
+    left: "10",
+    top: "10",
+    bottom: "10",
+}
+
+".date" : {
+    height: "60dp",
+    left: "5dp",
+    width: "60dp",
+    top: "20dp",
+    color: "#e4e4e4",
+}
+
+".line" : {
+    backgroundColor: "white",
+    height: "100%",
+    left: "70dp",
+    width: "2dp",
+    top: "20dp"
+}

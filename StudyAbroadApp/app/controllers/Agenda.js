@@ -135,7 +135,7 @@ listView.sections = [section];
 
 var eventdata = [];
 var sectionViews = [];
-var eventList = ['553c3755657a50639e15e826', '55355318442599bbd0eec70c', ];
+var eventList = [ '55355318442599bbd0eec70c', '553c3755657a50639e15e826',];
 
 for (var i = 0; i < eventList.length; i++) {
     Cloud.Events.show({
@@ -172,8 +172,8 @@ for (var i = 0; i < eventList.length; i++) {
 var scrollableView = Ti.UI.createScrollableView({
     views: eventList,
     showPagingControl: true,
-    scrollType: 'vertical',
 });
+
 var line = Ti.UI.createView();
 var dateView = Ti.UI.createView();
 sectionView = Ti.UI.createView();
