@@ -125,7 +125,7 @@ function openMapYou(){
     Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
     Ti.Geolocation.addEventListener('location', function(e) {
  if (e.error) {
-            alert('Error: ' + e.error);
+            alert('Error:Please enable location services');
         } else {
 	 		
       Ti.API.info(e.coords);
@@ -142,6 +142,12 @@ function openMapYou(){
    				 pincolor:"Ti.Map.ANNOTATION_RED"
     			
             });
+            
+    mapview.addAnnotation(you);           
+    win.add(mapview);
+    $.mapWin.close();
+    win.open();
+
  };
  
  if(OS_ANDROID){
@@ -152,11 +158,12 @@ function openMapYou(){
    				pincolor: Ti.Map.ANNOTATION_RED,
     			
             });
- };
     mapview.addAnnotation(you);           
     win.add(mapview);
     $.mapWin.close();
     win.open();
+
+ };
         }
     });
 } else {

@@ -35,7 +35,7 @@ var plainTemplate = {
                     fontFamily: "Arial",
                     fontSize: "21dp"
                 },
-                left: "100dp",
+                left: "120dp",
                 top: "20dp"
             },
         }, {
@@ -79,7 +79,7 @@ var plainTemplate = {
         properties: {
             backgroundColor: "white",
             width: Ti.UI.FILL,
-            height: Ti.UI.SIZE,
+            height:Ti.UI.SIZE,
         },
     }, 
     
@@ -88,8 +88,8 @@ var plainTemplate = {
         bindId: "title",
         properties: {
             color: "#424242",
-            width: Ti.UI.SIZE,
-            height: Ti.UI.SIZE,
+            width: Ti.UI.FILL,
+            height: Ti.UI.FILL,
             left: "30dp",
             top: "5dp"
         },
@@ -100,10 +100,11 @@ var plainTemplate = {
         bindId: "details",
         properties: {
             color: "gray",
-            height: Ti.UI.SIZE,
+            height: Ti.UI.FILL,
             width: Ti.UI.FILL,
             left: "30dp",
-            top: "25dp"
+            top: "25dp",
+            
         },
     }, 
     
@@ -135,7 +136,7 @@ listView.sections = [section];
 
 var eventdata = [];
 var sectionViews = [];
-var eventList = [ '55355318442599bbd0eec70c', '553c3755657a50639e15e826',];
+var eventList = [ '55355318442599bbd0eec70c','553c3755657a50639e15e826'];
 
 for (var i = 0; i < eventList.length; i++) {
     Cloud.Events.show({
