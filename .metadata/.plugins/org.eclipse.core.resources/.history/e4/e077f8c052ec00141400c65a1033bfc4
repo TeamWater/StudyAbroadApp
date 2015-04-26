@@ -162,8 +162,15 @@ listView.sections = [section];
 
 var eventdata = [];
 var sectionViews = [];
-
+<<<<<<< HEAD
+<<<<<<< HEAD
+var eventList = ['55355318442599bbd0eec70c', '553c3755657a50639e15e826'];
+=======
 var eventList = [ '55355318442599bbd0eec70c','553c3755657a50639e15e826'];
+>>>>>>> origin/master
+=======
+var eventList = [ '55355318442599bbd0eec70c','553c3755657a50639e15e826'];
+>>>>>>> f9fb518bdd483c37b90f814509fb44320ac1ac9b
 
 for (var i = 0; i < eventList.length; i++) {
     Cloud.Events.show({
