@@ -24,33 +24,7 @@ var plainTemplate = {
                 right: "10dp",
                 borderRadius: "5dp",
             }
-        }, 
-        {
-        type: "Ti.UI.Label",
-            bindId: "arrow",
-            properties: {
-                backgroundColor: "#e9e9e9",
-                width: "10dp",
-                height: "10dp",
-                transform: Ti.UI.create2DMatrix({rotate:45}),
-                top: "28dp",
-                left: "70dp",
-            }
-        },
-        {
-        
-        type: "Ti.UI.Label",
-            bindId: "dot",
-            properties: {
-                backgroundColor: "#1da587",
-                width: "10dp",
-                height: "10dp",
-                top: "28dp",
-                left: "52dp",
-                borderRadius: "5dp",
-            }
-        },
-        {
+        }, {
             type: "Ti.UI.Label",
             bindId: "title",
             properties: {
@@ -61,7 +35,7 @@ var plainTemplate = {
                     fontFamily: "Arial",
                     fontSize: "21dp"
                 },
-                left: "120dp",
+                left: "100dp",
                 top: "20dp"
             },
         }, {
@@ -105,7 +79,7 @@ var plainTemplate = {
         properties: {
             backgroundColor: "white",
             width: Ti.UI.FILL,
-            height:Ti.UI.SIZE,
+            height: Ti.UI.SIZE,
         },
     }, 
     
@@ -114,8 +88,8 @@ var plainTemplate = {
         bindId: "title",
         properties: {
             color: "#424242",
-            width: Ti.UI.FILL,
-            height: Ti.UI.FILL,
+            width: Ti.UI.SIZE,
+            height: Ti.UI.SIZE,
             left: "30dp",
             top: "5dp"
         },
@@ -126,11 +100,10 @@ var plainTemplate = {
         bindId: "details",
         properties: {
             color: "gray",
-            height: Ti.UI.FILL,
+            height: Ti.UI.SIZE,
             width: Ti.UI.FILL,
             left: "30dp",
-            top: "25dp",
-            
+            top: "25dp"
         },
     }, 
     
@@ -162,11 +135,7 @@ listView.sections = [section];
 
 var eventdata = [];
 var sectionViews = [];
-<<<<<<< HEAD
-var eventList = ['55355318442599bbd0eec70c', '553c3755657a50639e15e826'];
-=======
-var eventList = [ '55355318442599bbd0eec70c','553c3755657a50639e15e826'];
->>>>>>> origin/master
+var eventList = [ '55355318442599bbd0eec70c', '553c3755657a50639e15e826',];
 
 for (var i = 0; i < eventList.length; i++) {
     Cloud.Events.show({
@@ -181,8 +150,6 @@ for (var i = 0; i < eventList.length; i++) {
                     eventdata.push({
 
                         box: {},
-                        arrow: {},
-                        
                         title: {
                             text: event.name
                         },
@@ -208,6 +175,7 @@ var scrollableView = Ti.UI.createScrollableView({
 });
 
 var line = Ti.UI.createView();
+var arrow = Ti.UI.createView();
 var dateView = Ti.UI.createView();
 sectionView = Ti.UI.createView();
 sectionView.add(scrollableView);
