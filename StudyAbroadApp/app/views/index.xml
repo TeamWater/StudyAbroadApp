@@ -4,7 +4,7 @@
         	<Tab>
         		<Window class="container" id="index">
         			<RightNavButton platform="ios" icon="ic_menu_white_48dp.png" class="menuBar"/>
-        <TableView id="menu">
+        <TableView id="menu" separatorColor="transparent">
         		<TableViewRow class="space">
 					<Button class="menuButtons" onClick="OpenAgenda" >Agenda</Button>
 				</TableViewRow>
@@ -30,8 +30,7 @@
 </TabGroup>
 
 	<Window class="container" id="index" platform="android">
-        <RightNavButton platform="ios" icon="ic_menu_white_48dp.png" class="menuBar"/>
-        <TableView id="menu">
+        <TableView id="menu" separatorColor="transparent">
         		<TableViewRow class="space">
 					<Button class="menuButtons" onClick="OpenAgenda" >Agenda</Button>
 				</TableViewRow>

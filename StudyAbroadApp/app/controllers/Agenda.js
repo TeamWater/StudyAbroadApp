@@ -16,19 +16,21 @@ var plainTemplate = {
             type: "Ti.UI.Label",
             bindId: "box",
             properties: {
-                backgroundColor: "#e4e4e4",
-                width: "260dp",
+                backgroundColor: "#e9e9e9",
+                width: Ti.UI.FILL,
                 top: "10dp",
                 bottom: "10dp",
                 left: "75dp",
+                right: "10dp",
                 borderRadius: "5dp",
-                separatorColor: "#253640"
             }
         }, {
             type: "Ti.UI.Label",
             bindId: "title",
             properties: {
-                color: "#565656",
+            	height: Ti.UI.FILL,
+            	width: Ti.UI.FILL,
+                color: "#424242",
                 font: {
                     fontFamily: "Arial",
                     fontSize: "21dp"
@@ -40,13 +42,15 @@ var plainTemplate = {
             type: "Ti.UI.Label",
             bindId: "details",
             properties: {
-                color: "gray",
+            	height: Ti.UI.FILL,
+            	width: Ti.UI.FILL,
+                color: "#424242",
                 font: {
-                    fontFamily: "Arial",
                     fontSize: "14dp"
                 },
                 left: "100dp",
                 top: "50dp",
+                bottom: "50dp",
                 
             },
         }, {
@@ -54,14 +58,12 @@ var plainTemplate = {
             bindId: "date",
             properties: {
                 height: "50dp",
-                left: "0dp",
+                left: "6dp",
                 width: "60dp",
-                top: "10dp",
+                top: "5dp",
                 right: "200dp",
-                color: "red",
-                borderRadius: "3dp",
-                backgroundColor: "#e4e4e4",
-                separatorColor: "#253640"
+                color: "#e9e9e9",
+       
             }
         },
     ]};
@@ -78,7 +80,6 @@ var plainTemplate = {
             backgroundColor: "white",
             width: Ti.UI.FILL,
             height: Ti.UI.SIZE,
-            separatorColor: "transparent"
         },
     }, 
     
@@ -114,7 +115,7 @@ var plainTemplate = {
             left: "5dp",
             width: "38dp",
             top: "5dp",
-            color: "red",
+            color: "#e9e9e9",
         },
     }, 
     ]};
@@ -126,6 +127,7 @@ var listView = Ti.UI.createListView({
         uncheck: plainTemplate,
     },
     defaultItemTemplate: "uncheck",
+    separatorColor: "transparent",
 });
 
 var section = Ti.UI.createListSection();
@@ -133,7 +135,7 @@ listView.sections = [section];
 
 var eventdata = [];
 var sectionViews = [];
-var eventList = ['55355318442599bbd0eec70c'];
+var eventList = ['553c3755657a50639e15e826', '55355318442599bbd0eec70c', ];
 
 for (var i = 0; i < eventList.length; i++) {
     Cloud.Events.show({
@@ -141,6 +143,8 @@ for (var i = 0; i < eventList.length; i++) {
     }, function(e) {
         if (e.success) {
             var event = e.events[0];
+            
+            var fixedDate = String.formatDate(event.start_time,['short']);
                     eventdata.push({
 
                         box: {},
@@ -151,7 +155,7 @@ for (var i = 0; i < eventList.length; i++) {
                             text: event.details
                         },
                         date: {
-                            text: event.start_time
+                            text: fixedDate,
                         },
                         
                     });
@@ -165,9 +169,10 @@ for (var i = 0; i < eventList.length; i++) {
 
 var scrollableView = Ti.UI.createScrollableView({
     views: eventList,
-    showPagingControl: true
+    showPagingControl: true,
+    scrollType: 'vertical',
 });
-
+var line = Ti.UI.createView();
 var dateView = Ti.UI.createView();
 sectionView = Ti.UI.createView();
 sectionView.add(scrollableView);

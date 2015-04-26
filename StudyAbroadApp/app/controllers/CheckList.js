@@ -16,12 +16,11 @@ var plainTemplate = {
         properties: {
             backgroundColor: "#e4e4e4",
             width: "260dp",
-            //height: "Titanium.UI.SIZE",
             top: "10dp",
             bottom: "10dp",
             left: "75dp",
             borderRadius: "5dp",
-            separatorColor: "#253640"
+            
         }
     }, {
         type: "Ti.UI.Label",
@@ -35,7 +34,6 @@ var plainTemplate = {
             left: "100dp",
             top: "12dp"
         },
-        separatorColor: "#253640"
     }, {
         type: "Ti.UI.Label",
         bindId: "details",
@@ -49,19 +47,7 @@ var plainTemplate = {
             top: "32dp",
             bottom: "10dp"
         }
-    }, {
-    	type: "Ti.UI.Label",
-    	bindId: "date",
-    	properties: {
-    	left: "-10dp",
-    	width: "30dp",
-    	top: "20dp",
-    	right: "200dp", 
-    	color: "red",
-    	backgroundColor: "green",
-    	separatorColor: "#253640"
-    	}
-    },
+    }, 
     
     {
     	type: "Ti.UI.Switch",
@@ -96,16 +82,14 @@ var section = Ti.UI.createListSection();
 dateView = Ti.UI.createListView();
 
 var data = [];
-var checkList = ['552e99467eead2057e3ebe3e', '552e992d7eead2057e3ebd3d', '552e9912ac4547febd410f9b', '552e98f3ac4547febd410ad7', '552e98cd08c91ee918709a77', '552e989fac4547fec53df0fc',
-				'552e983aac4547fec53de8df', '552d9ef954add893dd371ef0', '552d9ea17eead2057e384c45'];
+var checkList = [];
 
 for (var i = 0; i < checkList.length; i++) {
 Cloud.Posts.show({post_id: checkList[i] },function (e) {
 	if (e.success) {
         var post = e.posts[0];
         	data.push({
-        		
-        		//date: {text: post.start_time},
+        	
             	box : {},
             	title: { text: post.title},
             	details: { text: post.content},
