@@ -7,6 +7,6 @@ function openMenu() {
    
  
 function OpenPush() {
-	var Settings = Alloy.createController("Puch Notifications").getView();
-	PushNotifications.open();
+	var Settings = Alloy.createController("Push").getView();
+	Push.open();
 }
