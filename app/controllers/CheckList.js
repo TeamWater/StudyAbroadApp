@@ -1,4 +1,4 @@
-// Mark and Hues
+// Mark and Huhges
 var args = arguments[0] || {};
 
 function openMenu() {
