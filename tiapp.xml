@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <property name="acs-api-key-production" type="string">jLP233C8G3xguviGtzT61nYjnAOE9Ofq</property>
+    <property name="acs-api-key-development" type="string">IrpjSVfewCJxbUActpfEJtm7n7Z7irTD</property>
+    <id>edu.wtamu.cis.cidm4385.StudyAbroadApp</id>
+    <name>Nortic Buffs</name>
+    <version>1.0</version>
+    <publisher>markritter</publisher>
+    <url>http://</url>
+    <description>undefined</description>
+    <copyright>2015 by markritter</copyright>
+    <icon>ic_launcher.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>16153e31-8018-4c55-9888-ae2eb0ea71a5</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <!--using facebook appid, facebook login by Anthony & Mayra-->
+    <property name="ti.facebook.appid">710193929092015</property>
+    <ios>
+        <plist>
+            <dict>
+                <key>NSLocationWhenInUseUsageDescription</key>
+                <string>Test NSLocationWhenInUseUsageDescription</string>
+                <key>NSLocationAlwaysUsageDescription</key>
+                <string>Test NSLocationAlwaysUsageDescription</string>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <!-- Allows to use MOCK GPS data from emulators -->
+            <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+            <!-- Allows the API to download data from Google Map servers -->
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <!-- Allows the API to pull Accounts-->
+            <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+            <!-- Allows the API to keep the processor from sleeping when a message is received -->
+            <uses-permission android:name="android.permission.WAKE_LOCK"/>
+            <!-- Allows the Receive-->
+            <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+            <!-- Allows the API to cache data -->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <!-- Use GPS for device location -->
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <!-- Use Wi-Fi or mobile connection for device location -->
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <!-- Allows the API to access Google web-based services -->
+            <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+            <!-- Specify OpenGL ES 2.0 as a requirement -->
+            <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+            <!-- TODO: double check your app ID here -->
+            <uses-permission android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.MAPS_RECEIVE"/>
+            <!-- TODO: double check your app ID here -->
+            <permission
+                android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+            <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16"/>
+            <!-- Permission for Google messaging -->
+            <permission
+                android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+            <uses-permission android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.permission.C2D_MESSAGE"/>
+            <application android:theme="@style/Theme.Derptheme">
+                <receiver>
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" &gt;
+            <intent-filter>
+                        <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                        <category android:name="edu.wtamu.cis.cidm4385.StudyAbroadApp.gcm"/>
+                    </intent-filter>
+                </receiver>
+                <service android:name=".GcmIntentService"/>
+                <!-- Google API key -->
+                <!-- TODO: double check your API key here -->
+                <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDzdeO3ZOQ4i1iZ8Qqllf1jOCa9jc3ua1s"/>
+            </application>
+            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        </manifest>
+    </android>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="iphone">com.appcelerator.urlSession</module>
+        <module platform="android">ti.cloudpush</module>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="iphone">ti.map</module>
+        <module platform="android">ti.map</module>
+        <module platform="android">facebook</module>
+        <module platform="iphone">facebook</module>
+    </modules>
+    <deployment-targets>
+        <target device="blackberry">false</target>
+        <target device="android">true</target>
+        <target device="ipad">true</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">true</target>
+    </deployment-targets>
+    <sdk-version>3.5.1.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+    <property name="appc-app-id" type="string">5AgCUkznoV7VBZno3NnQJmBsQ1JqCy3N</property>
+    <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-development" type="string">inxeRPewI31ogNhPSi9YMKoX4ju4Xryl</property>
+    <property name="acs-oauth-key-development" type="string">XjZhIFp4oQssxNPHHFEaPPIwQe4ExvKy</property>
+    <property name="acs-username-development" type="string">appc_app_user_dev</property>
+    <property name="acs-password-development" type="string">E0Tj7vixBqzY3b7o4P</property>
+    <property name="acs-authbase-url-production" type="string">https://secure-identity.cloud.appcelerator.com</property>
+    <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
+    <property name="acs-oauth-secret-production" type="string">8OhblTMCTasBdsvpyp5O3sWnUpf6nhFJ</property>
+    <property name="acs-oauth-key-production" type="string">EKQjPkxHciMPGn56FMcZNdi9uSHEweRo</property>
+    <property name="acs-username-production" type="string">appc_app_user</property>
+    <property name="acs-password-production" type="string">pe4qP6JFVK4QisBOvt</property>
+    <property name="appc-org-id" type="number">100005414</property>
+    <property name="appc-creator-user-id" type="string">e6126624-bae8-4261-87e1-fdee8509f768</property>
+</ti:app>

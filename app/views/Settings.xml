@@ -1,0 +1,26 @@
+<Alloy>
+	<TabGroup>
+        	<Tab>
+        		<Window platform=" ios" class="container">
+                	<RightNavButton platform="ios" >
+                    		<Button title="Menu" onClick="openMenu" />
+                	</RightNavButton>
+					<Menu platform="android" class="menuBar" >
+			 				<MenuItem title="Menu" onClick="openMenu"/>
+        			</Menu>
+        			<view>
+      				  <Button id="pushBtn" title="PushNotes" onClick="OpenPush"></Button>	
+       			    </view>
+				</Window>
+        	</Tab>
+    </TabGroup>
+    
+    <Window platform="android" class="container">
+    	<Menu platform="android" class="menuBar" >
+			<MenuItem title="Menu" onClick="openMenu"/>
+        </Menu>
+        <view>
+        <Button id="pushBtn" title="PushNotes" onClick="OpenPush"></Button>	
+        </view>
+    </Window>
+</Alloy>	

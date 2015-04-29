@@ -2,7 +2,11 @@
 <launchConfiguration type="com.appcelerator.titanium.mobile.ui.android.simulator.launchConfigurationType">
 <stringAttribute key="ATTR_PROJECT_NAME" value="StudyAbroadApp"/>
 <stringAttribute key="abi" value="armeabi"/>
-<stringAttribute key="device-id" value="Nexus_5_API_21_x86"/>
+<stringAttribute key="device-id" value="titanium_1_WVGA800"/>
+<stringAttribute key="key_password" value=""/>
+<stringAttribute key="keystore_alias" value=""/>
+<stringAttribute key="keystore_password" value=""/>
+<stringAttribute key="keystore_path" value=""/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/StudyAbroadApp"/>
 </listAttribute>
