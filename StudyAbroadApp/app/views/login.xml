@@ -6,9 +6,9 @@
 			<View id='homeView'>
 				<Label id='welcomeText'></Label>
 				<View id='hvButtonContainer'>
-					<Button id='showCreateAccountBtn' title="Create Account" class="button"/>
+					<!--<Button id='showCreateAccountBtn' title="Create Account" class="button"/>-->
 					<Button id='showLoginBtn' title="Login" class="button"/>
-					<Button id='showLoginFBBtn' title="Facebook Connect" class="button"/>
+					<!--<Button id='showLoginFBBtn' title="Facebook Connect" class="button"/>-->
 				</View>
 			</View>
 			<!-- the login view -->

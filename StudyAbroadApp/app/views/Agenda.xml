@@ -1,8 +1,8 @@
 <Alloy>
 	<TabGroup platform="ios" BackgroundColor="#1da587" barColor="#1da587" navBarHidden="true" tintColor="#e9e9e9">
         	<Tab>
-    		<Window id="win" class="win">
-            	<RightNavButton platform="ios"  >
+    		<Window platform="ios" id="win" class="win">
+            	<RightNavButton   >
                    <Button title="Menu" onClick="openMenu" />
                 </RightNavButton>
             </Window>
@@ -13,7 +13,11 @@
         <Menu platform="android" class="menuBar" >
 			 <MenuItem title="Menu" onClick="openMenu"/>
 		</Menu>
+<!-- Updated upstream-->
 	 	<View id="line" class="line"></View>		
+
+		<View id="line" class="line"></View>   
+<!--Stashed changes-->
 	</Window>
 </Alloy>
 

@@ -5,15 +5,16 @@ $.parentController = args.parentController;
 
 //chapter 7
 $.showLoginBtn.addEventListener('click', showLoginBtnClicked);
-$.showCreateAccountBtn.addEventListener('click', showCreateAccountBtnClicked);
-$.cancelCreateAcctBtn.addEventListener('click', cancelActionButtonClicked);
+//$.showCreateAccountBtn.addEventListener('click', showCreateAccountBtnClicked);
+//$.cancelCreateAcctBtn.addEventListener('click', cancelActionButtonClicked);
 $.cancelLoginBtn.addEventListener('click', cancelActionButtonClicked);
 
 $.doLoginBtn.addEventListener('click', doLoginBtnClicked);
-$.doCreateAcctBtn.addEventListener('click', doCreateAcctBtnClicked);
+//$.doCreateAcctBtn.addEventListener('click', doCreateAcctBtnClicked);
 
 //faceboook login ch7
-$.showLoginFBBtn.addEventListener('click', doFacebookLoginAction);
+//$.showLoginFBBtn.addEventListener('click', doFacebookLoginAction);
+
 function showLoginBtnClicked() {
 	
 	$.createAcctView.hide();
@@ -88,7 +89,7 @@ function doCreateAcctBtnClicked() {
 	user.createAccount(params, userActionResponseHandler);
 };//end doCreateAcctBtnClicked ch7
 
-function faceBookLoginEventHandler(_event) {
+/*function faceBookLoginEventHandler(_event) {
 
 	Alloy.Globals.FB.removeEventListener('login', faceBookLoginEventHandler);
 
@@ -99,7 +100,7 @@ function faceBookLoginEventHandler(_event) {
 	} else {
 		_event.cancelled && alert("User Canceled");
 	}
-};//end faceBookLoginEventHandler ch7
+};*///end faceBookLoginEventHandler ch7
 
 function faceBookLoginErrorHandler(_user, _error) {
 	

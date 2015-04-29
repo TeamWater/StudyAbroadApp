@@ -1,16 +1,23 @@
 <Alloy>
 	<TabGroup platform="ios" >
-        	<Tab>
-        		<Window>
-                	<RightNavButton >
-                    		<Button title="Menu" onClick="openMenu" />
-                	</RightNavButton>
-                </Window>
-        	</Tab>
-    	</TabGroup>
+        <Tab>
+        	<Window>
+               <RightNavButton >
+                   <Button title="Menu" onClick="openMenu" />
+               </RightNavButton>
+             
+             <View class="container" id="phoneEmergency">
+				<Button onClick="openPhoneToCallEmergency" >Make an emergency call</Button>	
+			</View>
+			
+            </Window>
+        </Tab>
+    </TabGroup>
 	<Menu platform="android" class="menuBar" >
 			 <MenuItem title="Menu" onClick="openMenu"/>
 -        </Menu>
-	<View class="container">
+	<View class="container" id="phoneEmergency">
+		<Button onClick="openPhoneToCallEmergency" >Make an emergency call</Button>	
 	</View>
 </Alloy>
+
