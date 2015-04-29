@@ -7,7 +7,7 @@
                </RightNavButton>
              
              <View class="container" id="phoneEmergency">
-				<Button onClick="openPhoneToCallEmergency" >Make an emergency call</Button>	
+				<Button id="helpBtn">Make an emergency call</Button>	
 			</View>
 			
             </Window>
@@ -17,7 +17,7 @@
 			 <MenuItem title="Menu" onClick="openMenu"/>
 -        </Menu>
 	<View class="container" id="phoneEmergency">
-		<Button onClick="openPhoneToCallEmergency" >Make an emergency call</Button>	
+		
 	</View>
 </Alloy>
 

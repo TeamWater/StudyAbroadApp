@@ -13,4 +13,9 @@ function openPhoneToCallEmergency() {
 	
 };  
 
+var helpBtn = Ti.UI.createButton({
+	onClick:openPhoneToCallEmergency,
+});
+
+$.container.add(helpBtn); 
 

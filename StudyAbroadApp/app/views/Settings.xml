@@ -8,9 +8,9 @@
 					<Menu platform="android" class="menuBar" >
 			 				<MenuItem title="Menu" onClick="openMenu"/>
         			</Menu>
-        			<view>
+        			<View>
       				  <Button id="pushBtn" title="PushNotes" onClick="OpenPush"></Button>	
-       			    </view>
+       			    </View>
 				</Window>
         	</Tab>
     </TabGroup>
@@ -19,8 +19,8 @@
     	<Menu platform="android" class="menuBar" >
 			<MenuItem title="Menu" onClick="openMenu"/>
         </Menu>
-        <view>
-        <Button id="pushBtn" title="PushNotes" onClick="OpenPush"></Button>	
-        </view>
+        <View>
+        	<Button id="pushBtn" title="PushNotes" onClick="OpenPush"></Button>	
+        </View>
     </Window>
 </Alloy>	
