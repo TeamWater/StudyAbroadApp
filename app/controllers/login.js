@@ -54,7 +54,9 @@ function userActionResponseHandler(_resp) {
 		Alloy.Globals.loggedIn = true;
 		Alloy.Globals.CURRENT_USER = _resp.model;
 		
-		
+	
+	
+	//PUSH NOTIFICATIONS	
 		var win = Ti.UI.createWindow({
     layout: 'vertical',
     backgroundColor: 'white'
