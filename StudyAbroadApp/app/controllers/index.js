@@ -34,8 +34,6 @@ var Agenda = Alloy.createController("Agenda").getView();
 	Agenda.open();
 
 
-
-
 //login created by Anthony & Mayra
 function doOpen() {
 
