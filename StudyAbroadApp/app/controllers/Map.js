@@ -6,7 +6,7 @@ function openMenu() {
 var MapModule = require('ti.map');
 
 function openMapYou() {
-  
+  var win = Titanium.UI.createWindow();
     if (Ti.Geolocation.locationServicesEnabled) {
         Ti.Geolocation.purpose = 'Get Current Location';
         Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
@@ -17,7 +17,7 @@ function openMapYou() {
             if (e.error) {
                 alert('Error:Please enable location services');
             } else {
-            	var win = Titanium.UI.createWindow();
+            	
                
                 var mapview = MapModule.createView({
                     mapType: MapModule.NORMAL_TYPE,
@@ -28,15 +28,13 @@ function openMapYou() {
                         longitudeDelta: 0.01
                     },
                     userLocation: true,
-                    animate: true,
-                });
-                
-                win.add(mapview);
-                $.mapWin.close();
-                win.open();
-                
+                }); 
             }
+           win.add(mapview);
         });
+         
+         $.mapWin.close();
+         win.open();
     }
 }
 

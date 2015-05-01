@@ -195,13 +195,15 @@ for (var i = 0; i < eventList.length; i++) {
                 section.setItems(eventdata);
             };
     });
-    eventList[i] = Ti.UI.createView();
+    eventList[i] = Ti.UI.createView({layout:'vertical'});
     eventList[i].add(listView);
 };
 
 var scrollableView = Ti.UI.createScrollableView({
     views: eventList,
-    showPagingControl: true,
+    showPagingControl: false,
+    showHorizonatalScrollIndicator:false,
+    layout:'vertical'
 });
 
 var line = Ti.UI.createView();
