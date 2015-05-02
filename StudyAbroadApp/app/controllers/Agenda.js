@@ -5,11 +5,6 @@ function openMenu() {
     var index = Alloy.createController("index").getView();
     index.open();
 }
-function OpenMap() {
-	var Map = Alloy.createController("Map").getView();
-	Map.open(); 
- 	}
- 	
 
 var Cloud = require("ti.cloud");
 Cloud.debug = true;
@@ -179,9 +174,9 @@ if (OS_ANDROID) {
                     var fixedDate = day.format("MM-DD");
             
                     row = Ti.UI.createTableViewRow({
-                        className: 'forumEvent', // used to improve table performance
+                        className: 'forumEvent',
                         selectedBackgroundColor: 'white',
-                        rowIndex: i, // custom property, useful for determining the row during events
+                        rowIndex: i, 
                         
                     });
 
@@ -198,9 +193,7 @@ if (OS_ANDROID) {
                     row.add(box);
 
                     var title = Ti.UI.createLabel({
-                        //text: event.name,
                         text:event.name,
-                        
                         width: Ti.UI.FILL,
                         color: "#424242",
                         font: {

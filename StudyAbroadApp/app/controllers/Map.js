@@ -8,7 +8,7 @@ var MapModule = require('ti.map');
 function openMapYou() {
   var win = Titanium.UI.createWindow();
     if (Ti.Geolocation.locationServicesEnabled) {
-        Ti.Geolocation.purpose = 'Get Current Location';
+        //Ti.Geolocation.purpose = 'Get Your Current Location';
         Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
         Ti.Geolocation.distanceFilter = 10;
         Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
@@ -30,11 +30,12 @@ function openMapYou() {
                     userLocation: true,
                 }); 
             }
-           win.add(mapview);
+           //win.add(mapview);
+            $.mapWin.add(mapview);
         });
-         
-         $.mapWin.close();
-         win.open();
+        
+         //$.mapWin.close();
+         //win.open();
     }
 }
 
@@ -72,9 +73,10 @@ function openMapCope(){
         	}
    		  }
 	});
-	win.add(mapview);
-    $.mapWin.close();
-    win.open();
+	//win.add(mapview);
+    //$.mapWin.close();
+    //win.open();
+    $.mapWin.add(mapview);
 }
 
 
@@ -113,9 +115,10 @@ function openMapOslo() {
         	}
    		  }
 	});
-	win.add(mapview);
-    $.mapWin.close();
-    win.open();
+	//win.add(mapview);
+    //$.mapWin.close();
+    //win.open();
+    $.mapWin.add(mapview);
 }
 
 function openMapGoth() {
@@ -151,8 +154,9 @@ function openMapGoth() {
         	}
    		  }
 	});
-	win.add(mapview);
-    $.mapWin.close();
-    win.open();
+	//win.add(mapview);
+    //$.mapWin.close();
+    //win.open();
+    $.mapWin.add(mapview);
 }
 

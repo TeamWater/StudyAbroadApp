@@ -20,8 +20,10 @@
     <ios>
         <plist>
             <dict>
+            	<key>NSLocationUsageDescription</key>
+            	<string> </string>
                 <key>NSLocationWhenInUseUsageDescription</key>
-                <string>Testing locations</string>
+                <string>Get Your Current Location</string>
                 <key>NSLocationAlwaysUsageDescription</key>
                 <string>Test NSLocationAlwaysUsageDescription</string>
                 <key>UISupportedInterfaceOrientations~iphone</key>
