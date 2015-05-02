@@ -1,3 +1,8 @@
+if(OS_ANDROID){
+	
+}
+
+if(OS_IOS){
 var Cloud = require('ti.cloud');
 var trace = Ti.API.info;
 var user_device_token = Ti.App.Properties.getString("device_token", null);
@@ -69,4 +74,5 @@ function subscribeToServerPush() {
             alert('Error:\\n' + ((e.error && e.message) || JSON.stringify(e)));
         }
     });
+}
 }

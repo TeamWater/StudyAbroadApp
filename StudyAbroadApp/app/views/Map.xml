@@ -36,7 +36,7 @@
       <Menu platform="android" class="menuBar">
          <MenuItem title="Menu" onClick="openMenu" />
       </Menu>
-       <TableView id="mapMenu">
+       <TableView id="mapMenu" separatorColor="transparent">
         		<TableViewRow class="space">
 					<Button class="mapButtons" onClick="openMapYou" >You are Here</Button>
 				</TableViewRow>
