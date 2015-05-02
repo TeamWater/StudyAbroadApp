@@ -1,0 +1,37 @@
+<Alloy>
+	<TabGroup platform="ios" >
+        <Tab>
+        	<Window>
+               <RightNavButton >
+                   <Button title="Menu" onClick="openMenu" />
+               </RightNavButton>
+             
+             <View class="container">
+             	<Button onClick="openPoliceEmergency">Police Emergency</Button>
+             		
+             	<!--		
+				<Button onClick="openAmbulanceEmergency">Ambulance Emergency</Button>
+				<Button onClick="openFireEmergency">Fire Emergency</Button>
+			  -->
+			</View>
+			
+            </Window>
+        </Tab>
+    </TabGroup>
+	<Window>  
+		<Menu platform="android" class="menuBar" >
+				 <MenuItem title="Menu" onClick="openMenu"/>
+	    </Menu>
+			<View class="container">
+				<Button onClick="openPoliceEmergency">Police Emergency</Button>
+             		
+             <!--		
+				<Button onClick="openAmbulanceEmergency">Ambulance Emergency</Button>
+				<Button onClick="openFireEmergency">Fire Emergency</Button>
+			  -->
+				
+				
+			</View>
+	</Window>  
+</Alloy>
+
