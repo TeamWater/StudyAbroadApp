@@ -1,4 +1,4 @@
-// Mark and Hues
+// Mark and Hughes
 var args = arguments[0] || {};
 
 function openMenu() {

@@ -1,6 +1,35 @@
 var Cloud = require('ti.cloud');
 var AndroidPush = OS_ANDROID ? require('ti.cloudpush') : null;
 
+
+APSServiceManager.getInstance().enable(getApplicationContext(), 'APS_APP_KEY');
+Map<String, Object> data = new HashMap<String, Object>();
+data.put("type", "android");
+data.put("channel", "friend_request");
+data.put("device_token", "4e7a297ccc173bec93a2b81");
+
+try {
+    APSPushNotifications.subscribeToken(data, new APSResponseHandler() {
+
+        @Override
+        public void onResponse(final APSResponse e) {
+
+            if (e.getSuccess()) {
+                Log.i("APSPushNotifications", "Subscribed!");
+            } else {
+                Log.e("APSPushNotifications", "ERROR: " + e.getErrorMessage());
+            }
+        }
+
+        @Override
+        public void onException(final APSCloudException e) {
+            Log.e("APSPushNotifications", "Exception throw: " + e.toString());
+        }
+    });
+} catch (APSCloudException e) {
+    Log.e("APSPushNotifications", "Exception thrown: " + e.toString());
+}
+
 /**
  *
  * @param {Object} _user
