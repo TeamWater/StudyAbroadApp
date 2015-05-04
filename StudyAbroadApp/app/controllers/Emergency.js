@@ -5,7 +5,7 @@ function openMenu() {
 	index.open();
    }; 
   
-   
+
 function openPhoneToCallEmergency() {
 	
 	var the_number = '0123456789';
@@ -13,9 +13,4 @@ function openPhoneToCallEmergency() {
 	
 };  
 
-var helpBtn = Ti.UI.createButton({
-	onClick:openPhoneToCallEmergency,
-});
-
-$.container.add(helpBtn); 
 
