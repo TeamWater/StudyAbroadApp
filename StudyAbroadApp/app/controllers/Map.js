@@ -8,9 +8,10 @@ var MapModule = require('ti.map');
 function openMapYou() {
   var win = Titanium.UI.createWindow();
     if (Ti.Geolocation.locationServicesEnabled) {
-        //Ti.Geolocation.purpose = 'Get Your Current Location';
+        Ti.Geolocation.purpose = 'Purpose';
         Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
         Ti.Geolocation.distanceFilter = 10;
+        Ti.Geolocation.freguency = 1; 
         Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
         
         Ti.Geolocation.addEventListener('location', function(e) {
