@@ -1,7 +1,7 @@
 <Alloy>
 	<TabGroup>
         	<Tab>
-        		<Window platform=" ios" class="container">
+        		<Window id="win" platform=" ios" class="container">
                 	<RightNavButton platform="ios" >
                     		<Button title="Menu" onClick="openMenu" />
                 	</RightNavButton>
@@ -15,7 +15,7 @@
         	</Tab>
     </TabGroup>
     
-    <Window platform="android" class="container">
+    <Window id="win" platform="android" class="container">
     	<Menu platform="android" class="menuBar" >
 			<MenuItem title="Menu" onClick="openMenu"/>
         </Menu>

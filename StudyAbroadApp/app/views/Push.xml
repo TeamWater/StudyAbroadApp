@@ -1,4 +1,8 @@
 <Alloy>
+	<Window>
 	<View class="container">
+		<TextArea top="100" width="200" id="pushText" hintText="Write a push note"></TextArea>
+		<Button top="170" id="createNote" onClick="makeNote">Send Noteification!</Button>
 	</View>
+	</Window>
 </Alloy>
