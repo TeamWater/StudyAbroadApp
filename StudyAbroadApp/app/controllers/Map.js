@@ -3,47 +3,30 @@ function openMenu() {
     var index = Alloy.createController("index").getView();
     index.open();
 }
-var MapModule = require('ti.map');
 
-function openMapYou() {
-  var win = Titanium.UI.createWindow();
-    if (Ti.Geolocation.locationServicesEnabled) {
-        Ti.Geolocation.purpose = 'Purpose';
-        Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
-        Ti.Geolocation.distanceFilter = 10;
-        Ti.Geolocation.freguency = 1; 
-        Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
+function OpenYouMap() {    	
+        if (Ti.Geolocation.locationServicesEnabled) {
         
-        Ti.Geolocation.addEventListener('location', function(e) {
-            if (e.error) {
-                alert('Error:Please enable location services');
-            } else {
-            	
-               
-                var mapview = MapModule.createView({
-                    mapType: MapModule.NORMAL_TYPE,
-                    region: {
-                        latitude: e.coords.latitude,
-                        longitude: e.coords.longitude,
-                        latitudeDelta: 0.01,
-                        longitudeDelta: 0.01
-                    },
-                    userLocation: true,
-                }); 
-            }
-           //win.add(mapview);
+            var mapview = MapModule.createView({
+                mapType : MapModule.NORMAL_TYPE,
+                region : {
+                    latitude : Alloy.Globals.lat,
+                    longitude : Alloy.Globals.lng ,
+                    latitudeDelta : 0.03,
+                    longitudeDelta : 0.03
+                },
+                regionFit : true,
+                userLocation : true,
+            });
             $.mapWin.add(mapview);
-        });
-        
-         //$.mapWin.close();
-         //win.open();
+            } else{
+    	alert("Enable Location Services");
     }
 }
+var MapModule = require('ti.map');
 
 function openMapCope(){
 
-    var win = Titanium.UI.createWindow();
-    
     var mapview = MapModule.createView({
         mapType: MapModule.NORMAL_TYPE,
         region: {
@@ -52,8 +35,9 @@ function openMapCope(){
             latitudeDelta: 0.1,
             longitudeDelta: 0.1
         },
+        animate : true,
+        regionFit : true,
         userLocation: true,
-        animate: true,
     });
 
   Cloud.Places.query({
@@ -74,9 +58,6 @@ function openMapCope(){
         	}
    		  }
 	});
-	//win.add(mapview);
-    //$.mapWin.close();
-    //win.open();
     $.mapWin.add(mapview);
 }
 
@@ -85,7 +66,6 @@ function openMapCope(){
 
 function openMapOslo() {
 
-    var win = Titanium.UI.createWindow();
     var mapview = MapModule.createView({
         mapType: MapModule.NORMAL_TYPE,
         region: {
@@ -95,7 +75,9 @@ function openMapOslo() {
             longitudeDelta: 0.1
         },
         userLocation: true,
-        animate: true,
+        animate : true,
+        regionFit : true,
+        
     });
 
   Cloud.Places.query({
@@ -116,15 +98,11 @@ function openMapOslo() {
         	}
    		  }
 	});
-	//win.add(mapview);
-    //$.mapWin.close();
-    //win.open();
     $.mapWin.add(mapview);
 }
 
 function openMapGoth() {
 
-    var win = Titanium.UI.createWindow();
     var mapview = MapModule.createView({
         mapType: MapModule.NORMAL_TYPE,
         region: {
@@ -134,7 +112,10 @@ function openMapGoth() {
             longitudeDelta: 0.1
         },
         userLocation: true,
-        animate: true,
+        animate : true,
+        regionFit : true,
+
+
     });
 
   Cloud.Places.query({
@@ -155,9 +136,7 @@ function openMapGoth() {
         	}
    		  }
 	});
-	//win.add(mapview);
-    //$.mapWin.close();
-    //win.open();
+
     $.mapWin.add(mapview);
 }
 

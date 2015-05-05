@@ -8,7 +8,6 @@ function openMenu() {
  
 function OpenPush() {
 	var Push = Alloy.createController("Push").getView();
-	$.win.close();
 	Push.open();
 	
 }

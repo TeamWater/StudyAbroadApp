@@ -7,7 +7,8 @@ function makeNote(){
     if (e.success) {
         for (var i = 0; i < e.users.length; i++) {
             var user = e.users[i];
-            var text = $.pushText.getvalue(); 
+            var text = getElementById($.pushText).getvalue(); 
+
 Cloud.PushNotifications.notify({
     channel: 'news_alerts',
     payload: text,
@@ -21,10 +22,9 @@ Cloud.PushNotifications.notify({
  	   }
 	});
          }
-    } else {
-        alert('Error:\n' +
-            ((e.error && e.message) || JSON.stringify(e)));
-    }
+    } 
 });
+}
+
 	
 	

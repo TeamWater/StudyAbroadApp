@@ -11,7 +11,7 @@
             
 			<TableView id="mapMenu">
         		<TableViewRow class="space">
-					<Button class="mapButtons" onClick="openMapYou" >You are Here</Button>
+					<Button class="mapButtons" onClick="OpenYouMap" >You are Here</Button>
 				</TableViewRow>
 				
 				<TableViewRow class="space">
@@ -38,7 +38,7 @@
       </Menu>
        <TableView id="mapMenu" separatorColor="transparent">
         		<TableViewRow class="space">
-					<Button class="mapButtons" onClick="openMapYou" >You are Here</Button>
+					<Button class="mapButtons" onClick="OpenYouMap" >You are Here</Button>
 				</TableViewRow>
 				
 				<TableViewRow class="space">

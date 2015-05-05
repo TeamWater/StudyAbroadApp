@@ -20,8 +20,10 @@
     <ios>
         <plist>
             <dict>
-            	<key>NSLocationUsageDescription</key>
-            	<string> </string>
+            	<key>NSLocationAlwaysUsageDescription</key>
+                <string>
+                    User Location need to track phone in maps.
+                </string>
                 <key>NSLocationWhenInUseUsageDescription</key>
                 <string>Get Your Current Location</string>
                 <key>NSLocationAlwaysUsageDescription</key>

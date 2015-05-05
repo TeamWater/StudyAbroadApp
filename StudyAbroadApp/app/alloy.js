@@ -12,3 +12,16 @@
 Alloy.Globals.Map = require('ti.map');
 
 Alloy.Globals.FB = require('facebook');
+
+
+Ti.Geolocation.purpose = 'Track Users Phone for map display';
+Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_HIGH ;
+Ti.Geolocation.distanceFilter = 10;
+Ti.Geolocation.ACTIVITYTYPE_FITNESS;
+Ti.Geolocation.hasCompass = true;
+Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
+ 
+ Ti.Geolocation.addEventListener('location', function(e) {
+  	Alloy.Globals.lat = e.coords.latitude;
+  	Alloy.Globals.lng = e.coords.longitude;
+  });

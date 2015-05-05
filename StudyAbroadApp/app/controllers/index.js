@@ -132,4 +132,3 @@ function doClick(e) {
     alert($.label.text);
     //$.login.open();
 }
-
