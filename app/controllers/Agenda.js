@@ -108,14 +108,11 @@ if (OS_ANDROID) {
     var eventdata = [];
     var sectionViews = [];
 
-    var eventList = ['55355318442599bbd0eec70c', '553c3755657a50639e15e826'];
-
-        for (var i = 0; i < eventList.length; i++) {
-            Cloud.Events.show({
-                event_id: eventList[i]
+Cloud.Events.query({
+                order: "start_time",
             }, function(e) {
-                if(e.success){
-                    var event = e.events[0];
+        for (var i = 0; i < e.events.length; i++) {
+                    var event = e.events[i];
                     var moment = require('alloy/moment');
                     var day = moment(event.start_time, "YYYY-MM-DD:HH:mm:ssZZ");
                     var fixedDate = day.format("MM-DD");
@@ -139,23 +136,13 @@ if (OS_ANDROID) {
 
                     section.setItems(eventdata);
                 }
-            }); eventList[i] = Ti.UI.createView({
-            layout: 'vertical'
-        }); 
-        eventList[i].add(listView);
-}
+               }
+            ); 
 
-        var scrollableView = Ti.UI.createScrollableView({
-            views: eventList,
-            showPagingControl: false,
-            showHorizonatalScrollIndicator: false,
-            layout: 'vertical'
-        });
-
-        var line = Ti.UI.createView();
+    var line = Ti.UI.createView();
         var dateView = Ti.UI.createView(); 
         sectionView = Ti.UI.createView(); 
-        sectionView.add(scrollableView); 
+        sectionView.add(listView); 
         dateView.add(sectionView); 
         $.win.add(dateView); $.win.open();
     }
