@@ -12,17 +12,17 @@
 				<TableViewRow class="space">
 					<Button  class="menuButtons" onClick="OpenMap" >Map</Button>
 				</TableViewRow>
-				
-				<TableViewRow class="space">
-					<Button class="menuButtons" onClick="OpenSettings">Settings</Button>
-				</TableViewRow>
-				
+
 				<TableViewRow class="space">
 					<Button class="menuButtons" onClick="OpenCheckList">Check List</Button>
 				</TableViewRow>
 				
 				<TableViewRow class="space">
 					<Button class="menuButtons" onClick="OpenEmergency">Emergency</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button class="menuButtons" onClick="OpenSettings">Settings</Button>
 				</TableViewRow>
         </TableView>	
 	</Window>
@@ -37,11 +37,7 @@
 				
 				<TableViewRow class="space">
 					<Button  class="menuButtons" onClick="OpenMap" >Map</Button>
-				</TableViewRow>
-				
-				<TableViewRow class="space">
-					<Button class="menuButtons" onClick="OpenSettings">Settings</Button>
-				</TableViewRow>
+				</TableViewRow>		
 				
 				<TableViewRow class="space">
 					<Button class="menuButtons" onClick="OpenCheckList">Check List</Button>
@@ -49,6 +45,10 @@
 				
 				<TableViewRow class="space">
 					<Button class="menuButtons" onClick="OpenEmergency">Emergency</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button class="menuButtons" onClick="OpenSettings">Settings</Button>
 				</TableViewRow>
         </TableView>	
 	</Window>

@@ -2,3 +2,37 @@
 ".container" : {
   
 }
+
+"#createNote" : {
+	backgroundColor: "#e9e9e9",
+	top: '200dp',
+	width: '200dp',
+	height: '40dp',
+	color: "#424242",
+	border: 1,
+	borderColor: '#1da587',
+	font:{
+		fontSize: '15dp'
+	},
+	borderRadius: "5dp",
+}
+"#soundSwitch" : {
+	Color: "#e9e9e9",
+	top: '160dp',
+	width: '130dp',
+	height: '40dp',
+	border: 1,
+	borderColor: '#1da587',
+	font:{
+		fontSize: '15dp'
+	},
+}
+
+"#pushText":{
+	top:50,
+   width:300,
+   height:100,
+   border: 1,
+borderColor: '#1da587',
+   
+}

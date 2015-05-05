@@ -1,30 +1,28 @@
-// 
-// 
-// 
-// function makeNote(){
-// 	
-	// Cloud.Users.query(function (e) {
-    // if (e.success) {
-        // for (var i = 0; i < e.users.length; i++) {
-            // var user = e.users[i];
-            // var text = $.pushText.getvalue(); 
-// Cloud.PushNotifications.notify({
-    // channel: 'news_alerts',
-    // payload: text,
-    // to_ids:user.id
-// }, function (e) {
-    // if (e.success) {
-        // alert('Success');
- 	   // } else {
- 	       // alert('Error:\n' +
-          	  // ((e.error && e.message) || JSON.stringify(e)));
- 	   // }
-	// });
-         // }
-    // } else {
-        // alert('Error:\n' +
-            // ((e.error && e.message) || JSON.stringify(e)));
-    // }
-// });
-// 	
-// 	
+//James Ritter
+function makeNote() {
+	
+alert($.soundSwitch.value);
+ $.soundSwitch.addEventListener('change',function(e){
+   $.soundSwitch.value = true;
+   alert($.basicSwitch.value);
+});
+
+	var sound = $.soundSwitch.value;
+    var text = $.pushText.getValue();
+    Cloud.PushNotifications.notify({
+        channel: 'all',
+        payload: {
+            "alert": text,
+            "sound": sound,
+            "vibrate": false
+        },
+        to_ids: 'everyone'
+    }, function(e) {
+        if (e.success) {
+            alert('Success');
+        } else {
+            alert('Error:\n' +
+                ((e.error && e.message) || JSON.stringify(e)));
+        }
+    });
+}
