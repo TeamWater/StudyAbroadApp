@@ -1,3 +1,4 @@
+<!--Anthony and Mayra 5/2/15 -->
 <Alloy>
 	<TabGroup platform="ios" >
         <Tab>
@@ -6,15 +7,13 @@
                    <Button title="Menu" onClick="openMenu" />
                </RightNavButton>
              
-             <View class="container">
-             	<Button onClick="openPoliceEmergency">Police Emergency</Button>
-             		
-             	<!--		
-				<Button onClick="openAmbulanceEmergency">Ambulance Emergency</Button>
-				<Button onClick="openFireEmergency">Fire Emergency</Button>
-			  -->
-			</View>
-			
+	             <View class="container">
+	             		<Label id='emergencyText'></Label>
+	             			<Button class="EmBtn1" onClick="openPoliceEmergency">Police Emergency 112</Button>		
+							<Button class="EmBtn2" onClick="openAmbulanceEmergency">Ambulance Emergency 111</Button>
+							<Button class="EmBtn3" onClick="openFireEmergency">Fire Emergency 110</Button>
+				  			
+				</View>
             </Window>
         </Tab>
     </TabGroup>
@@ -23,15 +22,11 @@
 				 <MenuItem title="Menu" onClick="openMenu"/>
 	    </Menu>
 			<View class="container">
-				<Button onClick="openPoliceEmergency">Police Emergency</Button>
-             		
-             <!--		
-				<Button onClick="openAmbulanceEmergency">Ambulance Emergency</Button>
-				<Button onClick="openFireEmergency">Fire Emergency</Button>
-			  -->
-				
-				
-			</View>
+				<Label id='emergencyText'></Label>
+				<Button class="EmBtn1" onClick="openPoliceEmergency">Police Emergency 112</Button>		
+				<Button class="EmBtn2" onClick="openAmbulanceEmergency">Ambulance Emergency 111</Button>
+				<Button class="EmBtn3" onClick="openFireEmergency">Fire Emergency 110</Button>
+		    </View>
 	</Window>  
 </Alloy>
 

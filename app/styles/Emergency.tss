@@ -1,9 +1,48 @@
 ".container": {
 	backgroundColor:"white"
-}
+},
 
-"Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
+'#emergencyText':{
+   text: "In the event of an emergency please call:",
+   color:"#1da587",
+   top: 20,
+   left: '15dp',
+   font:{
+    fontSize: '15dp',
+    fontWeight: 'bold'
+   }
+},
+
+'#emergencyText':{
+   text: "In the event of an emergency please call: ",
+   width: Titanium.UI.FILL, 
+   color:"#1da587",
+   top: 20,
+   left: '20dp',
+   font:{
+    fontSize: '20dp',
+    fontWeight: 'bold'
+   }
+},
+
+"Button": {
+	backgroundColor:"transparent"
+},
+
+".EmBtn1": {
+    color: "#999", 
+    top: 75,
+    left: '50dp',
+},
+
+".EmBtn2": {
+    color: "#999", 
+    top: 100,
+    left: '50dp'
+},
+
+".EmBtn3": {
+    color: "#999", 
+    top: 125,
+    left: '50dp'
 }

@@ -5,7 +5,7 @@ function openMenu() {
 	index.open();
    }; 
   
-
+//Anthony and Mayra on 5/2/15
 function openPoliceEmergency() {
 	
 	var the_number = '112';
