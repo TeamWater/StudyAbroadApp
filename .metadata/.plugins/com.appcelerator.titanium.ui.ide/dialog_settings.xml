@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="TitaniumProjectImportWizard">
 		<item value="false" key="COPY_PROJECT"/>
-		<item value="/Users/markritter/Desktop/StudyAbroadApp/StudyAbroadApp" key="LAST_IMPORT_PATH"/>
+		<item value="/Users/markritter/Desktop/StudyAbroadApp" key="LAST_IMPORT_PATH"/>
 	</section>
 	<section name="com.appcelerator.titanium.ui.ide.tiappEditor.ModuleSelectionDialog">
 		<item value="false" key="ShowStatusLine"/>
@@ -10,8 +10,8 @@
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="53" key="DIALOG_Y_ORIGIN"/>
-			<item value="300" key="DIALOG_X_ORIGIN"/>
 			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="300" key="DIALOG_X_ORIGIN"/>
 			<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
 		</section>
 	</section>
