@@ -1,10 +1,32 @@
 <!--James Ritter>-->
 <Alloy>
-	<Window>
-	<View id ="pushView" class="container">
+	<TabGroup platform="ios">
+      <Tab>
+	<Window id="win" >
+		<RightNavButton>
+           <Button title="Menu" onClick="openMenu" />
+        </RightNavButton>
+	  <View id ="pushView" class="container">
 		<TextArea  id="pushText" hintText="Write a push note"></TextArea>
-		<Switch id="soundSwitch" style="Ti.UI.Android.SWITCH_STYLE_CHECKBOX" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" ></Switch>
+		<Switch id="vibSwitch" title="Vibrate" value="false" ></Switch><Label platform="ios" id="vibLabel" text="Vibrate"></Label>
+		<Switch id="soundSwitch" title="Sound" value="false" ></Switch><Label platform="ios" id="soundLabel" text="Sound"></Label>
 		<Button id="createNote" onClick="makeNote">Send Notification!</Button>
 	</View>
 	</Window>
+	</Tab>
+  </TabGroup>
+  
+  <Window id="win" platform="android">
+	<View id ="pushView" class="container">
+		<Menu platform="android" class="menuBar">
+         <MenuItem title="Menu" onClick="openMenu" />
+        </Menu>
+		<TextArea  id="pushText" hintText="Write a push note"></TextArea>
+		<Switch id="vibSwitch" title="Vibrate" value="false" ></Switch><Label platform="ios" id="vibLabel" text="Vibrate"></Label>
+		<Switch id="soundSwitch" title="Sound" value="false" ></Switch><Label platform="ios" id="soundLabel" text="Sound"></Label>
+		<Button id="createNote" onClick="makeNote">Send Notification!</Button>
+	</View>
+	</Window>
+  
+  
 </Alloy>

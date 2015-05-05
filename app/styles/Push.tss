@@ -1,11 +1,25 @@
-
-".container" : {
-  
+//James
+"#win":{
+	backgroundColor: "#424242",
+}
+"#vibSwitch[platform=android]": {
+	backgroundColor: "#e9e9e9",
+	style:"Ti.UI.Android.SWITCH_STYLE_CHECKBOX",
+	textAlign:"Ti.UI.TEXT_ALIGNMENT_CENTER",
+	color: "#424242",
+	top: '210dp',
+	width: '130dp',
+	height: '40dp',
+	border: 1,
+	borderColor: '#1da587',
+	font:{
+		fontSize: '15dp'
+	},
 }
 
-"#createNote" : {
+"#createNote[platform=android]" : {
 	backgroundColor: "#e9e9e9",
-	top: '200dp',
+	top: '260dp',
 	width: '200dp',
 	height: '40dp',
 	color: "#424242",
@@ -16,8 +30,13 @@
 	},
 	borderRadius: "5dp",
 }
-"#soundSwitch" : {
-	Color: "#e9e9e9",
+
+
+"#soundSwitch[platform=android]" : {
+	backgroundColor: "#e9e9e9",
+	style:"Ti.UI.Android.SWITCH_STYLE_CHECKBOX",
+	textAlign:"Ti.UI.TEXT_ALIGNMENT_CENTER",
+	color: "#424242",
 	top: '160dp',
 	width: '130dp',
 	height: '40dp',
@@ -28,11 +47,69 @@
 	},
 }
 
-"#pushText":{
+"#pushText[platform=android]":{
 	top:50,
    width:300,
    height:100,
    border: 1,
-borderColor: '#1da587',
+   borderColor: '#1da587',
+   
+}
+
+"#createNote[platform=ios]" : {
+	top: '300dp',
+	width: '200dp',
+	height: '40dp',
+	color: "#424242",
+	border: 1,
+	borderRadius: "5dp",
+	backgroundColor: "#e9e9e9",
+	borderColor: '#1da587',
+}
+
+
+"#soundSwitch[platform=ios]" : {
+	color: "#424242",
+	top: '250dp',
+	left:'50dp',
+	width: '130dp',
+	height: '40dp',
+	border: 1,
+}
+"#soundLabel[platform=ios]" : {
+	backgroundColor: "#e9e9e9",
+	color: "#424242",
+	top: '250dp',
+	left:'110dp',
+	width: '60dp',
+	height: '30dp',
+	borderRadius: "5dp",
+	border: 1,
+}
+
+
+"#vibSwitch[platform=ios]" : {
+	color: "#424242",
+	top: '200dp',
+	left:'50dp',
+	width: '130dp',
+	height: '40dp',
+}
+"#vibLabel[platform=ios]" : {
+	backgroundColor: "#e9e9e9",
+	color: "#424242",
+	top: '200dp',
+	left:'110dp',
+	width: '60dp',
+	height: '30dp',
+	borderRadius: "5dp",
+}
+
+"#pushText[platform=ios]":{
+   top:'50dp',
+   width:'300dp',
+   height:'100dp',
+   border: '1dp',
+   borderColor: '#1da587',
    
 }
