@@ -1,0 +1,36 @@
+<Alloy>
+<TabGroup BackgroundColor="#1da587" tintColor="#1da587">
+        	<Tab>
+        		<Window id="win" class="win">
+                	<RightNavButton platform="ios"  >
+                    		<Button title="Menu" onClick="openMenu" />
+                	</RightNavButton>
+                	<Menu platform="android" class="menuBar" >
+			 <MenuItem title="Menu" onClick="openMenu"/>
+		</Menu>
+		<Button bindId="mapBtn" id="mapBtn" title="Map" onClick="showMap" ></Button>
+		
+		<View id="line" class="line"></View>
+		
+			<View id="dateView">
+				<View id="sectionView">
+					<ScrollableView id="scrollableView">
+						<View id="eventList">
+							<ListView id="listView">
+								<ListSection id="section">
+								</ListSection>
+							</ListView>
+						</View>
+					</ScrollableView>
+				</View>
+			</View>
+                </Window>
+        	</Tab>
+    	</TabGroup>
+	
+		
+		
+		
+		<!--<View bindId="mapView" id="mapview" ns="Ti.Map" animate="true" regionFit="true" mapType="Ti.Map.STANDARD_TYPE" visible = "false" /> -->
+
+</Alloy>

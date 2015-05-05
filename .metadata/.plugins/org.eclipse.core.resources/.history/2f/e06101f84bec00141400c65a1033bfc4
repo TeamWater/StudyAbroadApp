@@ -1,0 +1,20 @@
+<Alloy>
+	<TabGroup platform="ios" BackgroundColor="#1da587" barColor="#1da587" navBarHidden="true" tintColor="#e9e9e9">
+        	<Tab>
+    		<Window id="win" class="win">
+            	<RightNavButton platform="ios"  >
+                   <Button title="Menu" onClick="openMenu" />
+                </RightNavButton>
+            </Window>
+           </Tab>
+    </TabGroup>
+   
+   <Window platform="android" id="win" class="win">
+        <Menu platform="android" class="menuBar" >
+			 <MenuItem title="Menu" onClick="openMenu"/>
+		</Menu>
+	 	<View id="line" class="line"></View>		
+	 	<View id="arrow" class="arrow"> </View>
+	</Window>
+</Alloy>
+

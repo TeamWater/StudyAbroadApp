@@ -1,0 +1,10 @@
+<Alloy>
+	<Window>
+		<Menu platform="android" class="menuBar" >
+			 <MenuItem title="Menu" onClick="openMenu"/>
+        </Menu>
+		<View class="container">
+		
+		</View>
+	</Window>
+</Alloy>

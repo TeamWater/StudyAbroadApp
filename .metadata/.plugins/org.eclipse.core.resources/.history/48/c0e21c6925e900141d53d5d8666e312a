@@ -1,0 +1,30 @@
+"#HQ" : {
+    latitude: 55.670929,
+    longitude: 12.576556,
+    title: "HeadQuarters",
+    subtitle: "DanHostel",
+    pincolor: Alloy.Globals.Map.ANNOTATION_AZURE
+}
+
+".container": {
+	backgroundColor: "#253640"
+
+}
+"#mapview" : {
+    region : {
+        latitude:33.74511,
+        longitude:-84.38993,
+        latitudeDelta:0.01,
+        longitudeDelta:0.01
+    }
+},
+"#appcHQ" : {
+    latitude: 33.74511,
+    longitude: -84.38993,
+    title: "Appcelerator Headquarters",
+    subtitle: "Mountain View, CA",
+    pincolor: Alloy.Globals.Map.ANNOTATION_RED
+}
+".container": {
+	backgroundColor: "#253640"
+}

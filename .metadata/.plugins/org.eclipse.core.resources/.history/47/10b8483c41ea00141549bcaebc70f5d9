@@ -1,0 +1,32 @@
+<!-- mark made this -->
+<Alloy>    
+	<TabGroup BackgroundColor="#1da587" viewShadowColor="#1da587">
+        	<Tab>
+        		<Window class="container" id="index">
+        <RightNavButton platform="ios" icon="ic_menu_white_48dp.png" class="menuBar"/>
+        <TableView id="menu">
+        		<TableViewRow class="space">
+					<Button class="menuButtons" onClick="OpenAgenda" >Agenda</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button  class="menuButtons" onClick="OpenMap" >Map</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button class="menuButtons" onClick="OpenSettings">Settings</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button class="menuButtons" onClick="OpenCheckList">Check List</Button>
+				</TableViewRow>
+				
+				<TableViewRow class="space">
+					<Button class="menuButtons" onClick="OpenEmergency">Emergency</Button>
+				</TableViewRow>
+        </TableView>	
+	</Window>
+        	</Tab>
+    	</TabGroup>
+	
+</Alloy>
