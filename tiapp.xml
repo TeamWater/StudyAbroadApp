@@ -22,12 +22,12 @@
             <dict>
                 <key>NSLocationAlwaysUsageDescription</key>
                 <string>
-                    User Location need to track phone in maps.
+                    Location is needed to track current location when using app Maps functionality
                 </string>
                 <key>NSLocationWhenInUseUsageDescription</key>
-                <string>Get Your Current Location</string>
+                <string>Location is needed to track current location when using app Maps functionality</string>
                 <key>NSLocationAlwaysUsageDescription</key>
-                <string>Test NSLocationAlwaysUsageDescription</string>
+                <string>Location is needed to track current location when using app Maps functionality</string>
                 <key>UISupportedInterfaceOrientations~iphone</key>
                 <array>
                     <string>UIInterfaceOrientationPortrait</string>
