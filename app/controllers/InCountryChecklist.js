@@ -117,7 +117,7 @@ Cloud.Posts.query({
         for (var i = 0; i < e.posts.length; i++) {
                     var post = e.posts[i];
                     var moment = require('alloy/moment');
-                    var day = moment(post.start_time, "YYYY-MM-DD:HH:mm:ssZZ");
+                    var day = moment(post.created_at, "YYYY-MM-DD:HH:mm:ssZZ");
                     var fixedDate = day.format("MM-DD");
 
                     postdata.push({
@@ -162,7 +162,7 @@ Cloud.Posts.query({
         for (var i = 0; i < e.posts.length; i++) {
                     var post = e.posts[i];
                     var moment = require('alloy/moment');
-                    var day = moment(post.start_time, "YYYY-MM-DD:HH:mm:ssZZ");
+                    var day = moment(post.created_at, "YYYY-MM-DD:HH:mm:ssZZ");
                     var fixedDate = day.format("MM-DD");
             
                     row = Ti.UI.createTableViewRow({
