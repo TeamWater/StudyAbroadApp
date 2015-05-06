@@ -4,7 +4,6 @@
 }
 "#vibSwitch[platform=android]": {
 	backgroundColor: "#e9e9e9",
-	style:"Ti.UI.Android.SWITCH_STYLE_CHECKBOX",
 	textAlign:"Ti.UI.TEXT_ALIGNMENT_CENTER",
 	color: "#424242",
 	top: '210dp',
@@ -34,7 +33,6 @@
 
 "#soundSwitch[platform=android]" : {
 	backgroundColor: "#e9e9e9",
-	style:"Ti.UI.Android.SWITCH_STYLE_CHECKBOX",
 	textAlign:"Ti.UI.TEXT_ALIGNMENT_CENTER",
 	color: "#424242",
 	top: '160dp',
