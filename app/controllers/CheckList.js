@@ -1,5 +1,11 @@
 
 //Ussarian
+
+function openMenu() {
+    var index = Alloy.createController("index").getView();
+    index.open();
+}
+
 function OpenBeforeLeavingChecklist() {
 	var BeforeLeavingChecklist = Alloy.createController("BeforeLeavingChecklist").getView();
 	BeforeLeavingChecklist.open();

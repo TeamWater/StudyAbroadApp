@@ -5,6 +5,9 @@
         	<Tab>
         		<Window class="container" id="index">
         			<RightNavButton platform="ios" icon="ic_menu_white_48dp.png" class="menuBar"/>
+        			<RightNavButton   >
+                   <Button title="Menu" onClick="openMenu" />
+                </RightNavButton>
         <TableView id="menu" separatorColor="transparent">
         		<TableViewRow class="space">
 					<Button class="menuButtons" onClick="OpenBeforeLeavingChecklist" >Before Leaving Country</Button>
@@ -24,6 +27,9 @@
 </TabGroup>
    
    <Window class="container" id="index" platform="android">
+   	<Menu platform="android" class="menuBar" >
+			 <MenuItem title="Menu" onClick="openMenu"/>
+		</Menu>
         <TableView id="menu" separatorColor="transparent">
         		<TableViewRow class="space">
 					<Button class="menuButtons" onClick="OpenBeforeLeavingChecklist" >Before Leaving Country</Button>
