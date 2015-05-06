@@ -1,4 +1,5 @@
-var args = arguments[0] || {};
+//Ussarian, Christian, Mark
+
 var Events = Alloy.Collections.instance("Events");
 
 function openMenu() {

@@ -1,3 +1,5 @@
+//Ussarian, Christian, Mark
+
 var Events = Alloy.Collections.instance("Events");
 
 function openMenu() {
