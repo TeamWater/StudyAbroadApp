@@ -1,191 +1,255 @@
-//Obtain Android Token Device Token
-// Require the module
-var CloudPush = require('ti.cloudpush');
-var deviceToken = null;
- 
-// Initialize the module
-CloudPush.retrieveDeviceToken({
-    success: deviceTokenSuccess,
-    error: deviceTokenError
-});
-// Enable push notifications for this device
-// Save the device token for subsequent API calls
-function deviceTokenSuccess(e) {
-    deviceToken = e.deviceToken;
-}
-function deviceTokenError(e) {
-    alert('Failed to register for push notifications! ' + e.error);
-}
- 
-// Process incoming push notifications
-CloudPush.addEventListener('callback', function (evt) {
-    alert("Notification received: " + evt.payload);
-});
+//David Street
+var Cloud = require('ti.cloud');
+var AndroidPush = OS_ANDROID ? require('ti.cloudpush') : null;
 
-var deviceToken = null;
+/**
+ *
+ * @param {Object} _user
+ * @param {Function} _pushRcvCallback
+ * @param {Function} _callback
+ */
+exports.initialize = function(_user, _pushRcvCallback, _callback) {
 
-// Check if the device is running iOS 8 or later
-if (Ti.Platform.name == "iPhone OS" && parseInt(Ti.Platform.version.split(".")[0]) >= 8) {
- 
- // Wait for user settings to be registered before registering for push notifications
-    Ti.App.iOS.addEventListener('usernotificationsettings', function registerForPush() {
- 
- // Remove event listener once registered for push notifications
-        Ti.App.iOS.removeEventListener('usernotificationsettings', registerForPush); 
- 
-        Ti.Network.registerForPushNotifications({
-            success: deviceTokenSuccess,
-            error: deviceTokenError,
-            callback: receivePush
+  USER_ID = _user.get("id");
+
+  if (Ti.Platform.model === 'Simulator') {
+    alert("Push ONLY works on Devices!");
+    return;
+  }
+
+  // only register push if we have a user logged in
+  var userId = _user.get("id");
+
+  if (userId) {
+
+    if (OS_ANDROID) {
+      // reset any settings
+      AndroidPush.clearStatus();
+
+      // set some properties
+      AndroidPush.debug = true;
+      AndroidPush.showTrayNotificationsWhenFocused = true;
+
+      AndroidPush.retrieveDeviceToken({
+        success : function(_data) {
+          Ti.API.debug("recieved device token", _data.deviceToken);
+
+          // what to call when push is received
+          AndroidPush.addEventListener('callback', _pushRcvCallback);
+
+          // set some more properties
+          AndroidPush.enabled = true;
+          AndroidPush.focusAppOnPush = false;
+
+//The pushRegisterSuccess, subscribe device 
+          pushRegisterSuccess(userId, _data, function(_response) {
+            // save the device token locally
+            Ti.App.Properties.setString('android.deviceToken', _data.deviceToken);
+
+            _callback(_response);
+          });
+        },
+        error : function(_data) {
+          AndroidPush.enabled = false;
+          AndroidPush.focusAppOnPush = false;
+          AndroidPush.removeEventListener('callback', _pushRcvCallback);
+
+          pushRegisterError(_data, _callback);
+        }
+      });
+
+    } else {
+      Ti.Network.registerForPushNotifications({
+        types : [Ti.Network.NOTIFICATION_TYPE_BADGE, Ti.Network.NOTIFICATION_TYPE_ALERT, Ti.Network.NOTIFICATION_TYPE_SOUND],
+        success : function(_data) {
+          pushRegisterSuccess(userId, _data, _callback);
+        },
+        error : function(_data) {
+          pushRegisterError(_data, _callback);
+        },
+        callback : function(_data) {
+          // what to call when push is recieved
+          _pushRcvCallback(_data.data);
+        }
+      });
+    }
+  } else {
+    _callback && _callback({
+      success : false,
+      msg : 'Must have User for Push Notifications',
+    });
+  }
+};
+//This exports subscribe function is used to subscribe to push notification channels.
+exports.subscribe = function(_channel, _token, _callback) {
+  Cloud.PushNotifications.subscribe({
+    channel : _channel,
+    device_token : _token,
+    type : OS_IOS ? 'ios' : 'android'
+  }, function(_event) {
+
+    var msgStr = "Subscribed to " + _channel + " Channel";
+    Ti.API.debug(msgStr + ': ' + _event.success);
+
+    if (_event.success) {
+      _callback({
+        success : true,
+        error : null,
+        msg : msgStr
+      });
+
+    } else {
+      _callback({
+        success : false,
+        error : _event.data,
+        msg : "Error Subscribing to All Channels"
+      });
+    }
+  });
+};
+
+function pushRegisterError(_data, _callback) {
+  _callback && _callback({
+    success : false,
+    error : _data
+  });
+}
+
+/**
+ *
+ * @param {String} _userId
+ * @param {Object} _data
+ * @param {Function} _callback
+ */
+function pushRegisterSuccess(_userId, _data, _callback) {
+
+  var token = _data.deviceToken;
+
+  // clean up any previous registration of this device using saved
+  // device token
+  Cloud.PushNotifications.unsubscribe({
+    device_token : Ti.App.Properties.getString('android.deviceToken'),
+    user_id : _userId,
+    type : (OS_ANDROID) ? 'android' : 'ios'
+  }, function(e) {
+
+    exports.subscribe("all", token, function(_resp1) {
+
+      // if successful subscribe to the platform specific channel
+      if (_resp1.success) {
+
+        _callback({
+          success : true,
+          msg : "Subscribe to channel: all",
+          data : _data,
         });
+      } else {
+        _callback({
+          success : false,
+          error : _resp2.data,
+          msg : "Error Subscribing to channel: all"
+        });
+      }
     });
- 
- // Register notification types to use
-    Ti.App.iOS.registerUserNotificationSettings({
-	    types: [
-            Ti.App.iOS.USER_NOTIFICATION_TYPE_ALERT,
-            Ti.App.iOS.USER_NOTIFICATION_TYPE_SOUND,
-            Ti.App.iOS.USER_NOTIFICATION_TYPE_BADGE
-        ]
-    });
+  });
 }
- 
-// For iOS 7 and earlier
-else {
-    Ti.Network.registerForPushNotifications({
- // Specifies which notifications to receive
-        types: [
-            Ti.Network.NOTIFICATION_TYPE_BADGE,
-            Ti.Network.NOTIFICATION_TYPE_ALERT,
-            Ti.Network.NOTIFICATION_TYPE_SOUND
-        ],
-        success: deviceTokenSuccess,
-        error: deviceTokenError,
-        callback: receivePush
-    });
-}
-// Process incoming push notifications
-function receivePush(e) {
-    alert('Received push: ' + JSON.stringify(e));
-}
-// Save the device token for subsequent API calls
-function deviceTokenSuccess(e) {
-    deviceToken = e.deviceToken;
-}
-function deviceTokenError(e) {
-    alert('Failed to register for push notifications! ' + e.error);
-}
-//get a device token
-var deviceToken;
-// Require the Cloud module
-var Cloud = require("ti.cloud");
-function subscribeToChannel () {
- // Subscribes the device to the 'news_alerts' channel
- // Specify the push type as either 'android' for Android or 'ios' for iOS
-    Cloud.PushNotifications.subscribeToken({
-        device_token: deviceToken,
-        channel: 'news_alerts',
-        type: Ti.Platform.name == 'android' ? 'android' : 'ios'
-    }, function (e) {
- if (e.success) {
-            alert('Subscribed');
-        } else {
-            alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
-        }
-    });
-}
-function unsubscribeToChannel () {
- // Unsubscribes the device from the 'test' channel
-    Cloud.PushNotifications.unsubscribeToken({
-        device_token: deviceToken,
-        channel: 'news_alerts',
-    }, function (e) {
- if (e.success) {
-            alert('Unsubscribed');
-        } else {
-            alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
-        }
-    });
-}
- 
-var win = Ti.UI.createWindow({
-    backgroundColor: 'white',
-    layout:'vertical',
-    exitOnClose: true
-});
 
-var subscribe = Ti.UI.createButton({title:'Subscribe'});
-subscribe.addEventListener('click', subscribeToChannel);
-win.add(subscribe);
+exports.pushUnsubscribe = function(_data, _callback) {
 
-var unsubscribe = Ti.UI.createButton({title:'Unsubscribe'});
-unsubscribe.addEventListener('click', unsubscribeToChannel);
-win.add(unsubscribe);
- 
-win.open();
+  Cloud.PushNotifications.unsubscribe(_data, function(e) {
+    if (e.success) {
+      Ti.API.debug('Unsubscribed from: ' + _data.channel);
+      _callback({
+        success : true,
+        error : null
+      });
+    } else {
+      Ti.API.error('Error unsubscribing: ' + _data.channel);
+      Ti.API.error(JSON.stringify(e, null, 2));
+      _callback({
+        success : false,
+        error : e
+      });
+    }
+  });
+};
 
-// you need to get the device token
-// You also need an ACS user account.
-// Require in the Cloud module
-var Cloud = require("ti.cloud");
- 
-function loginUser(){
- // Log in to ACS
-    Cloud.Users.login({
-        login: 'test@david.com',
-        password: '12345'
-    }, function (e) {
- if (e.success) {
-            alert('Login successful');
-        } else {
-            alert('Error:\n' +
-                ((e.error && e.message) || JSON.stringify(e)));
-        }
-    });
-}
-function subscribeToChannel(){
- // Subscribe the user and device to the 'test' channel
- // Specify the push type as either 'android' for Android or 'ios' for iOS
- // Check if logged in
-    Cloud.PushNotifications.subscribe({
-        channel: 'test',
-        device_token: deviceToken,
-    }, function (e) {
- if (e.success) {
-            alert('Success');
-        } else {
-            alert('Error:\n' +
-                ((e.error && e.message) || JSON.stringify(e)));
-        }
-    });
-}
-function unsubscribeToChannel () {
- // Unsubscribes the user and device from the 'test' channel
-    Cloud.PushNotifications.unsubscribe({
-        channel: 'test',
-        device_token: deviceToken
-    }, function (e) {
- if (e.success) {
-            alert('Unsubscribed');
-        } else {
-            alert('Error:\n' +
-                ((e.error && e.message) || JSON.stringify(e)));
-        }
-    });
-}
- 
-var win = Ti.UI.createWindow({
-    backgroundColor: 'white',
-    layout:'vertical',
-    exitOnClose: true
-});
-var subscribe = Ti.UI.createButton({title:'Subscribe'});
-subscribe.addEventListener('click', subscribeToChannel);
-win.add(subscribe);
+exports.sendPush = function(_params, _callback) {
 
-var unsubscribe = Ti.UI.createButton({title:'Unsubscribe'});
-unsubscribe.addEventListener('click', unsubscribeToChannel);
-win.add(unsubscribe);
- 
-win.open();
-loginUser();
+  if (Alloy.Globals.pushToken === null) {
+    _callback({
+      success : false,
+      error : "Device Not Registered For Notifications!"
+    });
+    return;
+  }
+
+  var data = {
+    channel : 'all',
+    payload : _params.payload,
+  };
+
+  _params.all && (data.all = _params.all);
+  _params.to_ids && (data.to_ids = _params.to_ids);
+
+  Cloud.PushNotifications.notify(data, function(e) {
+    if (e.success) {
+      _callback({
+        success : true
+      });
+    } else {
+      var eStr = (e.error && e.message) || JSON.stringify(e);
+      Ti.API.error(eStr);
+      _callback({
+        success : false,
+        error : eStr
+      });
+    }
+  });
+};
+
+exports.getChannels = function(_user, _callback) {
+
+  var xhr = Ti.Network.createHTTPClient();
+
+  // create the url with params
+
+  // get the environment specific Key
+  var isProduction = Titanium.App.deployType === "production";
+  var acsKeyName = "acs-api-key-" + ( isProduction ? "production" : "development");
+
+  // construct the URL
+  var url = "https://api.cloud.appcelerator.com/v1/push_notification/query.json?key=";
+  url += Ti.App.Properties.getString(acsKeyName);
+  url += "&user_id=" + _user.id;
+
+  xhr.open("GET", url);
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.onerror = function(e) {
+    alert(e);
+    Ti.API.info(" " + String(e));
+  };
+  xhr.onload = function() {
+    try {
+      Ti.API.debug(" " + xhr.responseText);
+      var data = JSON.parse(xhr.responseText);
+      var subscriptions = data.response.subscriptions[0];
+      Ti.API.info(JSON.stringify(subscriptions));
+
+      _callback && _callback({
+        success : true,
+        data : subscriptions,
+      });
+    } catch(E) {
+      Ti.API.error(" " + String(E));
+
+      _callback && _callback({
+        success : false,
+        data : null,
+        error : E
+      });
+    }
+  };
+
+  xhr.send();
+};
