@@ -110,7 +110,9 @@ if (OS_ANDROID) {
     var sectionViews = [];
 
 Cloud.Posts.query({
-                order: "create_date",
+	where: {
+        tags_array: 'BeforeTrip',}
+               // order: "create_date",
             }, function(e) {
         for (var i = 0; i < e.posts.length; i++) {
                     var post = e.posts[i];
