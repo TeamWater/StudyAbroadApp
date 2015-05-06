@@ -12,7 +12,7 @@ Cloud.debug = true;
 
 if (OS_ANDROID) {
 
-    var plainTemplate = {
+        var plainTemplate = {
         childTemplates: [{
             type: "Ti.UI.Label",
             bindId: "box",
@@ -21,33 +21,8 @@ if (OS_ANDROID) {
                 width: Ti.UI.FILL,
                 top: "10dp",
                 bottom: "10dp",
-                left: "75dp",
+                left: "10dp",
                 right: "10dp",
-                borderRadius: "5dp",
-            }
-        }, {
-            type: "Ti.UI.Label",
-            bindId: "arrow",
-            properties: {
-                backgroundColor: "#e9e9e9",
-                width: "10dp",
-                height: "10dp",
-                transform: Ti.UI.create2DMatrix({
-                    rotate: 45
-                }),
-                top: "28dp",
-                left: "70dp",
-            }
-        }, {
-
-            type: "Ti.UI.Label",
-            bindId: "dot",
-            properties: {
-                backgroundColor: "#1da587",
-                width: "10dp",
-                height: "10dp",
-                top: "28dp",
-                left: "52dp",
                 borderRadius: "5dp",
             }
         }, {
@@ -61,8 +36,9 @@ if (OS_ANDROID) {
                     fontFamily: "Arial",
                     fontSize: "21dp"
                 },
-                left: "120dp",
-                top: "20dp"
+                left: "30dp",
+                top: "20dp",
+                right: "15dp"
             },
         }, {
             type: "Ti.UI.Label",
@@ -74,25 +50,16 @@ if (OS_ANDROID) {
                 font: {
                     fontSize: "14dp"
                 },
-                left: "100dp",
+                left: "20dp",
                 top: "50dp",
                 bottom: "50dp",
+                right: "20dp"
 
             },
-        }, {
-            type: "Ti.UI.Label",
-            bindId: "date",
-            properties: {
-                height: "50dp",
-                left: "6dp",
-                width: "60dp",
-                top: "5dp",
-                right: "200dp",
-                color: "#e9e9e9",
-
-            }
-        }, ]
+        },
+         ]
     };
+
 
 
     var listView = Ti.UI.createListView({

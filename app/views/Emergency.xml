@@ -2,7 +2,7 @@
 <Alloy>
 	<TabGroup platform="ios" >
         <Tab>
-        	<Window>
+        	<Window class="win">
                <RightNavButton >
                    <Button title="Menu" onClick="openMenu" />
                </RightNavButton>
@@ -21,7 +21,7 @@
 		<Menu platform="android" class="menuBar" >
 				 <MenuItem title="Menu" onClick="openMenu"/>
 	    </Menu>
-			<View class="container">
+			<View class="win">
 				<Label id='emergencyText'></Label>
 				<Button class="EmBtn1" onClick="openPoliceEmergency">Police Emergency 112</Button>		
 				<Button class="EmBtn2" onClick="openAmbulanceEmergency">Ambulance Emergency 111</Button>

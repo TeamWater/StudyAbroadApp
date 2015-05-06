@@ -1,5 +1,5 @@
-".container": {
-	backgroundColor:"white"
+".win": {
+	backgroundColor:"#424242"
 },
 
 '#emergencyText':{
@@ -26,23 +26,35 @@
 },
 
 "Button": {
-	backgroundColor:"transparent"
+	backgroundColor:"#e9e9e9",
+	borderRadius: "5dp",
+	left: "10dp",
+	right: "10dp",
 },
 
 ".EmBtn1": {
-    color: "#999", 
-    top: 75,
-    left: '50dp',
+    color: "#424242", 
+    top: "75dp",
+    width: Titanium.UI.FILL,
+    borderRadius: "5dp",
+    left: "10dp",
+    right: "10dp",
 },
 
 ".EmBtn2": {
-    color: "#999", 
-    top: 100,
-    left: '50dp'
+    color: "#424242", 
+    top: "150dp",
+    width: Titanium.UI.FILL, 
+    borderRadius: "5dp",
+    left: "10dp",
+    right: "10dp",
 },
 
 ".EmBtn3": {
-    color: "#999", 
-    top: 125,
-    left: '50dp'
+    color: "#424242", 
+    top: "225dp",
+    width: Titanium.UI.FILL, 
+    borderRadius: "5dp",
+    left: "10dp",
+    right: "10dp",
 }

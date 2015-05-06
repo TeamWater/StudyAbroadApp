@@ -61,7 +61,8 @@ if (OS_ANDROID) {
                     fontSize: "21dp"
                 },
                 left: "120dp",
-                top: "20dp"
+                top: "20dp",
+                right: "15dp"
             },
         }, {
             type: "Ti.UI.Label",
@@ -76,6 +77,7 @@ if (OS_ANDROID) {
                 left: "100dp",
                 top: "50dp",
                 bottom: "50dp",
+                right: "15dp"
 
             },
         }, {
