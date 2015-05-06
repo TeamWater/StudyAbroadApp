@@ -1,4 +1,4 @@
-//Mark and James
+//Mark and James(IOS)
 var Events = Alloy.Collections.instance("Events");
 
 function openMenu() {
