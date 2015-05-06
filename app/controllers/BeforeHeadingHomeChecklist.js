@@ -1,4 +1,3 @@
-var args = arguments[0] || {};
 var Events = Alloy.Collections.instance("Events");
 
 function openMenu() {
@@ -110,7 +109,7 @@ if (OS_ANDROID) {
 
 Cloud.Posts.query({
 	where: {
-        tags_array: 'BeforeTrip',}
+        tags_array: 'BeforeHeadingHome',}
                // order: "create_date",
             }, function(e) {
         for (var i = 0; i < e.posts.length; i++) {
@@ -154,7 +153,7 @@ Cloud.Posts.query({
         var tableData = [];
             Cloud.Posts.query({
                 where: {
-        tags_array: 'BeforeTrip',}
+        tags_array: 'BeforeHeadingHome',}
                // order: "create_date",
             }, function(e) {
                 if (e.success) {
