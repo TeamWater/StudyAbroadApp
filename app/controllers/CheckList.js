@@ -154,7 +154,9 @@ Cloud.Posts.query({
     if (OS_IOS) { 	
         var tableData = [];
             Cloud.Posts.query({
-                order: "create_date",
+                where: {
+        tags_array: 'BeforeTrip',}
+               // order: "create_date",
             }, function(e) {
                 if (e.success) {
         for (var i = 0; i < e.posts.length; i++) {
