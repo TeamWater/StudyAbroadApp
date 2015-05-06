@@ -1,7 +1,5 @@
 //David Street
 var Cloud = require('ti.cloud');
-var AndroidPush = OS_ANDROID ? require('ti.cloudpush') : null;
-
 /**
  *
  * @param {Object} _user
@@ -23,6 +21,8 @@ exports.initialize = function(_user, _pushRcvCallback, _callback) {
   if (userId) {
 
     if (OS_ANDROID) {
+		var AndroidPush = require('ti.cloudpush') ;
+		
       // reset any settings
       AndroidPush.clearStatus();
 
@@ -58,7 +58,9 @@ exports.initialize = function(_user, _pushRcvCallback, _callback) {
         }
       });
 
-    } else {
+    } 
+    if(OS_IOS) {
+    	alert("This is ios");
       Ti.Network.registerForPushNotifications({
         types : [Ti.Network.NOTIFICATION_TYPE_BADGE, Ti.Network.NOTIFICATION_TYPE_ALERT, Ti.Network.NOTIFICATION_TYPE_SOUND],
         success : function(_data) {
@@ -80,6 +82,7 @@ exports.initialize = function(_user, _pushRcvCallback, _callback) {
     });
   }
 };
+
 //This exports subscribe function is used to subscribe to push notification channels.
 exports.subscribe = function(_channel, _token, _callback) {
   Cloud.PushNotifications.subscribe({
