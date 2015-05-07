@@ -155,9 +155,9 @@ function subscribeToChannel (deviceToken) {
         type: Ti.Platform.name == 'android' ? 'android' : 'ios'
     }, function (e) {
  if (e.success) {
-           alert('Subscribed');
+           //alert('Subscribed');
         } else {
-            alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
+            //alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
         }
     });
 }

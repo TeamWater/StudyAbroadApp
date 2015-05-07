@@ -62,7 +62,7 @@ function userActionResponseHandler(_resp) {
 
 	} else {
 		// Show the error message and let the user try again.
-		alert("loginFailed", _resp.error.message);
+		//alert("loginFailed", _resp.error.message);
 
 		Alloy.Globals.CURRENT_USER = null;
 		Alloy.Globals.loggedIn = false;
@@ -105,7 +105,7 @@ function doCreateAcctBtnClicked() {
 function faceBookLoginErrorHandler(_user, _error) {
 	
 	// Show the error message somewhere and let the user try again.
-	alert("Error: " + _error.code + " " + _error.message);
+	//alert("Error: " + _error.code + " " + _error.message);
 
 	Alloy.Globals.loggedIn = false;
 	Alloy.Globals.CURRENT_USER = null;

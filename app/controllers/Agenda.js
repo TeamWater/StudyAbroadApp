@@ -120,8 +120,9 @@ if(!Alloy.Globals.loggedIn){
 
 		// save controller so we know not to create one again
 		$.loginController = loginController;
+	}else {
+		$.loginController.open(true);
 	}
-	
 	$.loginController.open(true);
 }
 else{

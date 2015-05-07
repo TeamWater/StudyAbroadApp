@@ -21,7 +21,6 @@
 						<Button id='doLoginBtn' title="Login" class="button" right="3dp" />
 						<Button id='cancelLoginBtn' title="Cancel" class="button" left="3dp"/>
 					</View>
-					<Button id='forgotPasswordBtn' title="Forgot Password" class="button" />
 				</View>
 			</View>
 			<!-- view account view -->
