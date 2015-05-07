@@ -13,6 +13,7 @@ Alloy.Globals.Map = require('ti.map');
 
 Alloy.Globals.FB = require('facebook');
 
+Alloy.Globals.loggedIn = false;
 
  	
 Ti.Geolocation.purpose = 'Track Users Phone for map display';

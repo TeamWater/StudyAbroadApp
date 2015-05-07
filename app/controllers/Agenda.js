@@ -110,6 +110,22 @@ if (OS_ANDROID) {
     var eventdata = [];
     var sectionViews = [];
 
+if(!Alloy.Globals.loggedIn){
+	
+	if (!$.loginController) {
+		var loginController = Alloy.createController("login", {
+			parentController : $,
+			reset : true
+		});
+
+		// save controller so we know not to create one again
+		$.loginController = loginController;
+	}
+	
+	$.loginController.open(true);
+}
+else{
+
 Cloud.Events.query({
                 order: "start_time",
             }, function(e) {
@@ -238,3 +254,6 @@ Cloud.Events.query({
         );
        
     }
+    
+    } // end else - added by Anthony to protect from non logged in users.
+    
