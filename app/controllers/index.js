@@ -66,8 +66,8 @@ $.loginSuccessAction = function(_options) {
 	// open the main screen
 	//$.tabGroup.open();
     //alert("You are logged in");
-		$.index.open();
-		//Agenda.open();
+		//$.index.open();
+		Agenda.open();
 	// set tabGroup to initial tab, in case this is coming from
 	// a previously logged in state
 	//$.tabGroup.setActiveTab(0);
@@ -135,12 +135,12 @@ CloudPush.retrieveDeviceToken({
 // register push notifications for this device
 // Save the device token for subsequent API calls
 function deviceTokenSuccess(e) {
-	//alert('Token Success' + e.deviceToken);
+
     deviceToken = e.deviceToken;
     subscribeToChannel(deviceToken);
 }
 function deviceTokenError(e) {
-    //alert('Failed to register for push notifications! ' + e.error);
+    alert('Failed to register for push notifications! ' + e.error);
 }
 
 CloudPush.addEventListener('callback', function (evt) {
@@ -155,7 +155,7 @@ function subscribeToChannel (deviceToken) {
         type: Ti.Platform.name == 'android' ? 'android' : 'ios'
     }, function (e) {
  if (e.success) {
-           // alert('Subscribed');
+           alert('Subscribed');
         } else {
             alert('Error:\n' + ((e.error && e.message) || JSON.stringify(e)));
         }
