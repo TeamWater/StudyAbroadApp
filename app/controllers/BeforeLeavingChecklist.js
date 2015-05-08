@@ -1,6 +1,6 @@
 //Ussarian, Christian, Mark
 
-var Events = Alloy.Collections.instance("Events");
+var Posts = Alloy.Collections.instance("Posts");
 
 function openMenu() {
     var index = Alloy.createController("index").getView();
